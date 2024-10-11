@@ -1,0 +1,66 @@
+.ae-cpu-card {
+    width: 128px;
+    height: 180px;
+    border: dashed 1px #ccc;
+    display: inline-block;
+    background: #4abe40ed;
+}
+
+.ae-cpu-card-busy {
+    background: rgba(241, 96, 70, 0.93);
+}
+
+.ae-cpu-card-status {
+    color: dimgray;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.ae-cpu-card-busy .ae-cpu-card-status {
+    color: #ffc82e;
+}
+
+.ae-cpu-card-line {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+.ae-cpu-card-line span:first-child {
+    position: absolute;
+    left: 5px;
+    max-width: 28%;
+}
+
+.ae-cpu-card-line span:last-child {
+    text-align: right;
+    display: inherit;
+    /*max-width: 66%;*/
+    padding-left: 30%;
+    padding-right: 5px;
+    word-break: break-all;
+}
+
+.ae-cpu-card-name {
+    color: aquamarine;
+    padding: 2px;
+}
+
+.ae-cpu-card-refresh {
+    cursor: pointer;
+}
+
+.ae-cpu-card-tool-bar-delete {
+    position: absolute;
+    right: 0;
+    padding: 0 7px;
+    border: dashed 1px #f4fa4f;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.ae-cpu-card-tool-bar {
+    position: relative;
+}

@@ -1,0 +1,9 @@
+.ae-cpu-item-card {
+    display: inline-table;
+    width: 33.333333%;
+}
+
+.ae-cpu-item-panel .ae-cpu-item-card:nth-child(2) {
+    border-left: 1px dashed blanchedalmond;
+    border-right: 1px dashed blanchedalmond;
+}
