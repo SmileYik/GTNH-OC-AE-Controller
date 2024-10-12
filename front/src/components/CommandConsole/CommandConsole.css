@@ -5,6 +5,11 @@
     border: dashed 1px #eee;
 }
 
+.command-console textarea,
+.command-console select {
+    background: transparent;
+}
+
 .command-area {
     position: absolute;
     left: 0px;

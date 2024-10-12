@@ -5,21 +5,17 @@ import ItemsPage from "./pages/ItemsPage/ItemsPage.jsx";
 import CpuPage from "./pages/CpuPage/CpuPage.jsx";
 import FluidPage from "./pages/FluidPage/FluidPage.jsx";
 import ConfigPage from "./pages/ConfigPage/ConfigPage.jsx";
+import IndexPage from "./pages/IndexPage/IndexPage.jsx";
+import "./style.css"
+import './MainFrame.css'
 
+const DEFAULT_PAGE = "Index"
 const pages = {
-    "TestPage": <TestPage></TestPage>,
+    "Index": <IndexPage></IndexPage>,
     "Items": <ItemsPage></ItemsPage>,
     "Fluids": <FluidPage></FluidPage>,
     "Cpus": <CpuPage></CpuPage>,
     "Config": <ConfigPage></ConfigPage>
-}
-
-function TestPage() {
-    return (
-        <>
-            <span>i am a test page</span>
-        </>
-    )
 }
 
 function TabList({onChangeTab, selectedPage}) {
@@ -36,7 +32,7 @@ function TabList({onChangeTab, selectedPage}) {
 
 
 export default function MainFrame() {
-    const [page, setPage] = useState()
+    const [page, setPage] = useState(DEFAULT_PAGE)
 
     const changePage = useCallback((page) => {
         setPage(page)

@@ -12,14 +12,12 @@
   top: 0;
   margin-left: 20%;
   width: 80% !important;
-  background: #ccc;
 }
 
 .main-page-wrapper {
   width: 90%;
   position: relative;
   height: 90vh;
-  background: #89a1c7;
   margin: 20px auto auto;
 }
 
@@ -29,6 +27,7 @@
   width: 15%;
   height: 100%;
   text-align: center;
+  align-content: center;
 }
 
 .tab-list p {
@@ -52,5 +51,5 @@
 }
 
 body {
-  background: #89a1c7;
+  background-color: #89a1c7;
 }
