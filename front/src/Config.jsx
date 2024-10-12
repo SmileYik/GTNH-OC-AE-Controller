@@ -33,5 +33,9 @@ export default {
             method: "refreshFluidStorage",
             data: "{}"
         }
-    }
+    },
+    theme: [
+        "theme-blue",
+        "theme-white"
+    ]
 }

@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import "./CommandConsole.css"
 import Config from "../../Config.jsx";
+import PropTypes from "prop-types";
 
 function CommandArea() {
     function submitCommand(command, bodyData) {
@@ -68,9 +69,9 @@ function CommandStatus() {
     )
 }
 
-export default function CommandConsole() {
+export default function CommandConsole({addClassName}) {
     return (
-        <div className={"command-console"}>
+        <div className={"command-console " + addClassName}>
             <div className={"command-area"}>
                 <CommandArea></CommandArea>
             </div>
@@ -79,4 +80,8 @@ export default function CommandConsole() {
             </div>
         </div>
     )
+}
+
+CommandConsole.propTypes = {
+    addClassName: PropTypes.string
 }

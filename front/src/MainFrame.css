@@ -53,3 +53,33 @@
 body {
   background-color: #89a1c7;
 }
+
+/**
+ * Theme
+ */
+
+/**
+ * theme-white
+ */
+
+.body-theme-white
+{
+  background: #eee;
+}
+
+.body-theme-white button {
+  background: #fff;
+  color: #222222;
+}
+
+.tab-list-theme-white,
+.tab-list-theme-white,
+.command-console-theme-white,
+.main-page-theme-white
+{
+  background: #fff;
+}
+
+.main-page-theme-white {
+  padding: 10px;
+}
