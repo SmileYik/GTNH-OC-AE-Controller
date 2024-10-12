@@ -6,7 +6,7 @@ export default function ConfigPage() {
 
     function saveConfig() {
         localStorage.setItem("base-url", baseUrl)
-        localStorage.setItem("token", token)
+        localStorage.setItem("ocaetoken", token)
         alert("成功保存配置到浏览器本地！")
     }
 
