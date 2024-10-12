@@ -1,6 +1,12 @@
+.ae-cpu-page {
+    text-align: center;
+    align-items: center;
+}
+
 .ae-cpu-item-card {
     display: inline-table;
     width: 33.333333%;
+    text-align: center;
 }
 
 .ae-cpu-item-panel .ae-cpu-item-card:nth-child(2) {

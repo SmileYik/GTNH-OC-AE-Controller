@@ -43,7 +43,7 @@ function CommandArea() {
                 <textarea placeholder={"在这里输入参数"} defaultValue={bodyData}
                        onChange={event => setBodyData(event.target.value)}/>
             </div>
-            <button className={"command-area-submit-btn"} onClick={event => submitCommand(command, bodyData)}>提交指令</button>
+            <span className={"command-area-submit-btn"} onClick={event => submitCommand(command, bodyData)}>提交指令</span>
         </>
     )
 }

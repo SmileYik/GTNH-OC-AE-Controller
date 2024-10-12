@@ -126,7 +126,7 @@ export default function CpuPage() {
     }, [])
 
     return (
-        <>
+        <div className={"ae-cpu-page"}>
             <button onClick={event => {
                 httpUtil.put(httpUtil.path.task, {
                     "method": "simpleCpusInfo",
@@ -169,7 +169,7 @@ export default function CpuPage() {
             {
                 cpu && cpu.id ? <CpuDetail cpu={cpu}></CpuDetail> : <></>
             }
-        </>
+        </div>
     )
 }
 

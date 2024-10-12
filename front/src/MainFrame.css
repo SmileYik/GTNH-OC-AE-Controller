@@ -3,21 +3,24 @@
   left: 20%;
   top: 25vh;
   width: 80%;
+  text-align: center;
+  align-items: center;
 }
 
 .command-console {
   position: absolute;
   top: 0;
   margin-left: 20%;
-  width: 80%;
+  width: 80% !important;
   background: #ccc;
 }
 
 .main-page-wrapper {
-  width: 90vw;
+  width: 90%;
   position: relative;
   height: 90vh;
   background: #89a1c7;
+  margin: 20px auto auto;
 }
 
 .tab-list {
@@ -25,6 +28,7 @@
   left: 0;
   width: 15%;
   height: 100%;
+  text-align: center;
 }
 
 .tab-list p {
@@ -39,8 +43,12 @@
   background: #7ba2e0;
 }
 
+.tab-item-selected {
+  background: #7ba2e0;
+}
+
 #root {
-  margin: 0;
+  margin: 5px;
 }
 
 body {
