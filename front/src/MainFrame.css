@@ -72,6 +72,10 @@ body {
   color: #222222;
 }
 
+.body-theme-white .item-stack-amount {
+  color: #555;
+}
+
 .tab-list-theme-white,
 .tab-list-theme-white,
 .command-console-theme-white,
