@@ -1,8 +1,24 @@
 .command-console {
     width: 100%;
-    height: 20vh;
+    height: 4vh;
     display: flex;
     padding: 5px;
+    transition: height 0.8s ease;
+}
+
+.command-console > * {
+    display: none !important;
+}
+
+.command-console-fixed,
+.command-console:hover {
+    height: 20vh;
+    transition: height 0.8s ease;
+}
+
+.command-console-fixed > *,
+.command-console:hover > * {
+    display: inline-block !important;
 }
 
 .command-console textarea,
@@ -105,6 +121,7 @@
         display: none;
     }
 
+    .command-console-fixed,
     .command-console:hover,
     .command-console:active,
     .command-console:focus {
@@ -113,6 +130,7 @@
         transition: height 0.8s ease;
     }
 
+    .command-console-fixed > *,
     .command-console:hover > *,
     .command-console:active > *,
     .command-console:focus > * {

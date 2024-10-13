@@ -73,3 +73,7 @@
     transition: transform 0.8s ease;
     transform: rotate(-360deg);
 }
+
+.ae-cpu-card-busy .ae-cpu-card-tool-bar-delete {
+    color: #f4fa4f;
+}

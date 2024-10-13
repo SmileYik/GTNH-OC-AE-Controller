@@ -36,7 +36,12 @@ export default function IndexPage() {
                     <img src={"https://blog.smileyik.eu.org/common/images/ico_normal.jpg"} alt={"SmileYik"}/>
                 </a>
                 <div id={"index-author-aside"}>
-                    <span>Made by <span>SmileYik</span></span>
+                    <p>
+                        Made by <span>SmileYik</span>
+                        <br/>
+                        感谢周小姐的鼎力支持
+                    </p>
+
                     <IconLink title={"博客"} iconUrl={"https://blog.smileyik.eu.org/common/images/ico_normal.jpg"} url={"https://blog.smileyik.eu.org/"}></IconLink>
                     <IconLink title={"主页"} svg={GITHUB_SVG} url={"https://github.com/SmileYik/"}></IconLink>
                     <IconLink title={"仓库"} svg={GITHUB_SVG} url={"https://github.com/SmileYik/GTNH-OC-AE-Controller"}></IconLink>

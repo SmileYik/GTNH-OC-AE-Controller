@@ -1,9 +1,10 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import "./CommandConsole.css"
 import Config from "../../Config.jsx";
+import PropTypes from "prop-types";
 
-function CommandArea() {
+function CommandArea({fixed, setFixed}) {
     function submitCommand(command, bodyData) {
         if (command == null || command === "") return
         const json = JSON.parse(bodyData)
@@ -24,11 +25,12 @@ function CommandArea() {
     const [command, setCommand] = useState("")
     const [bodyData, setBodyData] = useState("")
 
+
     return (
         <>
             <div className={"command-area"}>
                 <div className={"command-area-line command-area-line-1"}>
-                    <span>指令:</span>
+                    <span><input type={"checkbox"} checked={fixed} onChange={event => setFixed(event.target.checked)}></input>指令:</span>
                     <select onChange={event => {
                         setCommand(Config.tasks[event.target.value].method)
                         setBodyData(Config.tasks[event.target.value].data)
@@ -72,13 +74,23 @@ function CommandStatus() {
 }
 
 export default function CommandConsole() {
+    const [fixed, setFixed] = useState(false)
+    const onSetFexed = useCallback((fixed) => {
+        setFixed(fixed)
+    })
+
     return (
-        <div className={"command-console"}>
-            <CommandArea></CommandArea>
+        <div className={"command-console " + (fixed ? "command-console-fixed" : "")}>
+            <CommandArea fixed={fixed} setFixed={onSetFexed}></CommandArea>
 
             <div className={"command-status-area"}>
                 <CommandStatus/>
             </div>
         </div>
     )
+}
+
+CommandArea.propTypes = {
+    fixed: PropTypes.bool,
+    setFixed: PropTypes.func
 }
