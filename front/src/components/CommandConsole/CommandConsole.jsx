@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import "./CommandConsole.css"
 import Config from "../../Config.jsx";
-import PropTypes from "prop-types";
 
 function CommandArea() {
     function submitCommand(command, bodyData) {
@@ -27,24 +26,27 @@ function CommandArea() {
 
     return (
         <>
-            <div className={"command-area-line command-area-line-1"}>
-                <span>指令:</span>
-                <select onChange={event => {
-                    setCommand(Config.tasks[event.target.value].method)
-                    setBodyData(Config.tasks[event.target.value].data)
-                }}>
-                    <option value={"none"}></option>
-                    {commandOption}
-                </select>
-                {/*<input placeholder={"在这里输入指令"} defaultValue={command}*/}
-                {/*       onChange={event => setCommand(event.target.value)}/>*/}
+            <div className={"command-area"}>
+                <div className={"command-area-line command-area-line-1"}>
+                    <span>指令:</span>
+                    <select onChange={event => {
+                        setCommand(Config.tasks[event.target.value].method)
+                        setBodyData(Config.tasks[event.target.value].data)
+                    }}>
+                        <option value={"none"}></option>
+                        {commandOption}
+                    </select>
+                    {/*<input placeholder={"在这里输入指令"} defaultValue={command}*/}
+                    {/*       onChange={event => setCommand(event.target.value)}/>*/}
+                </div>
+                <div className={"command-area-line command-area-line-2"}>
+                    <span>参数:</span>
+                    <textarea placeholder={"在这里输入参数"} defaultValue={bodyData}
+                              onChange={event => setBodyData(event.target.value)}/>
+                </div>
             </div>
-            <div className={"command-area-line command-area-line-2"}>
-                <span>参数:</span>
-                <textarea placeholder={"在这里输入参数"} defaultValue={bodyData}
-                       onChange={event => setBodyData(event.target.value)}/>
-            </div>
-            <span className={"command-area-submit-btn"} onClick={event => submitCommand(command, bodyData)}>提交指令</span>
+            <span className={"command-area-submit-btn"}
+                  onClick={event => submitCommand(command, bodyData)}>提交指令</span>
         </>
     )
 }
@@ -69,19 +71,14 @@ function CommandStatus() {
     )
 }
 
-export default function CommandConsole({addClassName}) {
+export default function CommandConsole() {
     return (
-        <div className={"command-console " + addClassName}>
-            <div className={"command-area"}>
-                <CommandArea></CommandArea>
-            </div>
+        <div className={"command-console"}>
+            <CommandArea></CommandArea>
+
             <div className={"command-status-area"}>
                 <CommandStatus/>
             </div>
         </div>
     )
-}
-
-CommandConsole.propTypes = {
-    addClassName: PropTypes.string
 }

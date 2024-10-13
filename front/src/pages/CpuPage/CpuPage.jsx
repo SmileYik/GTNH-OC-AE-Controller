@@ -127,42 +127,43 @@ export default function CpuPage() {
 
     return (
         <div className={"ae-cpu-page"}>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "simpleCpusInfo",
-                    "data": {}
-                }).then(async resp => {
-                })
-            }}>发送更新请求
-            </button>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "allCpusInfo",
-                    "data": {}
-                }).then(async resp => {
-                })
-            }}>更新详细信息请求
-            </button>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "cpuMonitor",
-                    "data": {}
-                }).then(async resp => {
-                })
-            }}>添加监控
-            </button>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "cancelMonitor",
-                    "data": {"id": "cpuMonitor"}
-                }).then(async resp => {
-                })
-            }}>移除监控
-            </button>
+            <div>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "simpleCpusInfo",
+                        "data": {}
+                    }).then(async resp => {})
+                }}>发送更新请求
+                </button>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "allCpusInfo",
+                        "data": {}
+                    }).then(async resp => {})
+                }}>更新详细信息请求
+                </button>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "cpuMonitor",
+                        "data": {}
+                    }).then(async resp => {})
+                }}>添加监控
+                </button>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "cancelMonitor",
+                        "data": {"id": "cpuMonitor"}
+                    }).then(async resp => {})
+                }}>移除监控
+                </button>
+            </div>
+
+            <br/>
             <div className={"ae-cpu-card-panel"}>
                 {
                     cpus.map(cpu => {
-                        return <AeCpuCard key={Math.random()} cpu={cpu} onClick={onClickCpu} onRefresh={onRefresh} onDelete={onDeleteCpu}></AeCpuCard>
+                        return <AeCpuCard key={Math.random()} cpu={cpu} onClick={onClickCpu} onRefresh={onRefresh}
+                                          onDelete={onDeleteCpu}></AeCpuCard>
                     })
                 }
             </div>

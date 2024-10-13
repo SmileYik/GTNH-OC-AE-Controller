@@ -6,7 +6,7 @@ import CpuPage from "./pages/CpuPage/CpuPage.jsx";
 import FluidPage from "./pages/FluidPage/FluidPage.jsx";
 import ConfigPage from "./pages/ConfigPage/ConfigPage.jsx";
 import IndexPage from "./pages/IndexPage/IndexPage.jsx";
-import "./style.css"
+import "./commons/style.css"
 import './MainFrame.css'
 
 const DEFAULT_PAGE = "Index"
@@ -63,12 +63,14 @@ export default function MainFrame() {
     }, [setPage])
     console.log(theme)
     return (
-        <div className={"main-page-wrapper main-page-wrapper-" + (theme && theme !== "" ? theme : "")}>
-            <TabList className={"tab-list tab-list-" + (theme && theme !== "" ? theme : "")} onChangeTab={changePage} selectedPage={page}></TabList>
-            <div className={"main-page main-page-" + (theme && theme !== "" ? theme : "")}>
-                {page !== null && page !== "" && pages[page] ? pages[page] : <></>}
+        <div className={"main-page-wrapper"}>
+            <TabList className={"tab-list"} onChangeTab={changePage} selectedPage={page}></TabList>
+            <div className={"content"}>
+                <CommandConsole></CommandConsole>
+                <div className={"main-page"}>
+                    {page !== null && page !== "" && pages[page] ? pages[page] : <></>}
+                </div>
             </div>
-            <CommandConsole addClassName={theme && theme !== "" ? ("command-console-" + theme) : ""}></CommandConsole>
         </div>
     )
 }

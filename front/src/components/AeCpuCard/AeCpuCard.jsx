@@ -14,7 +14,7 @@ export default function AeCpuCard({onClick, cpu, onRefresh, onDelete}) {
     return (
         <div className={"ae-cpu-card " + (cpu.busy ? "ae-cpu-card-busy" : "") } onClick={event => onClick(cpu.id)}>
             <div className={"ae-cpu-card-tool-bar"}>
-                <div className={"ae-cpu-card-tool-bar-delete"} onClick={event => onDelete(cpu)}>X</div>
+                <span title={"删除"} className={"ae-cpu-card-tool-bar-delete"} onClick={event => onDelete(cpu)}>X</span>
             </div>
             <h2 className={"ae-cpu-card-name"}>{cpu.id}</h2>
             <AeCpuCardLine lineKey="容量:" value={(cpu.storage / 1024) + "K"}></AeCpuCardLine>

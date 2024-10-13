@@ -1,36 +1,36 @@
-.main-page {
-  position: absolute;
-  left: 20%;
-  top: 25vh;
-  width: 80%;
-  text-align: center;
-  align-items: center;
-}
-
-.command-console {
-  position: absolute;
-  top: 0;
-  margin-left: 20%;
-  width: 80% !important;
-}
-
 .main-page-wrapper {
   width: 90%;
   position: relative;
   height: 90vh;
   margin: 20px auto auto;
+  display: flex;
+}
+
+.main-page {
+  margin-top: 5%;
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .tab-list {
-  position: absolute;
-  left: 0;
   width: 15%;
   height: 100%;
   text-align: center;
   align-content: center;
+  display: inline-block;
 }
 
-.tab-list p {
+.content {
+  display: inline-block;
+  width: 80%;
+  margin-left: 5%;
+}
+
+.tab-item {
+  overflow: hidden;
   display: block;
   height: 40px;
   border: dashed 1px azure;
@@ -38,12 +38,18 @@
   cursor: pointer;
 }
 
-.tab-list p:hover {
+.tab-item:hover {
   background: #7ba2e0;
+  transition: transform .8s ease;
+  transform: rotate(5deg) scale(1.05);
 }
 
+.tab-item-selected:hover,
 .tab-item-selected {
   background: #7ba2e0;
+  margin: 50px 0;
+  transition: transform .8s ease !important;
+  transform: rotate(5deg) scale(1.1) !important;
 }
 
 #root {
@@ -52,6 +58,63 @@
 
 body {
   background-color: #89a1c7;
+}
+
+button:hover {
+  transition: transform .5s ease;
+  scale: 1.05;
+  transform: rotate(-5deg) scale(1.1);
+}
+
+/**
+ *  low width
+ */
+
+@media screen and (max-width: 30em) {
+
+  .main-page-wrapper {
+    width: 98%;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  #root {
+    margin-left: 0;
+  }
+
+  .tab-list {
+    width: 10%;
+    border-bottom-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    transition: width 0.8s ease;
+  }
+
+  .tab-list .tab-item {
+    opacity: 0;
+    display: none;
+  }
+
+  .tab-list .tab-item-selected {
+    opacity: 100;
+    display: block;
+  }
+
+  .tab-list:hover,
+  .tab-list:active,
+  .tab-list:focus
+  {
+    width: 100%;
+    transition: width 0.8s ease;
+  }
+
+  .tab-list:hover .tab-item,
+  .tab-list:active .tab-item,
+  .tab-list:focus .tab-item
+  {
+    transition: opacity 0.8s ease;
+    opacity: 100;
+    display: block;
+  }
 }
 
 /**
@@ -70,20 +133,29 @@ body {
 .body-theme-white button {
   background: #fff;
   color: #222222;
+  border-radius: 30px;
+}
+
+.body-theme-white button:hover {
+  background: #7ba2e0;
 }
 
 .body-theme-white .item-stack-amount {
   color: #555;
 }
 
-.tab-list-theme-white,
-.tab-list-theme-white,
-.command-console-theme-white,
-.main-page-theme-white
+.body-theme-white .tab-list,
+.body-theme-white .command-console,
+.body-theme-white .main-page
 {
   background: #fff;
+  border-radius: 20px;
 }
 
-.main-page-theme-white {
+.body-theme-white .tab-list .tab-item {
+  border-radius: 20px;
+}
+
+.body-theme-white .main-page {
   padding: 10px;
 }

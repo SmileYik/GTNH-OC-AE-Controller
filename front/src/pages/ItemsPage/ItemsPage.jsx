@@ -46,31 +46,24 @@ export default function ItemsPage() {
 
     return (
         <>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.items, {
-                    "result": []
-                })
-                    .then(async resp => {
-                        if (resp.status === 200) {
-
+            <div>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.items, {
+                        "result": []
+                    }).then(async resp => {})
+                }}>清理所有物品
+                </button>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "refreshStorage",
+                        "data": {
+                            isCraftable: true
                         }
-                    })
-            }}>清理所有物品
-            </button>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "refreshStorage",
-                    "data": {
-                        isCraftable: true
-                    }
-                })
-                .then(async resp => {
-                    if (resp.status === 200) {
+                    }).then(async resp => {})
+                }}>搜寻可制造物品
+                </button>
+            </div>
 
-                    }
-                })
-            }}>搜寻可制造物品
-            </button>
             <br/>
             {
                 items.map(item => {

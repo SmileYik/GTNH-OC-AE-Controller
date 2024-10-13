@@ -45,29 +45,24 @@ export default function FluidPage() {
 
     return (
         <>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.fluids, {
-                    "result": []
-                })
-                    .then(async resp => {
-                        if (resp.status === 200) {
+            <div>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.fluids, {
+                        "result": []
+                    }).then(async resp => {})
+                }}>
+                    清理所有流体
+                </button>
+                <button onClick={event => {
+                    httpUtil.put(httpUtil.path.task, {
+                        "method": "refreshFluidStorage",
+                        "data": {}
+                    }).then(async resp => {})
+                }}>
+                    搜寻流体
+                </button>
+            </div>
 
-                        }
-                    })
-            }}>清理所有流体
-            </button>
-            <button onClick={event => {
-                httpUtil.put(httpUtil.path.task, {
-                    "method": "refreshFluidStorage",
-                    "data": {}
-                })
-                .then(async resp => {
-                    if (resp.status === 200) {
-
-                    }
-                })
-            }}>搜寻流体
-            </button>
             <br/>
             {
                 items.map(item => {
