@@ -1,5 +1,9 @@
 ## 后端配置
 
+### 后端程序选择
+
+#### json-server
+
 后端默认采用的 [json-server](https://github.com/typicode/json-server)，可以使用指令 `npm install json-server -g` 安装至全局环境中。相关安装方法请进其项目页了解。
 
 json-server 运行的初始json文件内容如下：
@@ -14,6 +18,12 @@ json-server 运行的初始json文件内容如下：
 ```
 
 使用命令 `json-server oc.json` 开启一个简单的后端服务器
+
+#### simple-backend
+
+[SimpleBackend](./simple-backend/README.MD) 是用 Spring 制作的一个简单的符合OC-AE要求的后端程序，并且带有简单的鉴权验证。
+
+详细请到 [SimpleBackend](./simple-backend/README.MD) 页面查看。
 
 ### 启用鉴权
 
