@@ -17,7 +17,12 @@ public abstract class BaseController {
     protected abstract void onLoad(File file);
 
     public void store() {
-        onStore(new File(fileName));
+        File file = new File(fileName);
+        File parentFile = file.getParentFile();
+        if (parentFile != null && !parentFile.exists()) {
+            parentFile.mkdirs();
+        }
+        onStore(file);
     }
 
     protected abstract void onStore(File file);

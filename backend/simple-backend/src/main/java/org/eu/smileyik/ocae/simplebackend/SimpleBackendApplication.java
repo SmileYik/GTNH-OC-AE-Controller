@@ -6,20 +6,31 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 @SpringBootApplication
 public class SimpleBackendApplication {
 
 	public static void main(String[] args) throws IOException {
 		Gson gson = new Gson();
+		String configFile = "./config.json";
 		if (args.length == 0) {
-			System.out.println("Usage: \n  java -jar simple-backend.jar [config file]");
-			return;
+			Path path = Paths.get(configFile);
+			if (!Files.exists(path)) {
+				try (InputStream resourceAsStream = SimpleBackendApplication.class.getResourceAsStream("/config-template.json")) {
+					if (resourceAsStream != null) {
+						Files.write(path, resourceAsStream.readAllBytes(), StandardOpenOption.CREATE_NEW, StandardOpenOption.WRITE);
+					}
+				}
+			}
 		} else {
-			String configFile = args[0];
-			Config.instance = gson.fromJson(new String(Files.readAllBytes(new File(configFile).toPath())), Config.class);
+			configFile = args[0];
 		}
+		Config.instance = gson.fromJson(new String(Files.readAllBytes(new File(configFile).toPath())), Config.class);
 
 		System.setProperty("server.port", Config.instance.getPort() + "");
 		System.setProperty("spring.jackson.serialization.indent_output", "true");
