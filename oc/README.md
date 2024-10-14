@@ -31,6 +31,14 @@ OC 机器轮询访问某一网络链接地址，获取指令，根据指令去�
 3. 至少2根 T1 内存条
 4. OpenOS
 
+### 安装程序
+
+在装有因特网卡以及OpenOS的电脑上运行以下指令进行安装：
+
+```
+wget https://github.com/SmileYik/GTNH-OC-AE-Controller/raw/refs/heads/master/oc/installer.lua ./oc-ae-installer.lua && ./oc-ae-installer.lua --target-direcory "/home/oc-ae"
+```
+
 ### 使用方法
 
 将本目录中所有 lua 脚本文件全部拷贝到 oc 硬盘后，修改完配置文件，使用 `main` 运行程序。
