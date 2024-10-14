@@ -51,3 +51,7 @@ return {
     }
 }
 ```
+
+### 鉴权相关
+
+* OC电脑在向后端发送HTTP请求时会附带一个名为 `ocaetoken` 的 header 作为凭据
