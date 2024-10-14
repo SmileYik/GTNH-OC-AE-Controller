@@ -1,0 +1,11 @@
+{
+  "port": 60081,
+  "token": "123456",
+  "controller": {
+    "/items": "Object",
+    "/cpus": "Array",
+    "/task": "Object",
+    "/fluids": "Object",
+    "/essentia": "Object"
+  }
+}
