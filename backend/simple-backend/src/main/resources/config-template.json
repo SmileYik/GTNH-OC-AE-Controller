@@ -7,5 +7,10 @@
     "/task": "Object",
     "/fluids": "Object",
     "/essentia": "Object"
-  }
+  },
+  "enableMultiuser": false,
+  "userFile": "users.json",
+  "prefixPath": "/user",
+  "reentTableFile": "reent-table.json",
+  "maxReentFreeTime": 604800000
 }

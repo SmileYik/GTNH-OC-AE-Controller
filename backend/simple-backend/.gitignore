@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+/users.json
+/reent-table.json
+/config.json
+/user/
