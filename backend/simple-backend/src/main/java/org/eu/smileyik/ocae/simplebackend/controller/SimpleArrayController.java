@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class SimpleArrayController extends BaseController {
-    private static List<Map<String, Object>> array = new ArrayList<>();
+    private List<Map<String, Object>> array = new ArrayList<>();
 
     public SimpleArrayController(String fileName) {
         super(fileName);
