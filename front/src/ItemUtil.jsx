@@ -4,9 +4,9 @@ function getIcon(obj, prefixPath) {
     if (itemUtil.isItem(obj)) {
         const item = itemUtil.getItem(obj)
         if (item && item["maxDurability"] !== 1) {
-            return prefixPath + obj["name"].replaceAll(":", "/") + "/1.png"
+            return prefixPath + obj["name"].replaceAll("|", "_").replaceAll(":", "/") + "/1.png"
         }
-        return prefixPath + obj["name"].replaceAll(":", "/") + "/" + obj["damage"] + ".png"
+        return prefixPath + obj["name"].replaceAll("|", "_").replaceAll(":", "/") + "/" + obj["damage"] + ".png"
     }
     return prefixPath + "none.png"
 }
