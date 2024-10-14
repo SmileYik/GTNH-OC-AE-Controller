@@ -3,6 +3,7 @@ package org.eu.smileyik.ocae.simplebackend.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,13 +14,11 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class SimpleArrayController extends BaseController {
     private List<Map<String, Object>> array = new ArrayList<>();
+    private long latestModified = System.currentTimeMillis();
 
     public SimpleArrayController(String fileName) {
         super(fileName);
@@ -33,7 +32,13 @@ public class SimpleArrayController extends BaseController {
 
     @PostMapping
     @ResponseBody
-    public List<Map<String, Object>> get(@RequestBody Map<String, Object> request) {
+    public List<Map<String, Object>> get(@RequestBody Map<String, Object> request, HttpServletRequest req, HttpServletResponse resp) {
+        long timestamp = req.getDateHeader("If-Modified-Since");
+        if (latestModified <= timestamp) {
+            resp.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+            return null;
+        }
+
         array.add(request);
         if (!request.containsKey("id")) {
             request.put("id", array.size());
@@ -43,7 +48,14 @@ public class SimpleArrayController extends BaseController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public Map<String, Object> get(@PathVariable("id") String id, HttpServletResponse response) {
+    public Map<String, Object> get(@PathVariable("id") String id, HttpServletRequest req, HttpServletResponse response) {
+        long timestamp = req.getDateHeader("If-Modified-Since");
+        if (latestModified <= timestamp) {
+            response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+            return null;
+        }
+
+
         Map<String, Object> result = array.stream()
                 .filter(it -> it.containsKey("id") && Objects.equals(String.valueOf(it.get("id")), id))
                 .findFirst().orElseGet(() -> {
@@ -71,12 +83,14 @@ public class SimpleArrayController extends BaseController {
                 throw new RuntimeException();
             }
             array.set(Integer.parseInt(id), request);
+            latestModified = System.currentTimeMillis();
             return array.get(Integer.parseInt(id));
         } catch (Exception e) {
             for (int i = array.size() - 1; i >= 0; i--) {
                 Map<String, Object> map = array.get(i);
                 if (map.containsKey("id") && Objects.equals(String.valueOf(map.get("id")), id)) {
                     array.set(i, request);
+                    latestModified = System.currentTimeMillis();
                     return array.get(i);
                 }
             }
@@ -94,11 +108,13 @@ public class SimpleArrayController extends BaseController {
             if (result.containsKey("id") && !Objects.equals(String.valueOf(result.get("id")), id)) {
                 throw new RuntimeException();
             }
+            latestModified = System.currentTimeMillis();
             return array.remove(Integer.parseInt(id));
         } catch (Exception e) {
             for (int i = array.size() - 1; i >= 0; i--) {
                 Map<String, Object> map = array.get(i);
                 if (map.containsKey("id") && Objects.equals(String.valueOf(map.get("id")), id)) {
+                    latestModified = System.currentTimeMillis();
                     return array.remove(i);
                 }
             }
