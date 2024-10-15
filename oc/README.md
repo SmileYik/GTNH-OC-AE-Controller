@@ -42,7 +42,7 @@ wget https://github.com/SmileYik/GTNH-OC-AE-Controller/raw/refs/heads/master/oc/
 或者
 
 ```
-wget https://smileyik.github.io/GTNH-OC-AE-Controller/oc/installer.lua ./oc-ae-installer.lua && ./oc-ae-installer.lua --target-direcory "/home/oc-ae"
+wget https://ocae.smileyik.eu.org/oc/installer.lua ./oc-ae-installer.lua && ./oc-ae-installer.lua --target-direcory "/home/oc-ae"
 ```
 
 ### 使用方法
