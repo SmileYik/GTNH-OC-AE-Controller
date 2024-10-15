@@ -92,7 +92,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 </div>
 
                 <div className="itemIcon">
-                    <img src={itemUtil.getLargeIcon(air ? null : itemStack)} alt={item.tr} title={item.tr}/>
+                    <img loading={"lazy"} src={itemUtil.getLargeIcon(air ? null : itemStack)} alt={item.tr} title={item.tr}/>
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
