@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SimpleObjectController extends BaseController {
+    private static final TypeToken<Map<String, Object>> TYPE_TOKEN = new TypeToken<Map<String, Object>>() {};
     private Map<String, Object> object = new HashMap<>();
     private long lastModified = System.currentTimeMillis();
 
@@ -49,7 +50,9 @@ public class SimpleObjectController extends BaseController {
 
     @PutMapping
     @ResponseBody
-    public Map<String, Object> put(@RequestBody Map<String, Object> object) {
+    public Map<String, Object> put(@RequestBody Map<String, Object> object, HttpServletRequest req) {
+        object = filter(object, TYPE_TOKEN, req.getServletPath());
+
         this.object = new HashMap<>(object);
         lastModified = System.currentTimeMillis();
         return this.object;
@@ -57,7 +60,9 @@ public class SimpleObjectController extends BaseController {
 
     @PatchMapping
     @ResponseBody
-    public Map<String, Object> patch(@RequestBody Map<String, Object> object) {
+    public Map<String, Object> patch(@RequestBody Map<String, Object> object, HttpServletRequest req) {
+        object = filter(object, TYPE_TOKEN, req.getServletPath());
+
         this.object.putAll(object);
         lastModified = System.currentTimeMillis();
         return this.object;

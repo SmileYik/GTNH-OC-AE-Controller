@@ -12,5 +12,6 @@
   "userFile": "users.json",
   "prefixPath": "/user",
   "reentTableFile": "reent-table.json",
-  "maxReentFreeTime": 604800000
+  "maxReentFreeTime": 604800000,
+  "enableSensitiveWordCheck": false
 }

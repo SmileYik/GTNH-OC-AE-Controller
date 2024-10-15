@@ -51,7 +51,8 @@ SimpleBackend 是一个带有简单的凭据验证，支持 `If-Modified-Since` 
   "userFile": "users.json",              // 用户文件
   "prefixPath": "/user",                 // 请求路径前缀
   "reentTableFile": "reent-table.json",  // 租借表
-  "maxReentFreeTime": 604800000          // 最大空闲租借时间，毫秒
+  "maxReentFreeTime": 604800000，        // 最大空闲租借时间，毫秒
+  "enableSensitiveWordCheck": false      // 开启敏感词检测  
 }
 ```
 

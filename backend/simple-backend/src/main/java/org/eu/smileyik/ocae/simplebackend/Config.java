@@ -14,6 +14,7 @@ public class Config {
     private String prefixPath = "/users";
     private String reentTableFile = "reent-table.json";
     private long maxReentFreeTime = 604800000;
+    private boolean enableSensitiveWordCheck = false;
 
     public int getPort() {
         return port;
@@ -77,6 +78,14 @@ public class Config {
 
     public void setMaxReentFreeTime(long maxReentFreeTime) {
         this.maxReentFreeTime = maxReentFreeTime;
+    }
+
+    public void setEnableSensitiveWordCheck(boolean enableSensitiveWordCheck) {
+        this.enableSensitiveWordCheck = enableSensitiveWordCheck;
+    }
+
+    public boolean isEnableSensitiveWordCheck() {
+        return enableSensitiveWordCheck;
     }
 
     @Override

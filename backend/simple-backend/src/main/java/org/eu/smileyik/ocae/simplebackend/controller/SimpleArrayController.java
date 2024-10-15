@@ -1,10 +1,12 @@
 package org.eu.smileyik.ocae.simplebackend.controller;
 
+import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -20,8 +22,10 @@ import java.util.Map;
 import java.util.Objects;
 
 public class SimpleArrayController extends BaseController {
+    private static final TypeToken<Map<String, Object>> TYPE_TOKEN = new TypeToken<Map<String, Object>>() {};
     private List<Map<String, Object>> array = new ArrayList<>();
     private long lastModified = System.currentTimeMillis();
+
 
     public SimpleArrayController(String fileName) {
         super(fileName);
@@ -43,6 +47,8 @@ public class SimpleArrayController extends BaseController {
     @PostMapping
     @ResponseBody
     public List<Map<String, Object>> post(@RequestBody Map<String, Object> request, HttpServletRequest req, HttpServletResponse resp) {
+        request = filter(request, TYPE_TOKEN, req.getServletPath());
+
         array.add(request);
         if (!request.containsKey("id")) {
             request.put("id", array.size());
@@ -81,7 +87,11 @@ public class SimpleArrayController extends BaseController {
 
     @PutMapping("/{id}")
     @ResponseBody
-    public Map<String, Object> put(@PathVariable("id") String id, @RequestBody Map<String, Object> request, HttpServletResponse response) {
+    public Map<String, Object> put(@PathVariable("id") String id,
+                                   @RequestBody Map<String, Object> request,
+                                   HttpServletRequest req,
+                                   HttpServletResponse response) {
+        request = filter(request, TYPE_TOKEN, req.getServletPath());
         try {
             Map<String, Object> result = array.get(Integer.parseInt(id));
             if (result.containsKey("id") && !Objects.equals(String.valueOf(result.get("id")), id)) {
