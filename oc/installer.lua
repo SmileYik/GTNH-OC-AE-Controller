@@ -1,9 +1,9 @@
 local NEED_DOWNLOAD = {
-    ["config"] = "https://smileyik.github.io/GTNH-OC-AE-Controller/oc/config.lua",
-    ["cpu"] = "https://smileyik.github.io/GTNH-OC-AE-Controller/oc/cpu.lua",
-    ["http-method"] = "https://smileyik.github.io/GTNH-OC-AE-Controller/oc/http-method.lua",
-    ["json"] = "https://smileyik.github.io/GTNH-OC-AE-Controller/oc/json.lua",
-    ["main"] = "https://smileyik.github.io/GTNH-OC-AE-Controller/oc/main.lua"
+    ["config"] = "https://ocae.smileyik.eu.org/oc/config.lua",
+    ["cpu"] = "https://ocae.smileyik.eu.org/oc/cpu.lua",
+    ["http-method"] = "https://ocae.smileyik.eu.org/oc/http-method.lua",
+    ["json"] = "https://ocae.smileyik.eu.org/oc/json.lua",
+    ["main"] = "https://ocae.smileyik.eu.org/oc/main.lua"
 }
 
 local function checkInternetCard()
