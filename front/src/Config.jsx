@@ -40,6 +40,7 @@ export default {
     ],
     shareServer: {
         "": "手动输入",
-        "本地测试服务器": "http://localhost:60081/apply"
+        "本地测试服务器": "http://localhost:60081/apply",
+        "502y 的服务器": "http://111.231.23.21:60081/apply"
     }
 }
