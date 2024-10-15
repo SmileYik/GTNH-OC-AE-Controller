@@ -1,8 +1,0 @@
-.config-base-url-is-http {
-    color: red;
-    font-size: 12px;
-}
-
-.config-base-url-is-http > a {
-    color: #ff9d00;
-}
