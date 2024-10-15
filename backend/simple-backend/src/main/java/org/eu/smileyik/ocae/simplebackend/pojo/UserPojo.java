@@ -50,6 +50,10 @@ public class UserPojo {
         init();
     }
 
+    public String getUserUrl(User user) {
+        return Config.instance.getPrefixPath() + "/" + user.getToken();
+    }
+
     private void init() {
         if (lock == null || inject == null || controllers == null) return;
         try {

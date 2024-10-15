@@ -20,7 +20,7 @@ public class ApplyTokenController {
     private Set<String> ipCache;
 
     @GetMapping("/apply")
-    public Result<String> applyToken(HttpServletRequest req, HttpServletResponse res) {
+    public Result<UserModel> applyToken(HttpServletRequest req, HttpServletResponse res) {
         if (!Config.instance.isEnableMultiuser()) {
             res.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
@@ -33,7 +33,10 @@ public class ApplyTokenController {
             return new Result<>(500, "申领时出现问题，请稍后再试！", null);
         }
         ipCache.add(req.getRemoteHost());
-        return Result.success(user.getToken());
+        return Result.success(new UserModel(
+                userPojo.getUserUrl(user),
+                user.getToken()
+        ));
     }
 
     public void clearCache() {
@@ -75,6 +78,24 @@ public class ApplyTokenController {
 
         public T getData() {
             return data;
+        }
+    }
+
+    public static class UserModel {
+        private final String url;
+        private final String token;
+
+        public UserModel(String url, String token) {
+            this.url = url;
+            this.token = token;
+        }
+
+        public String getToken() {
+            return token;
+        }
+
+        public String getUrl() {
+            return url;
         }
     }
 }
