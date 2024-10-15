@@ -4,6 +4,7 @@ import ItemStack from "../../components/itemStack/ItemStack.jsx";
 
 export default function FluidPage() {
     const [items, setItems] = useState([])
+    const [lastModified, setLastModified] = useState("")
 
     const onCraftRequest = useCallback((itemStack) => {
         if (!itemStack || !itemStack.isCraftable) return;
@@ -30,18 +31,19 @@ export default function FluidPage() {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            httpUtil.get(httpUtil.path.fluids, null)
+            httpUtil.get(httpUtil.path.fluids, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async response => {
                     if (response.status === 200) {
                         const r = await response.json();
                         if (r.result) setItems(r.result)
+                        setLastModified(response.headers.get("last-modified"))
                     }
                 })
         }, 1000)
         return () => {
             clearInterval(timer)
         }
-    }, []);
+    }, [lastModified]);
 
     return (
         <>

@@ -55,18 +55,22 @@ function CommandArea({fixed, setFixed}) {
 
 function CommandStatus() {
     const [commandStatus, setCommandStatus] = useState("")
+    const [lastModified, setLastModified] = useState("")
     useEffect(() => {
         const timer = setInterval(() => {
-            httpUtil.get(httpUtil.path.task, null)
+            httpUtil.get(httpUtil.path.task, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async response => {
-                    if (response.status === 200) return setCommandStatus(await response.text())
+                    if (response.status === 200) {
+                        setCommandStatus(await response.text())
+                        setLastModified(response.headers.get("last-modified"))
+                    }
                 })
         }, 1000)
 
         return () => {
             clearInterval(timer)
         }
-    }, []);
+    }, [lastModified]);
 
     return (
         <textarea contentEditable={false} value={commandStatus ? commandStatus : ""}/>

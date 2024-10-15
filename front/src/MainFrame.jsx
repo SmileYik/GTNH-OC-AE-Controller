@@ -39,7 +39,6 @@ export default function MainFrame() {
     useEffect(() => {
         const timer = setInterval(() => {
             const t = localStorage.getItem("theme")
-            console.log(t)
             if (!t) return
             setTheme((old) => {
                 if (old !== t) {

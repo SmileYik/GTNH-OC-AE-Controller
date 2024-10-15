@@ -60,13 +60,15 @@ function CpuDetail({cpu}) {
 export default function CpuPage() {
     const [cpus, setCpus] = useState([])
     const [cpu, setCpu] = useState({})
+    const [lastModified, setLastModified] = useState("")
 
     useEffect(() => {
         const timer = setInterval(() => {
-            httpUtil.get(httpUtil.path.cpus)
+            httpUtil.get(httpUtil.path.cpus, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async resp => {
                     if (resp.status === 200) {
                         setCpus(await resp.json())
+                        setLastModified(resp.headers.get("last-modified"))
                     }
                 })
         }, 1000)
@@ -74,7 +76,7 @@ export default function CpuPage() {
         return () => {
             clearInterval(timer)
         }
-    }, []);
+    }, [lastModified]);
 
     useEffect(() => {
         if (cpu != null) {
