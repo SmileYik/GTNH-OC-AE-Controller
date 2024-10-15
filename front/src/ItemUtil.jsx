@@ -17,8 +17,11 @@ const itemUtil = {
     },
     getItem: (obj) => {
         if (itemUtil.isItem(obj)) {
-            const name = obj["name"]
-            if (!itemDatabase[name]) return null
+            let name = obj["name"]
+            if (!itemDatabase[name]) {
+                name = name.replaceAll("|", "_")
+                if (!itemDatabase[name]) return null
+            }
             const damage = (obj["damage"] ? obj["damage"] : 0) + ""
             return itemDatabase[name][damage]
         }
