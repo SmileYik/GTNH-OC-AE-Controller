@@ -8,6 +8,7 @@ import ConfigPage from "./pages/ConfigPage/ConfigPage.jsx";
 import IndexPage from "./pages/IndexPage/IndexPage.jsx";
 import "./commons/style.css"
 import './MainFrame.css'
+import ApplyPage from "./pages/ApplyPage/ApplyPage.jsx";
 
 const DEFAULT_PAGE = "Index"
 const pages = {
@@ -15,7 +16,8 @@ const pages = {
     "Items": <ItemsPage></ItemsPage>,
     "Fluids": <FluidPage></FluidPage>,
     "Cpus": <CpuPage></CpuPage>,
-    "Config": <ConfigPage></ConfigPage>
+    "Config": <ConfigPage></ConfigPage>,
+    "Apply": <ApplyPage></ApplyPage>
 }
 
 function TabList({className, onChangeTab, selectedPage}) {

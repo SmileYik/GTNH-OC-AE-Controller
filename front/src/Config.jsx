@@ -37,5 +37,9 @@ export default {
     theme: [
         "theme-blue",
         "theme-white"
-    ]
+    ],
+    shareServer: {
+        "": "手动输入",
+        "本地测试服务器": "http://localhost:60081/apply"
+    }
 }

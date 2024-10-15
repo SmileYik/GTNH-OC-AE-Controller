@@ -47,4 +47,7 @@ export default {
     get: (path, header) => {
         return doAction(getBaseUrl() + path, "GET", null, header)
     },
+    doAction: (url, method, body, header) => {
+        return doAction(url, method, body, header)
+    }
 }
