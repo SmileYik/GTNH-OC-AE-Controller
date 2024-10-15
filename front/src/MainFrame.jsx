@@ -62,7 +62,6 @@ export default function MainFrame() {
     const changePage = useCallback((page) => {
         setPage(page)
     }, [setPage])
-    console.log(theme)
     return (
         <div className={"main-page-wrapper"}>
             <TabList className={"tab-list"} onChangeTab={changePage} selectedPage={page}></TabList>

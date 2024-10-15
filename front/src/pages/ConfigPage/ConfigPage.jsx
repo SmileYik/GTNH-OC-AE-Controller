@@ -23,7 +23,7 @@ export default function ConfigPage() {
                 <div>
                     {
                         // https 混用 http 接口警告
-                        baseUrl.startsWith("https") || document.URL.startsWith("http:") ? <></> :
+                        baseUrl == null || baseUrl.startsWith("https") || document.URL.startsWith("http:") ? <></> :
                         <span className={"config-base-url-is-http"}>
                             您想使用 HTTP 接口，但访问本站的方式为 HTTPS，这将会导致访问接口数据失败。您需要切换成 HTTP 方式访问本站，以防止接口调用失败。
                             您可能需要去手动关闭浏览器的强制 HTTPS 模式。
@@ -45,7 +45,7 @@ export default function ConfigPage() {
                 </select>
                 <br/>
                 <br/>
-                <button value={"保存"} type={"button"} onClick={event => saveConfig()}>保存</button>
+                <button value={"保存"} type={"button"} onClick={() => saveConfig()}>保存</button>
             </form>
         </div>
     )

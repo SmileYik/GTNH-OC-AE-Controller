@@ -48,7 +48,7 @@ function CommandArea({fixed, setFixed}) {
                 </div>
             </div>
             <span className={"command-area-submit-btn"}
-                  onClick={event => submitCommand(command, bodyData)}>提交指令</span>
+                  onClick={() => submitCommand(command, bodyData)}>提交指令</span>
         </>
     )
 }
@@ -65,6 +65,9 @@ function CommandStatus() {
                         setLastModified(response.headers.get("last-modified"))
                     }
                 })
+                .catch((error) => {
+                    if (typeof error === "string") setCommandStatus(error)
+                })
         }, 1000)
 
         return () => {
@@ -78,14 +81,14 @@ function CommandStatus() {
 }
 
 export default function CommandConsole() {
-    const [fixed, setFixed] = useState(false)
-    const onSetFexed = useCallback((fixed) => {
+    const [fixed, setFixed] = useState(true)
+    const onSetFixed = useCallback((fixed) => {
         setFixed(fixed)
     })
 
     return (
         <div className={"command-console " + (fixed ? "command-console-fixed" : "")}>
-            <CommandArea fixed={fixed} setFixed={onSetFexed}></CommandArea>
+            <CommandArea fixed={fixed} setFixed={onSetFixed}></CommandArea>
 
             <div className={"command-status-area"}>
                 <CommandStatus/>
