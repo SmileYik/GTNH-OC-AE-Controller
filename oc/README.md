@@ -39,6 +39,12 @@ OC 机器轮询访问某一网络链接地址，获取指令，根据指令去�
 wget https://github.com/SmileYik/GTNH-OC-AE-Controller/raw/refs/heads/master/oc/installer.lua ./oc-ae-installer.lua && ./oc-ae-installer.lua --target-direcory "/home/oc-ae"
 ```
 
+或者
+
+```
+wget https://smileyik.github.io/GTNH-OC-AE-Controller/oc/installer.lua ./oc-ae-installer.lua && ./oc-ae-installer.lua --target-direcory "/home/oc-ae"
+```
+
 ### 使用方法
 
 将本目录中所有 lua 脚本文件全部拷贝到 oc 硬盘后，修改完配置文件，使用 `main` 运行程序。
