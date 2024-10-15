@@ -21,7 +21,7 @@ import java.util.Objects;
 
 public class SimpleArrayController extends BaseController {
     private List<Map<String, Object>> array = new ArrayList<>();
-    private long latestModified = System.currentTimeMillis();
+    private long lastModified = System.currentTimeMillis();
 
     public SimpleArrayController(String fileName) {
         super(fileName);
@@ -29,23 +29,25 @@ public class SimpleArrayController extends BaseController {
 
     @GetMapping
     @ResponseBody
-    public List<Map<String, Object>> get() {
+    public List<Map<String, Object>> get(HttpServletRequest req, HttpServletResponse resp) {
+        long timestamp = req.getDateHeader("If-Modified-Since");
+        if (lastModified <= timestamp) {
+            resp.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
+            return null;
+        }
+
+        resp.setDateHeader("Last-Modified", lastModified + 1000);
         return array;
     }
 
     @PostMapping
     @ResponseBody
-    public List<Map<String, Object>> get(@RequestBody Map<String, Object> request, HttpServletRequest req, HttpServletResponse resp) {
-        long timestamp = req.getDateHeader("If-Modified-Since");
-        if (latestModified <= timestamp) {
-            resp.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
-            return null;
-        }
-
+    public List<Map<String, Object>> post(@RequestBody Map<String, Object> request, HttpServletRequest req, HttpServletResponse resp) {
         array.add(request);
         if (!request.containsKey("id")) {
             request.put("id", array.size());
         }
+        lastModified = System.currentTimeMillis();
         return array;
     }
 
@@ -53,11 +55,10 @@ public class SimpleArrayController extends BaseController {
     @ResponseBody
     public Map<String, Object> get(@PathVariable("id") String id, HttpServletRequest req, HttpServletResponse response) {
         long timestamp = req.getDateHeader("If-Modified-Since");
-        if (latestModified <= timestamp) {
+        if (lastModified <= timestamp) {
             response.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
             return null;
         }
-
 
         Map<String, Object> result = array.stream()
                 .filter(it -> it.containsKey("id") && Objects.equals(String.valueOf(it.get("id")), id))
@@ -73,6 +74,7 @@ public class SimpleArrayController extends BaseController {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
         } else {
+            response.setDateHeader("Last-Modified", lastModified + 1000);
             return result;
         }
     }
@@ -86,14 +88,14 @@ public class SimpleArrayController extends BaseController {
                 throw new RuntimeException();
             }
             array.set(Integer.parseInt(id), request);
-            latestModified = System.currentTimeMillis();
+            lastModified = System.currentTimeMillis();
             return array.get(Integer.parseInt(id));
         } catch (Exception e) {
             for (int i = array.size() - 1; i >= 0; i--) {
                 Map<String, Object> map = array.get(i);
                 if (map.containsKey("id") && Objects.equals(String.valueOf(map.get("id")), id)) {
                     array.set(i, request);
-                    latestModified = System.currentTimeMillis();
+                    lastModified = System.currentTimeMillis();
                     return array.get(i);
                 }
             }
@@ -111,13 +113,13 @@ public class SimpleArrayController extends BaseController {
             if (result.containsKey("id") && !Objects.equals(String.valueOf(result.get("id")), id)) {
                 throw new RuntimeException();
             }
-            latestModified = System.currentTimeMillis();
+            lastModified = System.currentTimeMillis();
             return array.remove(Integer.parseInt(id));
         } catch (Exception e) {
             for (int i = array.size() - 1; i >= 0; i--) {
                 Map<String, Object> map = array.get(i);
                 if (map.containsKey("id") && Objects.equals(String.valueOf(map.get("id")), id)) {
-                    latestModified = System.currentTimeMillis();
+                    lastModified = System.currentTimeMillis();
                     return array.remove(i);
                 }
             }

@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class SimpleObjectController extends BaseController {
     private Map<String, Object> object = new HashMap<>();
-    private long latestModified = System.currentTimeMillis();
+    private long lastModified = System.currentTimeMillis();
 
     public SimpleObjectController(String fileName) {
         super(fileName);
@@ -29,11 +29,12 @@ public class SimpleObjectController extends BaseController {
     @ResponseBody
     public Map<String, Object> get(HttpServletRequest req, HttpServletResponse resp) {
         long timestamp = req.getDateHeader("If-Modified-Since");
-        if (latestModified <= timestamp) {
+        if (lastModified < timestamp) {
             resp.setStatus(HttpServletResponse.SC_NOT_MODIFIED);
             return null;
         }
 
+        resp.setDateHeader("Last-Modified", lastModified + 1000);
         return object;
     }
 
@@ -42,7 +43,7 @@ public class SimpleObjectController extends BaseController {
     public Map<String, Object> delete() {
         Map<String, Object> result = object;
         object = new HashMap<>();
-        latestModified = System.currentTimeMillis();
+        lastModified = System.currentTimeMillis();
         return result;
     }
 
@@ -50,7 +51,7 @@ public class SimpleObjectController extends BaseController {
     @ResponseBody
     public Map<String, Object> put(@RequestBody Map<String, Object> object) {
         this.object = new HashMap<>(object);
-        latestModified = System.currentTimeMillis();
+        lastModified = System.currentTimeMillis();
         return this.object;
     }
 
@@ -58,7 +59,7 @@ public class SimpleObjectController extends BaseController {
     @ResponseBody
     public Map<String, Object> patch(@RequestBody Map<String, Object> object) {
         this.object.putAll(object);
-        latestModified = System.currentTimeMillis();
+        lastModified = System.currentTimeMillis();
         return this.object;
     }
 
