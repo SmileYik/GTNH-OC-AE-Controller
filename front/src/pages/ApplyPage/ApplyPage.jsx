@@ -87,7 +87,8 @@ export default function ApplyPage() {
     return (
         <div className={"apply-page"}>
             <label htmlFor={"select-share-server"}>分享服务器</label>
-            <select inputMode={"url"} id={"select-share-server"} defaultValue={shareServer} onChange={event => setShareServer(event.target.value)}>
+            <select inputMode={"url"} id={"select-share-server"} defaultValue={shareServer}
+                    onChange={event => setShareServer(event.target.value)}>
                 {servers}
             </select>
 
@@ -96,6 +97,20 @@ export default function ApplyPage() {
                    disabled={shareServer !== "" && shareServer !== "手动输入"}
                    type={"url"} placeholder={"在此手动输入分享地址"}
                    defaultValue={url} onChange={event => setUrl(event.target.value)}/>
+            <div>
+                {
+                    // https 混用 http 接口警告
+                    shareServer !== "" && Config.shareServer[shareServer].startsWith("https") ||
+                    document.URL.startsWith("http:") ||
+                    shareServer === "" && (url === "" || url && url.startsWith("https")) ? <></> :
+                        <span className={"config-base-url-is-http"}>
+                            您想使用 HTTP 接口，但访问本站的方式为 HTTPS，这将会导致访问接口数据失败。您需要切换成 HTTP 方式访问本站，以防止接口调用失败。
+                            您可能需要去手动关闭浏览器的强制 HTTPS 模式。
+                            <a href={document.URL.replace("https:", "http:")}> 以 HTTP 方式访问本站 </a>。
+                        </span>
+                }
+            </div>
+
 
             <br/>
             <button disabled={apply} onClick={event => setApply(true)}>申领</button>
@@ -106,7 +121,8 @@ export default function ApplyPage() {
             <div className={"pre-shared-token"}>
                 <h2>上一次申领的 Token</h2>
                 {
-                    prevToken && prevUrl ? <ShareTokenCard url={prevUrl} token={prevToken}></ShareTokenCard> : <p>好像没有申领过哦</p>
+                    prevToken && prevUrl ? <ShareTokenCard url={prevUrl} token={prevToken}></ShareTokenCard> :
+                        <p>好像没有申领过哦</p>
                 }
             </div>
         </div>

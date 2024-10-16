@@ -4,6 +4,7 @@ import "./ConfigPage.css"
 
 export default function ConfigPage() {
     const [baseUrl, setBaseUrl] = useState(localStorage.getItem("base-url"))
+    const [hideBaseUrl, setHideBaseUrl] = useState(true)
     const [token, setToken] = useState(localStorage.getItem("ocaetoken"))
     const [theme, setTheme] = useState(localStorage.getItem("theme"))
 
@@ -17,8 +18,12 @@ export default function ConfigPage() {
     return (
         <div style={{textAlign: "left", alignItems: "normal"}}>
             <form name={"config-form"}>
-                <label htmlFor={"config-base-url"}>基础URL</label>
-                <input name={"config-base-url"} placeholder={"基础URL"} defaultValue={baseUrl} type={"url"}
+                <label htmlFor={"config-base-url"}>
+                    基础URL
+                    <input type={"checkbox"} checked={hideBaseUrl}
+                           onChange={(event) => setHideBaseUrl(event.target.checked)}/>
+                </label>
+                <input name={"config-base-url"} placeholder={"基础URL"} defaultValue={baseUrl} type={ hideBaseUrl ? "password" : "url"}
                        onChange={event => setBaseUrl(event.target.value)}/>
                 <div>
                     {
