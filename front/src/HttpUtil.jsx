@@ -41,7 +41,8 @@ export default {
         task: "/task",
         items: "/items",
         cpus: "/cpus",
-        fluids: "/fluids"
+        fluids: "/fluids",
+        essentia: "/essentia"
     },
     addGlobalHeader: (key, val) => {
         headers[key] = val

@@ -9,12 +9,14 @@ import IndexPage from "./pages/IndexPage/IndexPage.jsx";
 import "./commons/style.css"
 import './MainFrame.css'
 import ApplyPage from "./pages/ApplyPage/ApplyPage.jsx";
+import EssentiaPage from "./pages/EssentiaPage/EssentiaPage.jsx";
 
 const DEFAULT_PAGE = "Index"
 const pages = {
     "Index": <IndexPage></IndexPage>,
     "Items": <ItemsPage></ItemsPage>,
     "Fluids": <FluidPage></FluidPage>,
+    "Essentia": <EssentiaPage></EssentiaPage>,
     "Cpus": <CpuPage></CpuPage>,
     "Config": <ConfigPage></ConfigPage>,
     "Apply": <ApplyPage></ApplyPage>
