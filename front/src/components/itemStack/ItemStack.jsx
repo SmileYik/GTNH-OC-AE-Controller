@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import itemUtil from "../../ItemUtil.jsx";
 import "./ItemStack.css"
+import fluidDatabase from "../../FluidDatabase.json"
 
 const CRAFTABLE_SVG = (
     <svg t="1728796172948" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -35,8 +36,9 @@ function ItemStack({itemStack = null, onCraftRequest}) {
     }
     // 流体
     if (itemStack && itemStack.amount) {
-        item = {name: itemStack.name, tr: itemStack.label, maxDurability: 1}
+        item = {name: itemStack.name, tr: fluidDatabase[itemStack.name].zh, maxDurability: 1}
         itemStack.size = itemStack.amount
+        itemStack.Temperature = fluidDatabase[itemStack.name].Temperature
     }
     // 源质物品
     else if (itemStack.aspect) {
@@ -118,6 +120,12 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                         <span>损伤值:</span>
                         <span>{itemStack.damage}</span>
                     </div>
+                    {itemStack && itemStack.amount ? (
+                        <div className={"itemInfoLine"}>
+                            <span>温度:</span>
+                            <span>{itemStack.Temperature} K</span>
+                        </div>
+                    ) : null}
                     <hr className={"item-stack-oc-item-hr"}/>
                     {metadata}
                 </div>

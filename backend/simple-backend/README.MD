@@ -106,3 +106,34 @@ curl -X GET -H "Content-Type: application/json" -H "ocaetoken: lakhflahsfhaoihoi
 ``` 
 
 此外，需要注意的是，每天每个IP仅能够申领一次用户Token，以达到一定程度的限制作用。
+
+
+#### 使用docker构建和部署
+
+> 使用前请先安装docker
+
+1. 修改配置文件
+
+根据需要修改`./src/main/resources/config-template.json`文件（端口不要修改）
+
+2. 编译docker镜像文件：
+```bash
+docker build -t backend .
+```
+
+3. 创建并启动容器
+```bash
+docker run -d --name backend -p 11451:60081 backend
+```
+> 其中11451是你要公网监听的端口，60081是docker镜像里设置的端口，与config-template.json里的端口相同。
+
+4. 查看容器情况
+```bash
+docker ps -a
+```
+
+5. 查看运行日志
+```bash
+ docker logs xxxx
+```
+其中 xxxx 为容器ID（CONTAINER ID）
