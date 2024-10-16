@@ -20,7 +20,8 @@ function tasks.refreshStorage(data)
             label = j.label,
             isCraftable = j.isCraftable,
             damage = j.damage,
-            size = j.size
+            size = j.size,
+            aspect = j.aspect
         })
     end
 
@@ -53,7 +54,8 @@ function tasks.refreshEssentiaStorage(_)
         table.insert(result, {
             name = j.name,
             label = j.label,
-            amount = j.amount
+            amount = j.amount,
+            aspect = j.aspect
         })
     end
 

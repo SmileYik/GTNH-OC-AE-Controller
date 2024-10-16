@@ -19,7 +19,8 @@ local function simpleItemInfo(item)
         name = item.name,
         label = item.label,
         damage = item.damage,
-        size = item.size
+        size = item.size,
+        aspect = item.aspect
     }
 end
 
