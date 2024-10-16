@@ -23,6 +23,8 @@ const INFORMATION_SVG = (
     </svg>
 )
 
+// aspect:praecantatio
+
 function ItemStack({itemStack = null, onCraftRequest}) {
     if (!itemStack) return
     const oriStack = JSON.parse(JSON.stringify(itemStack))
@@ -31,10 +33,16 @@ function ItemStack({itemStack = null, onCraftRequest}) {
     if (item && item.tr === item.name) {
         item.name = itemStack.label
     }
+    // 流体
     if (itemStack && itemStack.amount) {
         item = {name: itemStack.name, tr: itemStack.label, maxDurability: 1}
         itemStack.size = itemStack.amount
-    } else if (!itemStack) {
+    }
+    // 源质物品
+    else if (itemStack.aspect) {
+        item = {name: itemStack.aspect, tr: itemStack.aspect, maxDurability: 1}
+    }
+    else if (!itemStack) {
         item = {"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1}
         itemStack = {"size": "0", "damage": "0", "name": "Air"}
         air = true

@@ -13,13 +13,18 @@ export default function ItemsPage() {
         console.log(number, number + "" === numberString)
         if (number + "" !== numberString || number === 0 || isNaN(number)) return;
 
+        const filter = {
+            name: itemStack.name,
+            damage: itemStack.damage
+        }
+        if (itemStack.aspect) {
+            filter.aspect = itemStack.aspect
+        }
+
         httpUtil.put(httpUtil.path.task, {
             "method": "requestItem",
             "data": {
-                filter: {
-                    name: itemStack.name,
-                    damage: itemStack.damage
-                },
+                filter: filter,
                 amount: number
             }
         })
