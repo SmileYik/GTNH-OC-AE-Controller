@@ -13,7 +13,7 @@ function getIcon(obj, prefixPath) {
 
 const itemUtil = {
     isItem: (obj) => {
-        return obj && obj["name"] && obj["damage"]
+        return obj && obj["name"] && obj["damage"] !== null // 防止damage为0时返回false
     },
     getItem: (obj) => {
         if (itemUtil.isItem(obj)) {
@@ -32,6 +32,9 @@ const itemUtil = {
     },
     getSmallIcon: (obj) => {
         return getIcon(obj, "./images/small/")
+    },
+    getFluidIconByName: (name) => {
+        return `./images/fluids/${name.replaceAll(":", "_")}.png`
     }
 }
 

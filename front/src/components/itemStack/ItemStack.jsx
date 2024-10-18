@@ -43,6 +43,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
         if (fluidDatabase[itemStack.name]) {
             item.tr = fluidDatabase[itemStack.name].zh
             itemStack.Temperature = fluidDatabase[itemStack.name].Temperature
+            itemStack.iconPath = itemUtil.getFluidIconByName(itemStack.name);
         }
     }
     // 源质物品, 源质目前存储方式是等离子体, 也是流体
@@ -52,6 +53,8 @@ function ItemStack({itemStack = null, onCraftRequest}) {
         if (fluidDatabase[fluidName]) {
             item.tr = fluidDatabase[fluidName].zh
             itemStack.Temperature = fluidDatabase[fluidName].Temperature
+            itemStack.iconPath = itemUtil.getFluidIconByName(fluidName);
+
         }
     }
     else if (!itemStack) {
@@ -112,7 +115,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 </div>
 
                 <div className="itemIcon">
-                    <img loading={"lazy"} src={itemUtil.getLargeIcon(air ? null : itemStack)} alt={item.tr} title={item.tr}/>
+                    <img loading={"lazy"} src={itemStack.iconPath || itemUtil.getLargeIcon(air ? null : itemStack)} alt={item.tr} title={item.tr}/>
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
