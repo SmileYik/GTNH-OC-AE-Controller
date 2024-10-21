@@ -1,0 +1,1 @@
+{"id":"i~chisel~upgrade~0","imageFilePath":"item/chisel/upgrade~0.png","internalName":"upgrade","itemDamage":0,"itemId":5087,"localizedName":"速度升级组件","maxDamage":0,"maxStackSize":1,"modId":"chisel","nbt":"","tooltip":"速度升级组件 (#5087/0)\nchisel:upgrade\n加快雕刻速度.","unlocalizedName":"item.upgrade_speed"}

@@ -1,0 +1,1 @@
+{"id":"i~miscutils~itemLavaFilter~0","imageFilePath":"item/miscutils/itemLavaFilter~0.png","internalName":"itemLavaFilter","itemDamage":0,"itemId":9647,"localizedName":"岩浆过滤器","maxDamage":99,"maxStackSize":1,"modId":"miscutils","nbt":"","tooltip":"岩浆过滤器 (#9647)\nmiscutils:itemLavaFilter\n放入地热锅炉中可过滤岩浆\nUses remaining: 100 / 100","unlocalizedName":"item.itemLavaFilter"}

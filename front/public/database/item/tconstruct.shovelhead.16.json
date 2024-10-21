@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~shovelHead~16","imageFilePath":"item/TConstruct/shovelHead~16.png","internalName":"shovelHead","itemDamage":16,"itemId":4621,"localizedName":"钢铲头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"钢铲头 (#4621/16)\nTConstruct:shovelHead\n耐久 II\n耐久:300\n采掘速度:7\n采掘等级:05-黑曜石\n\n可被替换","unlocalizedName":"toolpart.ShovelHead.Steel"}

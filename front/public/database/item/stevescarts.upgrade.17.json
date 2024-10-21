@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~17","imageFilePath":"item/StevesCarts/upgrade~17.png","internalName":"upgrade","itemDamage":17,"itemId":2648,"localizedName":"升级：管理器桥梁","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：管理器桥梁 (#2648/17)\nStevesCarts:upgrade\n连接装配器与管理器。\n矿车装配时间 +10 秒。","unlocalizedName":"item.SC2:manager_bridge"}

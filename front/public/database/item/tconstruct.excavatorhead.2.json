@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~excavatorHead~2","imageFilePath":"item/TConstruct/excavatorHead~2.png","internalName":"excavatorHead","itemDamage":2,"itemId":4638,"localizedName":"铁开掘铲头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"铁开掘铲头 (#4638/2)\nTConstruct:excavatorHead\n耐久 I\n耐久:188\n采掘速度:6\n采掘等级:03-锡\n\n可被替换","unlocalizedName":"toolpart.ExcavatorHead.Iron"}

@@ -1,0 +1,1 @@
+{"id":"i~JABBA~upgradeCore~3","imageFilePath":"item/JABBA/upgradeCore~3.png","internalName":"upgradeCore","itemDamage":3,"itemId":10215,"localizedName":"漏斗升级","maxDamage":0,"maxStackSize":16,"modId":"JABBA","nbt":"","tooltip":"漏斗升级 (#10215/3)\nJABBA:upgradeCore\n使用插槽数：1\n允许桶自动输出","unlocalizedName":"item.upgrade.core.hopper"}

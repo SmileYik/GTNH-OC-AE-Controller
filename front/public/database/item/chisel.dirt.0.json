@@ -1,0 +1,1 @@
+{"id":"i~chisel~dirt~0","imageFilePath":"item/chisel/dirt~0.png","internalName":"dirt","itemDamage":0,"itemId":970,"localizedName":"泥土","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"泥土 (#0970/0)\nchisel:dirt\n杂乱堆砌的泥砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.dirt"}

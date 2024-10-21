@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~signal~7","imageFilePath":"item/Railcraft/signal~7.png","internalName":"signal","itemDamage":7,"itemId":807,"localizedName":"信号计数盒","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"信号计数盒 (#0807/7)\nRailcraft:signal\n发送信号至接收盒\n无线联动: 无\n相邻联动: 接收, 发射\n红石联动: 接收中继盒, 发射\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.signal.box.capacitor"}

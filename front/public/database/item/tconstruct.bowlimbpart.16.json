@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~BowLimbPart~16","imageFilePath":"item/TConstruct/BowLimbPart~16.png","internalName":"BowLimbPart","itemDamage":16,"itemId":4663,"localizedName":"钢弓臂","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"钢弓臂 (#4663/16)\nTConstruct:BowLimbPart\n耐久 II\n耐久:300\n拉弓速度:3s\n箭矢速度:5.5\n\n可被替换","unlocalizedName":"toolpart.BowLimb.Steel"}

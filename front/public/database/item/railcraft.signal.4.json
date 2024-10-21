@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~signal~4","imageFilePath":"item/Railcraft/signal~4.png","internalName":"signal","itemDamage":4,"itemId":807,"localizedName":"转辙拉杆","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"转辙拉杆 (#0807/4)\nRailcraft:signal\n控制相邻的转换轨道\n人工操作\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.signal.switch.lever"}

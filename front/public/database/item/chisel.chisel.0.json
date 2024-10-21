@@ -1,0 +1,1 @@
+{"id":"i~chisel~chisel~0","imageFilePath":"item/chisel/chisel~0.png","internalName":"chisel","itemDamage":0,"itemId":5089,"localizedName":"凿子","maxDamage":256,"maxStackSize":1,"modId":"chisel","nbt":"","tooltip":"凿子 (#5089)\nchisel:chisel\n右键打开界面\n左键方块以直接在世界中进行雕刻\n存放于凿子中的方块可定为雕刻目标\n\n攻击伤害 +2\n凿子mod的凿子","unlocalizedName":"item.chisel.chisel_iron"}

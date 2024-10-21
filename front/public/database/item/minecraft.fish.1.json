@@ -1,0 +1,1 @@
+{"id":"i~minecraft~fish~1","imageFilePath":"item/minecraft/fish~1.png","internalName":"fish","itemDamage":1,"itemId":349,"localizedName":"生鲑鱼","maxDamage":0,"maxStackSize":64,"modId":"minecraft","nbt":"","tooltip":"生鲑鱼 (#0349/1)\n塞牙之物\nminecraft:fish\n营养值： 肉类 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.fish.salmon.raw"}

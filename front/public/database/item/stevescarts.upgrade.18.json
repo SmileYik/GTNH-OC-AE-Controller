@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~18","imageFilePath":"item/StevesCarts/upgrade~18.png","internalName":"upgrade","itemDamage":18,"itemId":2648,"localizedName":"升级：热能引擎","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：热能引擎 (#2648/18)\nStevesCarts:upgrade\n使用内置水槽中的熔岩给矿车供能。\n燃料消耗 +5%。","unlocalizedName":"item.SC2:thermal_engine_upgrade"}

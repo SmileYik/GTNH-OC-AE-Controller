@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~81","imageFilePath":"item/OpenComputers/item~81.png","internalName":"item","itemDamage":81,"itemId":7507,"localizedName":"网络调试器","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"网络调试器 (#7507/81)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。","unlocalizedName":"item.oc.Debugger"}

@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~109","imageFilePath":"item/OpenComputers/item~109.png","internalName":"item","itemDamage":109,"itemId":7507,"localizedName":"机架式软盘驱动器","maxDamage":0,"maxStackSize":1,"modId":"OpenComputers","nbt":"","tooltip":"机架式软盘驱动器 (#7507/109)\nOpenComputers:item\n和普通软盘驱动器功能一致，但必须安装在机架里。 ","unlocalizedName":"item.oc.DiskDriveMountable"}

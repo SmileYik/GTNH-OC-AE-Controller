@@ -1,0 +1,1 @@
+{"id":"i~chisel~upgrade~2","imageFilePath":"item/chisel/upgrade~2.png","internalName":"upgrade","itemDamage":2,"itemId":5087,"localizedName":"堆叠升级组件","maxDamage":0,"maxStackSize":1,"modId":"chisel","nbt":"","tooltip":"堆叠升级组件 (#5087/2)\nchisel:upgrade\n允许整组进行雕刻.","unlocalizedName":"item.upgrade_stack"}

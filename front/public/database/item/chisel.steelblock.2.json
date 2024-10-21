@@ -1,0 +1,1 @@
+{"id":"i~chisel~steelblock~2","imageFilePath":"item/chisel/steelblock~2.png","internalName":"steelblock","itemDamage":2,"itemId":1111,"localizedName":"钢块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"钢块 (#1111/2)\nchisel:steelblock\n热力膨胀式\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.steelblock"}

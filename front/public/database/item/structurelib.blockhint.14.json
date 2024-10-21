@@ -1,0 +1,1 @@
+{"id":"i~structurelib~blockhint~14","imageFilePath":"item/structurelib/blockhint~14.png","internalName":"blockhint","itemDamage":14,"itemId":2193,"localizedName":"提示方块：非空气","maxDamage":0,"maxStackSize":64,"modId":"structurelib","nbt":"","tooltip":"提示方块：非空气 (#2193/14)\nstructurelib:blockhint\n帮助构建多方块机器\n确保其不是空气方块.","unlocalizedName":"tile.structurelib.blockhint.14"}

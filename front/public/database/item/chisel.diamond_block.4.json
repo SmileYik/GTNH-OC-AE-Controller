@@ -1,0 +1,1 @@
+{"id":"i~chisel~diamond_block~4","imageFilePath":"item/chisel/diamond_block~4.png","internalName":"diamond_block","itemDamage":4,"itemId":968,"localizedName":"钻石块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"钻石块 (#0968/4)\nchisel:diamond_block\n镶嵌着钻石的紫色黑曜石\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.diamond_block"}

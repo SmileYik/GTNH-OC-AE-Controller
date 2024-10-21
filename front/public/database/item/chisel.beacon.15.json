@@ -1,0 +1,1 @@
+{"id":"i~chisel~beacon~15","imageFilePath":"item/chisel/beacon~15.png","internalName":"beacon","itemDamage":15,"itemId":954,"localizedName":"信标","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"信标 (#0954/15)\nchisel:beacon\n彩虹定向信标\n生物不会在这个方块上生成\n玻璃等级: HV","unlocalizedName":"tile.chisel.beacon"}

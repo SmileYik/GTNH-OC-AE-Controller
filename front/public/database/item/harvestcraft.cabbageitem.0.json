@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~cabbageItem~0","imageFilePath":"item/harvestcraft/cabbageItem~0.png","internalName":"cabbageItem","itemDamage":0,"itemId":6581,"localizedName":"卷心菜","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"卷心菜 (#6581)\n营养的塞牙之物\nharvestcraft:cabbageItem\n营养值： 蔬菜 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.cabbageItem"}

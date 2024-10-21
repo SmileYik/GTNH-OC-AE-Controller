@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~sausageItem~0","imageFilePath":"item/harvestcraft/sausageItem~0.png","internalName":"sausageItem","itemDamage":0,"itemId":7250,"localizedName":"香肠","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"香肠 (#7250)\n便餐\nharvestcraft:sausageItem\n营养值： 肉类 (1.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.sausageItem"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~ice_pillar~3","imageFilePath":"item/chisel/ice_pillar~3.png","internalName":"ice_pillar","itemDamage":3,"itemId":1007,"localizedName":"冰柱","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"冰柱 (#1007/3)\nchisel:ice_pillar\n有着希腊式顶石的希腊式冰柱\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.ice_pillar"}

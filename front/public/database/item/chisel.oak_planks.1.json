@@ -1,0 +1,1 @@
+{"id":"i~chisel~oak_planks~1","imageFilePath":"item/chisel/oak_planks~1.png","internalName":"oak_planks","itemDamage":1,"itemId":1143,"localizedName":"橡木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"橡木板 (#1143/1)\nchisel:oak_planks\n平滑橡木木板\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.oak_planks"}

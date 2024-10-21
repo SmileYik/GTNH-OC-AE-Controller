@@ -1,0 +1,1 @@
+{"id":"i~chisel~stonebricksmooth~9","imageFilePath":"item/chisel/stonebricksmooth~9.png","internalName":"stonebricksmooth","itemDamage":9,"itemId":1112,"localizedName":"石砖","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"石砖 (#1112/9)\nchisel:stonebricksmooth\n光滑整齐的石砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.stonebricksmooth"}

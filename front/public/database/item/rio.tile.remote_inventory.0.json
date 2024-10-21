@@ -1,0 +1,1 @@
+{"id":"i~RIO~tile.remote_inventory~0","imageFilePath":"item/RIO/tile.remote_inventory~0.png","internalName":"tile.remote_inventory","itemDamage":0,"itemId":3426,"localizedName":"远程背包接口","maxDamage":0,"maxStackSize":64,"modId":"RIO","nbt":"","tooltip":"远程背包接口 (#3426)\nRIO:tile.remote_inventory\n用绑定的无线收发器右键远程背包接口以此构建连接","unlocalizedName":"tile.remote_inventory"}

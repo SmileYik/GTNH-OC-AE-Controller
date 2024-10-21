@@ -1,0 +1,1 @@
+{"id":"i~chisel~paperwall~3","imageFilePath":"item/chisel/paperwall~3.png","internalName":"paperwall","itemDamage":3,"itemId":1082,"localizedName":"障子","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"障子 (#1082/3)\nchisel:paperwall\n六等分障子\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.paperwall"}

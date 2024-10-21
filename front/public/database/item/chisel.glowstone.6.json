@@ -1,0 +1,1 @@
+{"id":"i~chisel~glowstone~6","imageFilePath":"item/chisel/glowstone~6.png","internalName":"glowstone","itemDamage":6,"itemId":996,"localizedName":"萤石","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"萤石 (#0996/6)\nchisel:glowstone\n岩状萤石\n生物不会在这个方块上生成\n玻璃等级: HV","unlocalizedName":"tile.chisel.glowstone"}

@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgrade~6","imageFilePath":"item/StorageDrawers/upgrade~6.png","internalName":"upgrade","itemDamage":6,"itemId":10408,"localizedName":"抽屉容量升级(VI)","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉容量升级(VI) (#10408/6)\nStorageDrawers:upgrade\n将抽屉容量升级为其基础容量的32倍。","unlocalizedName":"item.storagedrawers.upgrade.emerald"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~paperwall_block~7","imageFilePath":"item/chisel/paperwall_block~7.png","internalName":"paperwall_block","itemDamage":7,"itemId":1083,"localizedName":"障子方块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"障子方块 (#1083/7)\nchisel:paperwall_block\n空白障子\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.paperwall_block"}

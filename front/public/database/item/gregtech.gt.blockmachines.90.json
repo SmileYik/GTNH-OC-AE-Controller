@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockmachines~90","imageFilePath":"item/gregtech/gt.blockmachines~90.png","internalName":"gt.blockmachines","itemDamage":90,"itemId":2196,"localizedName":"维护仓","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"维护仓 (#2196/90)\ngregtech:gt.blockmachines\n用以维修多方块机器\n不得被多方块机器共享！","unlocalizedName":"gt.blockmachines.hatch.maintenance"}

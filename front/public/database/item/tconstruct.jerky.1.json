@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~jerky~1","imageFilePath":"item/TConstruct/jerky~1.png","internalName":"jerky","itemDamage":1,"itemId":4646,"localizedName":"鸡肉干","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"鸡肉干 (#4646/1)\n塞牙之物\nTConstruct:jerky\n营养值： 肉类 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.tconstruct.jerky.chicken"}

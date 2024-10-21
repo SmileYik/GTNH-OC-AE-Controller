@@ -1,0 +1,1 @@
+{"id":"i~chisel~smashingrock~0","imageFilePath":"item/chisel/smashingrock~0.png","internalName":"smashingrock","itemDamage":0,"itemId":5094,"localizedName":"碎石块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"碎石块 (#5094)\nchisel:smashingrock\n右键丢出.可使圆石变成砂砾;砂砾变为沙子.","unlocalizedName":"item.smashingRock"}

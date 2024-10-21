@@ -1,0 +1,1 @@
+{"id":"i~witchery~stew~0","imageFilePath":"item/witchery/stew~0.png","internalName":"stew","itemDamage":0,"itemId":7393,"localizedName":"炖肉","maxDamage":0,"maxStackSize":64,"modId":"witchery","nbt":"","tooltip":"炖肉 (#7393)\n佳肴\nwitchery:stew\n营养值： 肉类, 蔬菜 (2.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.witchery:stew"}

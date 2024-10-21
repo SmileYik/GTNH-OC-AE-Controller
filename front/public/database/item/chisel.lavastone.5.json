@@ -1,0 +1,1 @@
+{"id":"i~chisel~lavastone~5","imageFilePath":"item/chisel/lavastone~5.png","internalName":"lavastone","itemDamage":5,"itemId":1037,"localizedName":"熔岩石","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"熔岩石 (#1037/5)\nchisel:lavastone\n镶板熔岩石\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.lavastone"}

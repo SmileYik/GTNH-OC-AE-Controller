@@ -1,0 +1,1 @@
+{"id":"i~chisel~road_line~3","imageFilePath":"item/chisel/road_line~3.png","internalName":"road_line","itemDamage":3,"itemId":1103,"localizedName":"道路标线","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"道路标线 (#1103/3)\nchisel:road_line\n黄色双标线\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.road_line"}

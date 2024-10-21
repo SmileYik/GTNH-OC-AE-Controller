@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~35","imageFilePath":"item/OpenComputers/item~35.png","internalName":"item","itemDamage":35,"itemId":7507,"localizedName":"告示牌读写升级","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"告示牌读写升级 (#7507/35)\nOpenComputers:item\n让机器人可以读写告示牌。 \n等级 1","unlocalizedName":"item.oc.UpgradeSign"}

@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~cornItem~0","imageFilePath":"item/harvestcraft/cornItem~0.png","internalName":"cornItem","itemDamage":0,"itemId":6551,"localizedName":"玉米","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"玉米 (#6551)\n塞牙之物\nharvestcraft:cornItem\n营养值： 蔬菜 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.cornItem"}

@@ -1,0 +1,1 @@
+{"id":"i~IC2~blockElectric~6","imageFilePath":"item/IC2/blockElectric~6.png","internalName":"blockElectric","itemDamage":6,"itemId":200,"localizedName":"超高压变压器","maxDamage":0,"maxStackSize":1,"modId":"IC2","nbt":"","tooltip":"超高压变压器 (#0200/6)\nIC2:blockElectric\n低压: 2048EU/t 高压: 8192EU/t ","unlocalizedName":"ic2.blockTransformerEV"}

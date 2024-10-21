@@ -1,0 +1,1 @@
+{"id":"i~chisel~redstone_block~13","imageFilePath":"item/chisel/redstone_block~13.png","internalName":"redstone_block","itemDamage":13,"itemId":1102,"localizedName":"红石块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"红石块 (#1102/13)\nchisel:redstone_block\n迷宫式布线的红石电路板\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.redstone_block"}

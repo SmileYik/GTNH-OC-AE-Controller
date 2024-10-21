@@ -1,0 +1,1 @@
+{"id":"i~chisel~granite~0","imageFilePath":"item/chisel/granite~0.png","internalName":"granite","itemDamage":0,"itemId":999,"localizedName":"花岗岩","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"花岗岩 (#0999/0)\nchisel:granite\n会生成在世界中\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.granite"}

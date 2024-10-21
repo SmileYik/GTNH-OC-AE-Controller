@@ -1,0 +1,1 @@
+{"id":"i~minecraft~fish~3","imageFilePath":"item/minecraft/fish~3.png","internalName":"fish","itemDamage":3,"itemId":349,"localizedName":"河豚","maxDamage":0,"maxStackSize":64,"modId":"minecraft","nbt":"","tooltip":"河豚 (#0349/3)\n塞牙之物\nminecraft:fish\n营养值： 肉类 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.fish.pufferfish.raw"}

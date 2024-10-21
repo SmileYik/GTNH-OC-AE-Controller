@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~keyboard~0","imageFilePath":"item/OpenComputers/keyboard~0.png","internalName":"keyboard","itemDamage":0,"itemId":2486,"localizedName":"键盘","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"键盘 (#2486/0)\nOpenComputers:keyboard\n可以连接显示屏，以向其输入内容。 \n按住[NONE]显示所需材料。","unlocalizedName":"tile.oc.keyboard"}

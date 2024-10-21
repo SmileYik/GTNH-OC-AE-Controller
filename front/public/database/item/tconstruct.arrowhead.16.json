@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~arrowhead~16","imageFilePath":"item/TConstruct/arrowhead~16.png","internalName":"arrowhead","itemDamage":16,"itemId":4660,"localizedName":"钢箭头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"钢箭头 (#4660/16)\nTConstruct:arrowhead\n攻击力:1.5 心\n耐久:300\n损坏几率: 90%\n重量:3.6\n\n可被替换","unlocalizedName":"toolpart.ArrowHead.Steel"}

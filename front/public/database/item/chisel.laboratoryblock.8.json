@@ -1,0 +1,1 @@
+{"id":"i~chisel~laboratoryblock~8","imageFilePath":"item/chisel/laboratoryblock~8.png","internalName":"laboratoryblock","itemDamage":8,"itemId":1035,"localizedName":"实验室方块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"实验室方块 (#1035/8)\nchisel:laboratoryblock\n棋盘格地板\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.laboratoryblock"}

@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgradeVoid~0","imageFilePath":"item/StorageDrawers/upgradeVoid~0.png","internalName":"upgradeVoid","itemDamage":0,"itemId":10410,"localizedName":"虚空升级","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"虚空升级 (#10410)\nStorageDrawers:upgradeVoid\n销毁存储超过上限的物品。","unlocalizedName":"item.storagedrawers.upgradeVoid"}

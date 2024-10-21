@@ -1,0 +1,1 @@
+{"id":"i~littletiles~saw~0","imageFilePath":"item/littletiles/saw~0.png","internalName":"saw","itemDamage":0,"itemId":10744,"localizedName":"小锯","maxDamage":0,"maxStackSize":1,"modId":"littletiles","nbt":"","tooltip":"小锯 (#10744)\nlittletiles:saw\nrightclick to increase and\nshift+rightclick to decrease\nthe size of a placed tile","unlocalizedName":"item.LTSaw"}

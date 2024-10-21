@@ -1,0 +1,1 @@
+{"id":"i~chisel~upgrade~3","imageFilePath":"item/chisel/upgrade~3.png","internalName":"upgrade","itemDamage":3,"itemId":5087,"localizedName":"复原升级组件","maxDamage":0,"maxStackSize":1,"modId":"chisel","nbt":"","tooltip":"复原升级组件 (#5087/3)\nchisel:upgrade\n将基本栏位恢复为其初始状态","unlocalizedName":"item.upgrade_reversion"}

@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~pickaxeHead~3","imageFilePath":"item/TConstruct/pickaxeHead~3.png","internalName":"pickaxeHead","itemDamage":3,"itemId":4620,"localizedName":"燧石镐头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"燧石镐头 (#4620/3)\nTConstruct:pickaxeHead\n耐久:113\n采掘速度:4\n采掘等级:00-石头\n\n可被替换","unlocalizedName":"toolpart.PickaxeHead.Flint"}

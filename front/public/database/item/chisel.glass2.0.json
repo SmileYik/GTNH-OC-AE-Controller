@@ -1,0 +1,1 @@
+{"id":"i~chisel~glass2~0","imageFilePath":"item/chisel/glass2~0.png","internalName":"glass2","itemDamage":0,"itemId":980,"localizedName":"玻璃","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"玻璃 (#0980/0)\nchisel:glass2\n非对称式格栅铅框玻璃\n生物不会在这个方块上生成\n玻璃等级: HV","unlocalizedName":"tile.chisel.glass2"}

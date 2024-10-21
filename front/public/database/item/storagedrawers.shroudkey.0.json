@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~shroudKey~0","imageFilePath":"item/StorageDrawers/shroudKey~0.png","internalName":"shroudKey","itemDamage":0,"itemId":10414,"localizedName":"屏蔽钥匙","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"屏蔽钥匙 (#10414)\nStorageDrawers:shroudKey\n隐藏或显示抽屉上的物品图标。\n\n攻击伤害 +2","unlocalizedName":"item.storagedrawers.shroudKey"}

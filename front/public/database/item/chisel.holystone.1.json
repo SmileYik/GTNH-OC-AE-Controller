@@ -1,0 +1,1 @@
+{"id":"i~chisel~holystone~1","imageFilePath":"item/chisel/holystone~1.png","internalName":"holystone","itemDamage":1,"itemId":1003,"localizedName":"神圣石","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"神圣石 (#1003/1)\nchisel:holystone\n抛光神圣石\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.holystone"}

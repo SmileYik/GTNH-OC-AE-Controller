@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~frame~0","imageFilePath":"item/Railcraft/frame~0.png","internalName":"frame","itemDamage":0,"itemId":834,"localizedName":"线缆支撑框架","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"线缆支撑框架 (#0834)\nRailcraft:frame\n用于将轨道放置在分路线缆上\n生物不会在这个方块上生成\n玻璃等级: HV","unlocalizedName":"tile.railcraft.frame"}

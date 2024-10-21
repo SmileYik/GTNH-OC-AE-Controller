@@ -1,0 +1,1 @@
+{"id":"i~chisel~gold_block~6","imageFilePath":"item/chisel/gold_block~6.png","internalName":"gold_block","itemDamage":6,"itemId":998,"localizedName":"金块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"金块 (#0998/6)\nchisel:gold_block\n正面朝下的金币堆\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.gold_block"}

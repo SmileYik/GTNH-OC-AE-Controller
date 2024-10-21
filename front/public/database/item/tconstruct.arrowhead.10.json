@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~arrowhead~10","imageFilePath":"item/TConstruct/arrowhead~10.png","internalName":"arrowhead","itemDamage":10,"itemId":4660,"localizedName":"钴箭头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"钴箭头 (#4660/10)\nTConstruct:arrowhead\n攻击力:2 心\n耐久:600\n损坏几率: 200%\n重量:3\n\n可被替换","unlocalizedName":"toolpart.ArrowHead.Cobalt"}

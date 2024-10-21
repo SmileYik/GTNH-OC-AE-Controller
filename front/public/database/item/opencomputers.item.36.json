@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~36","imageFilePath":"item/OpenComputers/item~36.png","internalName":"item","itemDamage":36,"itemId":7507,"localizedName":"导航升级","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"导航升级 (#7507/36)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。\n按住[NONE]显示所需材料。\n等级 2","unlocalizedName":"item.oc.UpgradeNavigation"}

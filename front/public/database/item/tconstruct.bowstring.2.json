@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~bowstring~2","imageFilePath":"item/TConstruct/bowstring~2.png","internalName":"bowstring","itemDamage":2,"itemId":4659,"localizedName":"火焰弓弦","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"火焰弓弦 (#4659/2)\nTConstruct:bowstring\n拉弓速度:1.1x\n耐久:1.2x\n箭矢速度:1.2x\n\n可被替换","unlocalizedName":"item.tconstruct.Bowstring.flamestring"}

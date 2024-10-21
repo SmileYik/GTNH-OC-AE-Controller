@@ -1,0 +1,1 @@
+{"id":"i~IC2~blockElectric~4","imageFilePath":"item/IC2/blockElectric~4.png","internalName":"blockElectric","itemDamage":4,"itemId":200,"localizedName":"中压变压器","maxDamage":0,"maxStackSize":1,"modId":"IC2","nbt":"","tooltip":"中压变压器 (#0200/4)\nIC2:blockElectric\n低压: 128EU/t 高压: 512EU/t ","unlocalizedName":"ic2.blockTransformerMV"}

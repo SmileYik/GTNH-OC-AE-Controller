@@ -1,0 +1,1 @@
+{"id":"i~BuildCraftFactory~tankBlock~0","imageFilePath":"item/BuildCraftFactory/tankBlock~0.png","internalName":"tankBlock","itemDamage":0,"itemId":787,"localizedName":"储罐","maxDamage":0,"maxStackSize":64,"modId":"BuildCraft|Factory","nbt":"","tooltip":"储罐 (#0787)\nBuildCraft|Factory:tankBlock\n玻璃等级: HV\n最多可存储16桶单一种类液体 不便于携带,请使用手推车","unlocalizedName":"tile.tankBlock"}

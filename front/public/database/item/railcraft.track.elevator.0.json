@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~track.elevator~0","imageFilePath":"item/Railcraft/track.elevator~0.png","internalName":"track.elevator","itemDamage":0,"itemId":806,"localizedName":"升降轨道","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"升降轨道 (#0806)\nRailcraft:track.elevator\n允许车厢竖直移动\n- 顶部通入红石信号即可激活 -\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.track.elevator"}

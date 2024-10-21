@@ -1,0 +1,1 @@
+{"id":"i~BiomesOPlenty~food~4","imageFilePath":"item/BiomesOPlenty/food~4.png","internalName":"food","itemDamage":4,"itemId":5150,"localizedName":"水果沙拉","maxDamage":0,"maxStackSize":1,"modId":"BiomesOPlenty","nbt":"","tooltip":"水果沙拉 (#5150/4)\n便餐\nBiomesOPlenty:food\n营养值： 水果 (1.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.food.saladfruit"}

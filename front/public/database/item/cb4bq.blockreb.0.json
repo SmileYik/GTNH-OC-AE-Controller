@@ -1,0 +1,1 @@
+{"id":"i~cb4bq~BlockREB~0","imageFilePath":"item/cb4bq/BlockREB~0.png","internalName":"BlockREB","itemDamage":0,"itemId":3687,"localizedName":"重置任务方块","maxDamage":0,"maxStackSize":64,"modId":"cb4bq","nbt":"","tooltip":"重置任务方块 (#3687)\ncb4bq:BlockREB\n右键此方块将重置你的所有任务, 从第0阶段重新开始. 不要放置或使用它, 除非你真正需要!","unlocalizedName":"tile.CB4BQ.REB"}

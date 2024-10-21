@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~110","imageFilePath":"item/OpenComputers/item~110.png","internalName":"item","itemDamage":110,"itemId":7507,"localizedName":"交易升级","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"交易升级 (#7507/110)\nOpenComputers:item\n让机器人与无人机获得与村民交易的能力。 \n等级 2","unlocalizedName":"item.oc.UpgradeTrading"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~iron_bars~6","imageFilePath":"item/chisel/iron_bars~6.png","internalName":"iron_bars","itemDamage":6,"itemId":1016,"localizedName":"铁栅栏","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"铁栅栏 (#1016/6)\nchisel:iron_bars\n细铁格网\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.iron_bars"}

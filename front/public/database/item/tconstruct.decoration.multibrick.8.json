@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~decoration.multibrick~8","imageFilePath":"item/TConstruct/decoration.multibrick~8.png","internalName":"decoration.multibrick","itemDamage":8,"itemId":609,"localizedName":"红石砖块","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"红石砖块 (#0609/8)\nTConstruct:decoration.multibrick\n能够发出红石信号, 最多延伸\n4格远","unlocalizedName":"block.brick.redstone"}

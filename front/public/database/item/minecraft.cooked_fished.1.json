@@ -1,0 +1,1 @@
+{"id":"i~minecraft~cooked_fished~1","imageFilePath":"item/minecraft/cooked_fished~1.png","internalName":"cooked_fished","itemDamage":1,"itemId":350,"localizedName":"熟鲑鱼","maxDamage":0,"maxStackSize":64,"modId":"minecraft","nbt":"","tooltip":"熟鲑鱼 (#0350/1)\n便餐\nminecraft:cooked_fished\n营养值： 肉类 (1.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.fish.salmon.cooked"}

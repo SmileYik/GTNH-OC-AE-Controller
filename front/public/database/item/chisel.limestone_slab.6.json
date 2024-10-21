@@ -1,0 +1,1 @@
+{"id":"i~chisel~limestone_slab~6","imageFilePath":"item/chisel/limestone_slab~6.png","internalName":"limestone_slab","itemDamage":6,"itemId":1041,"localizedName":"石灰岩台阶","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"石灰岩台阶 (#1041/6)\nchisel:limestone_slab\n破损灰岩瓷砖台阶\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.limestone_slab"}

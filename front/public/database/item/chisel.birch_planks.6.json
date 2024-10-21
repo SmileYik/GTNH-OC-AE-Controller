@@ -1,0 +1,1 @@
+{"id":"i~chisel~birch_planks~6","imageFilePath":"item/chisel/birch_planks~6.png","internalName":"birch_planks","itemDamage":6,"itemId":1145,"localizedName":"白桦木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"白桦木板 (#1145/6)\nchisel:birch_planks\n精制白桦木板\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.birch_planks"}

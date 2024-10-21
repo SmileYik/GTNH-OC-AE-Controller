@@ -1,0 +1,1 @@
+{"id":"i~chisel~warningSign~11","imageFilePath":"item/chisel/warningSign~11.png","internalName":"warningSign","itemDamage":11,"itemId":1141,"localizedName":"警告标志","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"警告标志 (#1141/11)\nchisel:warningSign\n噪声污染\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.warningSign"}

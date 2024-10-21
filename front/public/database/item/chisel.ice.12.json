@@ -1,0 +1,1 @@
+{"id":"i~chisel~ice~12","imageFilePath":"item/chisel/ice~12.png","internalName":"ice","itemDamage":12,"itemId":1006,"localizedName":"冰","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"冰 (#1006/12)\nchisel:ice\n双层冰台阶\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.ice"}

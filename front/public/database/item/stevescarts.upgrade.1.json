@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~1","imageFilePath":"item/StevesCarts/upgrade~1.png","internalName":"upgrade","itemDamage":1,"itemId":2648,"localizedName":"升级：能量水晶","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：能量水晶 (#2648/1)\nStevesCarts:upgrade\n燃料容量 +15000。\n每分钟产生 150 装置的能量。","unlocalizedName":"item.SC2:power_crystal"}

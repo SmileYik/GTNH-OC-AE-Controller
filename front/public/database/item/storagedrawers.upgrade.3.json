@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgrade~3","imageFilePath":"item/StorageDrawers/upgrade~3.png","internalName":"upgrade","itemDamage":3,"itemId":10408,"localizedName":"抽屉容量升级(III)","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉容量升级(III) (#10408/3)\nStorageDrawers:upgrade\n将抽屉容量升级为其基础容量的4倍。","unlocalizedName":"item.storagedrawers.upgrade.gold"}

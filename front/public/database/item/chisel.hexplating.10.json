@@ -1,0 +1,1 @@
+{"id":"i~chisel~hexPlating~10","imageFilePath":"item/chisel/hexPlating~10.png","internalName":"hexPlating","itemDamage":10,"itemId":1001,"localizedName":"六角金属镀层块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"六角金属镀层块 (#1001/10)\nchisel:hexPlating\n黄绿色金属镀层\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.hexPlating"}

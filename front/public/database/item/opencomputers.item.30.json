@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~30","imageFilePath":"item/OpenComputers/item~30.png","internalName":"item","itemDamage":30,"itemId":7507,"localizedName":"未加工电路板","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"未加工电路板 (#7507/30)\nOpenComputers:item\n可在任意兼容原版熔炉功能的炉具中硬化。 ","unlocalizedName":"item.oc.RawCircuitBoard"}

@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~signal~5","imageFilePath":"item/Railcraft/signal~5.png","internalName":"signal","itemDamage":5,"itemId":807,"localizedName":"路由转辙马达","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"路由转辙马达 (#0807/5)\nRailcraft:signal\n控制相邻的转换轨道\n脚本逻辑操作\n相关工具:\n- 路由表\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.signal.switch.routing"}

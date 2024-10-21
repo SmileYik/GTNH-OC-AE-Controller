@@ -1,0 +1,1 @@
+{"id":"i~JABBA~upgradeCore~7","imageFilePath":"item/JABBA/upgradeCore~7.png","internalName":"upgradeCore","itemDamage":7,"itemId":10215,"localizedName":"虚空升级","maxDamage":0,"maxStackSize":16,"modId":"JABBA","nbt":"","tooltip":"虚空升级 (#10215/7)\nJABBA:upgradeCore\n使用插槽数：2\n一旦桶被填满就会删除多余的物品","unlocalizedName":"item.upgrade.core.void"}

@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~waypoint~0","imageFilePath":"item/OpenComputers/waypoint~0.png","internalName":"waypoint","itemDamage":0,"itemId":2505,"localizedName":"路径点","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"路径点 (#2505/0)\nOpenComputers:waypoint\n为安装有导航升级的设备提供参考点。 \n按住[NONE]显示所需材料。","unlocalizedName":"tile.oc.waypoint"}

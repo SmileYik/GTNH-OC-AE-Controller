@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~soybeanItem~0","imageFilePath":"item/harvestcraft/soybeanItem~0.png","internalName":"soybeanItem","itemDamage":0,"itemId":6585,"localizedName":"黄豆","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"黄豆 (#6585)\n营养的塞牙之物\nharvestcraft:soybeanItem\n营养值： 蔬菜 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.soybeanItem"}

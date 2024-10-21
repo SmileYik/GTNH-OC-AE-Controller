@@ -1,0 +1,1 @@
+{"id":"i~EnderIO~blockElectricLight~3","imageFilePath":"item/EnderIO/blockElectricLight~3.png","internalName":"blockElectricLight","itemDamage":3,"itemId":1487,"localizedName":"灯(反相)","maxDamage":0,"maxStackSize":64,"modId":"EnderIO","nbt":"","tooltip":"灯(反相) (#1487/3)\nEnderIO:blockElectricLight\n\u003c按住Shift\u003e","unlocalizedName":"item.itemLightInverted"}

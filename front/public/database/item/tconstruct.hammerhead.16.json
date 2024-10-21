@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~hammerHead~16","imageFilePath":"item/TConstruct/hammerHead~16.png","internalName":"hammerHead","itemDamage":16,"itemId":4640,"localizedName":"钢锤头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"钢锤头 (#4640/16)\nTConstruct:hammerHead\n耐久 II\n耐久:300\n采掘速度:7\n采掘等级:05-黑曜石\n攻击力:1.5 心\n\n可被替换","unlocalizedName":"toolpart.HammerHead.Steel"}

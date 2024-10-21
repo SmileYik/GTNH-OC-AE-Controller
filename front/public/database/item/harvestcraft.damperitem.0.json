@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~damperItem~0","imageFilePath":"item/harvestcraft/damperItem~0.png","internalName":"damperItem","itemDamage":0,"itemId":7133,"localizedName":"丹波面包","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"丹波面包 (#7133)\n便餐\nharvestcraft:damperItem\n营养值： 乳制品, 谷物 (1.7%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.damperItem"}

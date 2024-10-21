@@ -1,0 +1,1 @@
+{"id":"i~chisel~nation~1","imageFilePath":"item/chisel/nation~1.png","internalName":"nation","itemDamage":1,"itemId":1065,"localizedName":"盟军方块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"盟军方块 (#1065/1)\nchisel:nation\ntile.imperial.1.desc\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.nation"}

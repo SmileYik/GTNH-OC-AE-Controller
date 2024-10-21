@@ -1,0 +1,1 @@
+{"id":"i~chisel~nucrete~3","imageFilePath":"item/chisel/nucrete~3.png","internalName":"nucrete","itemDamage":3,"itemId":1070,"localizedName":"结构混凝土","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"结构混凝土 (#1070/3)\nchisel:nucrete\n深色平滑混凝土\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.nucrete"}

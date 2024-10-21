@@ -1,0 +1,1 @@
+{"id":"i~chisel~carpet_block~0","imageFilePath":"item/chisel/carpet_block~0.png","internalName":"carpet_block","itemDamage":0,"itemId":960,"localizedName":"地毯","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"地毯 (#0960/0)\nchisel:carpet_block\n白色地毯方块\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.carpet_block"}

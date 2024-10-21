@@ -1,0 +1,1 @@
+{"id":"i~chisel~dirt~1","imageFilePath":"item/chisel/dirt~1.png","internalName":"dirt","itemDamage":1,"itemId":970,"localizedName":"泥土","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"泥土 (#0970/1)\nchisel:dirt\n模仿地狱砖设计的泥砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.dirt"}

@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~capacitor~0","imageFilePath":"item/OpenComputers/capacitor~0.png","internalName":"capacitor","itemDamage":0,"itemId":2476,"localizedName":"电容","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"电容 (#2476/0)\nOpenComputers:capacitor\n储能以供后续使用。充放电速度很快。 \n按住[NONE]显示所需材料。","unlocalizedName":"tile.oc.capacitor"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~glass_pane~13","imageFilePath":"item/chisel/glass_pane~13.png","internalName":"glass_pane","itemDamage":13,"itemId":981,"localizedName":"玻璃板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"玻璃板 (#0981/13)\nchisel:glass_pane\n中式金框窗棂板\n生物不会在这个方块上生成\n玻璃等级: HV","unlocalizedName":"tile.chisel.glass_pane"}

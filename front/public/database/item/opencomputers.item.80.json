@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~80","imageFilePath":"item/OpenComputers/item~80.png","internalName":"item","itemDamage":80,"itemId":7507,"localizedName":"T3数据库升级","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"T3数据库升级 (#7507/80)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。\n等级 3","unlocalizedName":"item.oc.UpgradeDatabase2"}

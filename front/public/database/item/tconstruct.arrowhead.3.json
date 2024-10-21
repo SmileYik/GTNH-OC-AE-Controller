@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~arrowhead~3","imageFilePath":"item/TConstruct/arrowhead~3.png","internalName":"arrowhead","itemDamage":3,"itemId":4660,"localizedName":"燧石箭头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"燧石箭头 (#4660/3)\nTConstruct:arrowhead\n攻击力:1 心\n耐久:113\n损坏几率: 100%\n重量:1.33\n\n可被替换","unlocalizedName":"toolpart.ArrowHead.Flint"}

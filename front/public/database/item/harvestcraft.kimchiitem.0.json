@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~kimchiItem~0","imageFilePath":"item/harvestcraft/kimchiItem~0.png","internalName":"kimchiItem","itemDamage":0,"itemId":7240,"localizedName":"泡菜","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"泡菜 (#7240)\n便餐\nharvestcraft:kimchiItem\n营养值： 谷物, 蔬菜 (2.1%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.kimchiItem"}

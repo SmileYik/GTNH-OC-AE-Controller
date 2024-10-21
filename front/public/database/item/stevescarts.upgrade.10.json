@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~10","imageFilePath":"item/StevesCarts/upgrade~10.png","internalName":"upgrade","itemDamage":10,"itemId":2648,"localizedName":"升级：矿车部署器","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：矿车部署器 (#2648/10)\nStevesCarts:upgrade\n启用已完成的矿车的调度。","unlocalizedName":"item.SC2:cart_deployer"}

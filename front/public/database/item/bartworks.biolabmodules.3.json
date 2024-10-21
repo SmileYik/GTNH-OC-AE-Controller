@@ -1,0 +1,1 @@
+{"id":"i~bartworks~BioLabModules~3","imageFilePath":"item/bartworks/BioLabModules~3.png","internalName":"BioLabModules","itemDamage":3,"itemId":10590,"localizedName":"基因转化模块","maxDamage":0,"maxStackSize":64,"modId":"bartworks","nbt":"","tooltip":"基因转化模块 (#10590/3)\nbartworks:BioLabModules\n用于改变生物实验室工作模式的模块\n添加者:  BartWorks","unlocalizedName":"labModule.item.TransformationModule"}

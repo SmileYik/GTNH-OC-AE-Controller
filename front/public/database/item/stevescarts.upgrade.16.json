@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~16","imageFilePath":"item/StevesCarts/upgrade~16.png","internalName":"upgrade","itemDamage":16,"itemId":2648,"localizedName":"升级：熵","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：熵 (#2648/16)\nStevesCarts:upgrade\n模块拆卸时间 -1600 秒。\n模块装配时间 +150 秒。","unlocalizedName":"item.SC2:entropy"}

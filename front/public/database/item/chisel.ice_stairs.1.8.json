@@ -1,0 +1,1 @@
+{"id":"i~chisel~ice_stairs.1~8","imageFilePath":"item/chisel/ice_stairs.1~8.png","internalName":"ice_stairs.1","itemDamage":8,"itemId":1009,"localizedName":"冰楼梯","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"冰楼梯 (#1009/8)\nchisel:ice_stairs.1\n大块粗砌冰砖楼梯\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.ice_stairs.1"}

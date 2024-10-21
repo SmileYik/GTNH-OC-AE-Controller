@@ -1,0 +1,1 @@
+{"id":"i~chisel~jungle_planks~9","imageFilePath":"item/chisel/jungle_planks~9.png","internalName":"jungle_planks","itemDamage":9,"itemId":1146,"localizedName":"丛林木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"丛林木板 (#1146/9)\nchisel:jungle_planks\n丛林木双层台阶\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.jungle_planks"}

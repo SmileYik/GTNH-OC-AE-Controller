@@ -1,0 +1,1 @@
+{"id":"i~chisel~cobblestone~12","imageFilePath":"item/chisel/cobblestone~12.png","internalName":"cobblestone","itemDamage":12,"itemId":963,"localizedName":"圆石","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"圆石 (#0963/12)\nchisel:cobblestone\n凹面圆石砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.cobblestone"}

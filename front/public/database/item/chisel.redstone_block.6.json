@@ -1,0 +1,1 @@
+{"id":"i~chisel~redstone_block~6","imageFilePath":"item/chisel/redstone_block~6.png","internalName":"redstone_block","itemDamage":6,"itemId":1102,"localizedName":"红石块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"红石块 (#1102/6)\nchisel:redstone_block\n小碎石红石砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.redstone_block"}

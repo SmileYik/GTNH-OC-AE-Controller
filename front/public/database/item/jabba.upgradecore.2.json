@@ -1,0 +1,1 @@
+{"id":"i~JABBA~upgradeCore~2","imageFilePath":"item/JABBA/upgradeCore~2.png","internalName":"upgradeCore","itemDamage":2,"itemId":10215,"localizedName":"红石升级","maxDamage":0,"maxStackSize":16,"modId":"JABBA","nbt":"","tooltip":"红石升级 (#10215/2)\nJABBA:upgradeCore\n使用插槽数：1\n允许桶发出红石信号","unlocalizedName":"item.upgrade.core.redstone"}

@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~fletching~1","imageFilePath":"item/TConstruct/fletching~1.png","internalName":"fletching","itemDamage":1,"itemId":4661,"localizedName":"树叶箭羽","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"树叶箭羽 (#4661/1)\nTConstruct:fletching\n石缚 [升级槽: 1]\n耐久:2.5x\n损坏几率: 0%\n精准度:75%\n\n可被替换","unlocalizedName":"item.tconstruct.Fletching.leaf"}

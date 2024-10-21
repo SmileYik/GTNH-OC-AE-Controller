@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~63","imageFilePath":"item/OpenComputers/item~63.png","internalName":"item","itemDamage":63,"itemId":7507,"localizedName":"T1电池升级","maxDamage":100,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"T1电池升级 (#7507/63)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。\n等级 1\nDurability: 0 / 100","unlocalizedName":"item.oc.UpgradeBattery0"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~sandstone~15","imageFilePath":"item/chisel/sandstone~15.png","internalName":"sandstone","itemDamage":15,"itemId":1104,"localizedName":"沙石","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"沙石 (#1104/15)\nchisel:sandstone\n层叠沙石瓷砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.sandstone"}

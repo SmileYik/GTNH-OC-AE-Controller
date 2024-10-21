@@ -1,0 +1,1 @@
+{"id":"i~JABBA~upgradeCore~0","imageFilePath":"item/JABBA/upgradeCore~0.png","internalName":"upgradeCore","itemDamage":0,"itemId":10215,"localizedName":"存储升级","maxDamage":0,"maxStackSize":16,"modId":"JABBA","nbt":"","tooltip":"存储升级 (#10215/0)\nJABBA:upgradeCore\n使用插槽数：1\n将储存容量升至64组","unlocalizedName":"item.upgrade.core.storage"}

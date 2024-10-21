@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgradeLock~0","imageFilePath":"item/StorageDrawers/upgradeLock~0.png","internalName":"upgradeLock","itemDamage":0,"itemId":10413,"localizedName":"抽屉钥匙","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉钥匙 (#10413)\nStorageDrawers:upgradeLock\n给抽屉上锁或解锁。\n\n攻击伤害 +2","unlocalizedName":"item.storagedrawers.upgradeLock"}

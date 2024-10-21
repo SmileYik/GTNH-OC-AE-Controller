@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~97","imageFilePath":"item/OpenComputers/item~97.png","internalName":"item","itemDamage":97,"itemId":7507,"localizedName":"材质获取器","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"材质获取器 (#7507/97)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。\n按住[NONE]显示所需材料。","unlocalizedName":"item.oc.TexturePicker"}

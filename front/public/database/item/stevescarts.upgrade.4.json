@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~4","imageFilePath":"item/StevesCarts/upgrade~4.png","internalName":"upgrade","itemDamage":4,"itemId":2648,"localizedName":"升级：熟练装配工","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：熟练装配工 (#2648/4)\nStevesCarts:upgrade\n装配效率 +10%.\n燃料消耗 +30%。","unlocalizedName":"item.SC2:experienced_assembler"}

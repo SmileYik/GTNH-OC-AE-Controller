@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~Smeltery~0","imageFilePath":"item/TConstruct/Smeltery~0.png","internalName":"Smeltery","itemDamage":0,"itemId":660,"localizedName":"冶炼炉控制器","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"冶炼炉控制器 (#0660/0)\nTConstruct:Smeltery\n相当于冶炼炉的大脑\n冶炼炉中加工的某些金属不符合GT的纯度要求.","unlocalizedName":"Smeltery.Controller"}

@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgrade~4","imageFilePath":"item/StorageDrawers/upgrade~4.png","internalName":"upgrade","itemDamage":4,"itemId":10408,"localizedName":"抽屉容量升级(IV)","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉容量升级(IV) (#10408/4)\nStorageDrawers:upgrade\n将抽屉容量升级为其基础容量的8倍。","unlocalizedName":"item.storagedrawers.upgrade.obsidian"}

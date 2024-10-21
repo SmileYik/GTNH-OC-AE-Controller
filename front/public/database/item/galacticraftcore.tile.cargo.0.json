@@ -1,0 +1,1 @@
+{"id":"i~GalacticraftCore~tile.cargo~0","imageFilePath":"item/GalacticraftCore/tile.cargo~0.png","internalName":"tile.cargo","itemDamage":0,"itemId":689,"localizedName":"货物加载器","maxDamage":0,"maxStackSize":64,"modId":"GalacticraftCore","nbt":"","tooltip":"货物加载器 (#0689/0)\nGalacticraftCore:tile.cargo\n能量需求: 137 EU /s\n按住LSHIFT查看详情","unlocalizedName":"tile.cargo.loader"}

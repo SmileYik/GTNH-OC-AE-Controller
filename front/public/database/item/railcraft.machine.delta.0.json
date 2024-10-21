@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~machine.delta~0","imageFilePath":"item/Railcraft/machine.delta~0.png","internalName":"machine.delta","itemDamage":0,"itemId":835,"localizedName":"电力分路线缆","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"电力分路线缆 (#0835/0)\nRailcraft:machine.delta\n跨距连接电轨\n配合线缆支撑框架可放置于轨道下方\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.machine.delta.wire"}

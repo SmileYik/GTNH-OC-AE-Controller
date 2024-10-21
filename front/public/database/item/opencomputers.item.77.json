@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~77","imageFilePath":"item/OpenComputers/item~77.png","internalName":"item","itemDamage":77,"itemId":7507,"localizedName":"储罐交互升级","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"储罐交互升级 (#7507/77)\nOpenComputers:item\n按住[LSHIFT]显示详细提示文本。\n等级 2","unlocalizedName":"item.oc.UpgradeTankController"}

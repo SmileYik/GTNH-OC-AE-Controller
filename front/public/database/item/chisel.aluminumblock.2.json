@@ -1,0 +1,1 @@
+{"id":"i~chisel~aluminumblock~2","imageFilePath":"item/chisel/aluminumblock~2.png","internalName":"aluminumblock","itemDamage":2,"itemId":945,"localizedName":"铝块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"铝块 (#0945/2)\nchisel:aluminumblock\n热力膨胀式\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.aluminumblock"}

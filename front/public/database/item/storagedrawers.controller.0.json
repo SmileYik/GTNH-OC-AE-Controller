@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~controller~0","imageFilePath":"item/StorageDrawers/controller~0.png","internalName":"controller","itemDamage":0,"itemId":3458,"localizedName":"抽屉管理器","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉管理器 (#3458)\nStorageDrawers:controller\n将放入的物品分配存入邻接的抽屉中。","unlocalizedName":"tile.drawerController"}

@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~turnipItem~0","imageFilePath":"item/harvestcraft/turnipItem~0.png","internalName":"turnipItem","itemDamage":0,"itemId":6564,"localizedName":"大头菜","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"大头菜 (#6564)\n营养的塞牙之物\nharvestcraft:turnipItem\n营养值： 蔬菜 (0.5%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.turnipItem"}

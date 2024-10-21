@@ -1,0 +1,1 @@
+{"id":"i~Railcraft~signal~3","imageFilePath":"item/Railcraft/signal~3.png","internalName":"signal","itemDamage":3,"itemId":807,"localizedName":"信号盒","maxDamage":0,"maxStackSize":64,"modId":"Railcraft","nbt":"","tooltip":"信号盒 (#0807/3)\nRailcraft:signal\n检测信号盒中的机车\n无线联动:\n- 1x信号盒\n- 1x控制盒\n相关工具:\n- 信号域监测仪\n生物不会在这个方块上生成","unlocalizedName":"tile.railcraft.signal.block.signal"}

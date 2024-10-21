@@ -1,0 +1,1 @@
+{"id":"i~harvestcraft~tacoItem~0","imageFilePath":"item/harvestcraft/tacoItem~0.png","internalName":"tacoItem","itemDamage":0,"itemId":6789,"localizedName":"塔可饼","maxDamage":0,"maxStackSize":64,"modId":"harvestcraft","nbt":"","tooltip":"塔可饼 (#6789)\n佳肴\nharvestcraft:tacoItem\n营养值： 乳制品, 谷物, 肉类, 蔬菜 (2.2%)\n食物恢复的饥饿值递减开始在\n食用任何食物超过 10次 之后","unlocalizedName":"item.tacoItem"}

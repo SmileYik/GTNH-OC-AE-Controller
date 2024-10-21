@@ -1,0 +1,1 @@
+{"id":"i~chisel~limestone~6","imageFilePath":"item/chisel/limestone~6.png","internalName":"limestone","itemDamage":6,"itemId":1040,"localizedName":"石灰岩","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"石灰岩 (#1040/6)\nchisel:limestone\n破损灰岩瓷砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.limestone"}

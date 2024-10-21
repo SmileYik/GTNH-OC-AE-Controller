@@ -1,0 +1,1 @@
+{"id":"i~StorageDrawers~upgrade~2","imageFilePath":"item/StorageDrawers/upgrade~2.png","internalName":"upgrade","itemDamage":2,"itemId":10408,"localizedName":"抽屉容量升级(II)","maxDamage":0,"maxStackSize":64,"modId":"StorageDrawers","nbt":"","tooltip":"抽屉容量升级(II) (#10408/2)\nStorageDrawers:upgrade\n将抽屉容量升级为其基础容量的2倍。","unlocalizedName":"item.storagedrawers.upgrade.iron"}

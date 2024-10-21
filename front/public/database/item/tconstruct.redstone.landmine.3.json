@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~Redstone.Landmine~3","imageFilePath":"item/TConstruct/Redstone.Landmine~3.png","internalName":"Redstone.Landmine","itemDamage":3,"itemId":672,"localizedName":"地雷","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"地雷 (#0672/3)\nTConstruct:Redstone.Landmine\n触发对象: 仅限红石触发","unlocalizedName":"tile.landmine"}

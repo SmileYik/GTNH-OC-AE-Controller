@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~SearedBlock~1","imageFilePath":"item/TConstruct/SearedBlock~1.png","internalName":"SearedBlock","itemDamage":1,"itemId":664,"localizedName":"浇注口","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"浇注口 (#0664/1)\nTConstruct:SearedBlock\n让冶炼炉的内容物流出来\n冶炼炉中加工的某些金属不符合GT的纯度要求.","unlocalizedName":"SearedBlock.Faucet"}

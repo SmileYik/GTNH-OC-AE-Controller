@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~assembler~0","imageFilePath":"item/OpenComputers/assembler~0.png","internalName":"assembler","itemDamage":0,"itemId":2474,"localizedName":"电子装配器","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"电子装配器 (#2474/0)\nOpenComputers:assembler\n可用于将各种不同电脑配件组装成机器人与其他设备。 \n按住[NONE]显示所需材料。","unlocalizedName":"tile.oc.assembler"}

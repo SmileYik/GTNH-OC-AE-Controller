@@ -1,0 +1,1 @@
+{"id":"i~chisel~present~5","imageFilePath":"item/chisel/present~5.png","internalName":"present","itemDamage":5,"itemId":1084,"localizedName":"礼物","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"礼物 (#1084/5)\nchisel:present\n一个精致漂亮的礼物箱子\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.present"}

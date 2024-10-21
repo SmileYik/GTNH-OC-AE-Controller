@@ -1,0 +1,1 @@
+{"id":"i~chisel~iron_block~1","imageFilePath":"item/chisel/iron_block~1.png","internalName":"iron_block","itemDamage":1,"itemId":1018,"localizedName":"铁块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"铁块 (#1018/1)\nchisel:iron_block\n大块铁锭\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.iron_block"}

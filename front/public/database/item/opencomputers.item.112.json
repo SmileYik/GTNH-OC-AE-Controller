@@ -1,0 +1,1 @@
+{"id":"i~OpenComputers~item~112","imageFilePath":"item/OpenComputers/item~112.png","internalName":"item","itemDamage":112,"itemId":7507,"localizedName":"MFU","maxDamage":0,"maxStackSize":64,"modId":"OpenComputers","nbt":"","tooltip":"MFU (#7507/112)\nOpenComputers:item\n让适配器能够访问不相邻的方块。 \n未建立连接\n等级 3","unlocalizedName":"item.oc.UpgradeMF"}

@@ -1,0 +1,1 @@
+{"id":"i~chisel~factoryblock~1","imageFilePath":"item/chisel/factoryblock~1.png","internalName":"factoryblock","itemDamage":1,"itemId":973,"localizedName":"工厂方块","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"工厂方块 (#0973/1)\nchisel:factoryblock\n生锈金属板\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.factoryblock"}

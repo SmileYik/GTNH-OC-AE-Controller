@@ -1,0 +1,1 @@
+{"id":"i~StevesCarts~upgrade~15","imageFilePath":"item/StevesCarts/upgrade~15.png","internalName":"upgrade","itemDamage":15,"itemId":2648,"localizedName":"升级：快速拆卸器","maxDamage":0,"maxStackSize":64,"modId":"StevesCarts","nbt":"","tooltip":"升级：快速拆卸器 (#2648/15)\nStevesCarts:upgrade\n模块拆卸时间 -400 秒。","unlocalizedName":"item.SC2:quick_demolisher"}

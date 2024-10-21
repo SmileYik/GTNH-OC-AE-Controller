@@ -1,0 +1,1 @@
+{"id":"i~chisel~spruce_planks~3","imageFilePath":"item/chisel/spruce_planks~3.png","internalName":"spruce_planks","itemDamage":3,"itemId":1144,"localizedName":"云杉木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"云杉木板 (#1144/3)\nchisel:spruce_planks\n竖纹云杉木板\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.spruce_planks"}

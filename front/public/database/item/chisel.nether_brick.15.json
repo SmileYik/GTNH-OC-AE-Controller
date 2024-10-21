@@ -1,0 +1,1 @@
+{"id":"i~chisel~nether_brick~15","imageFilePath":"item/chisel/nether_brick~15.png","internalName":"nether_brick","itemDamage":15,"itemId":1068,"localizedName":"地狱砖","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"地狱砖 (#1068/15)\nchisel:nether_brick\n小块红色地狱砖\n生物不会在这个方块上生成","unlocalizedName":"tile.chisel.nether_brick"}
