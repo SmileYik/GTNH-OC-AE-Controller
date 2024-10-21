@@ -56,7 +56,7 @@ public class ToJson {
     public static void toJsonItem(List<Item> items) throws IOException {
         newDir(OUT_DIR, ITEM_DIR);
         items.forEach(item -> {
-            String filename = String.format("%s:%s:%d.json", item.getModId(), item.getInternalName(), item.getItemDamage()).toLowerCase();
+            String filename = String.format("%s.%s.%d.json", item.getModId(), item.getInternalName(), item.getItemDamage()).toLowerCase();
             Path path = Paths.get(OUT_DIR, ITEM_DIR, filename);
             if (Files.exists(path) && item.getNbt() != null && !item.getNbt().isEmpty()) {
                 return;
