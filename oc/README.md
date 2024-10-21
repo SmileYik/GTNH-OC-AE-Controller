@@ -55,7 +55,7 @@ wget https://ocae.smileyik.eu.org/oc/installer.lua ./oc-ae-installer.lua && ./oc
 return {
     sleep = 10,                     -- 两次执行任务时间隔多少秒
     token = "token",                -- token，若后端不需要校验token则可随便填写
-    baseUrl = "https://123456",     -- 基础 url，后端路径，也是你在前端输入的 url
+    baseUrl = "https://SERVER_URL/user/YOUR_TOKEN",     -- 基础 url，后端路径，也是你在前端输入的 url
     path = {                        -- 各项数据路径
         task = "/task",             -- 任务数据所在路径
         cpu = "/cpus",              -- cpu
