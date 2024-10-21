@@ -6,6 +6,7 @@ public class Aspect {
     private String name;
     private boolean primal;
     private String iconId;
+    private String imageFilePath;
 
     public String getId() {
         return id;
@@ -45,6 +46,14 @@ public class Aspect {
 
     public void setIconId(String iconId) {
         this.iconId = iconId;
+        // i~thaumcraftneiplugin~Aspect~0~fAEKF3UUPgWZnEuxrVzERA==
+        // item/thaumcraftneiplugin/Aspect~0~fAEKF3UUPgWZnEuxrVzERA==.png
+        // item/AFSU/AFSU~0~-zWaMSRkPXqSGkmAYXtOGA==.png
+        this.imageFilePath = String.format("item/thaumcraftneiplugin/%s.png", iconId.substring("i~thaumcraftneiplugin~".length()));
+    }
+
+    public String getImageFilePath() {
+        return imageFilePath;
     }
 
     @Override
@@ -55,6 +64,7 @@ public class Aspect {
         sb.append(", name='").append(name).append('\'');
         sb.append(", primal=").append(primal);
         sb.append(", iconId='").append(iconId).append('\'');
+        sb.append(", imageFilePath='").append(imageFilePath).append('\'');
         sb.append('}');
         return sb.toString();
     }
