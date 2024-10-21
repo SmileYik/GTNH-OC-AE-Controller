@@ -31,6 +31,9 @@ export default function IndexPage() {
                 第一次使用请去设置页面设置好后端地址及Token <br/>
                 若设置正确则会自动更新指令框中的结果栏
             </p>
+            <p>
+                使用 <a href={"https://www.mozilla.org/zh-CN/firefox/windows/"}>FireFox</a> 获取完美的视觉体验.
+            </p>
             <div id={"index-author-panel"}>
                 <a href={"https://blog.smileyik.eu.org/"} id={"index-author-icon"}>
                     <img src={"https://blog.smileyik.eu.org/common/images/ico_normal.jpg"} alt={"SmileYik"}/>

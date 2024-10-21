@@ -56,7 +56,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
         let url = "database/" + type + "/"
         switch (type) {
             case ITEM_STACK_TYPE.ITEM:
-                url += itemStack.name.toLowerCase() + ":" + damage + ".json"
+                url += itemStack.name.toLowerCase().replaceAll(":", ".") + "." + damage + ".json"
                 break;
             case ITEM_STACK_TYPE.ASPECT:
                 url += itemStack.aspect.toLowerCase() + ".json"
@@ -141,10 +141,12 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                         <span>ID:</span>
                         <span title={itemStack.name}>{itemStack.name}</span>
                     </div>
-                    <div className={"itemInfoLine"}>
-                        <span>损伤值:</span>
-                        <span>{itemStack.damage}</span>
-                    </div>
+                    {itemStack && itemStack.damage ? (
+                        <div className={"itemInfoLine"}>
+                            <span>损伤值:</span>
+                            <span>{itemStack.damage}</span>
+                        </div>
+                    ) : null}
                     {itemStack && itemStack.Temperature ? (
                         <div className={"itemInfoLine"}>
                             <span>温度:</span>
