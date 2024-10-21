@@ -68,7 +68,7 @@ export default function FluidPage() {
             <br/>
             {
                 items.map(item => {
-                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest}></ItemStack>)
+                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + item.label}></ItemStack>)
                 })
             }
         </>

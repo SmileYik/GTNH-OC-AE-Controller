@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import itemUtil from "../../ItemUtil.jsx";
 import "./ItemStack.css"
-import fluidDatabase from "../../FluidDatabase.json"
+import {useEffect, useState} from "react";
+import httpUtil from "../../HttpUtil.jsx";
 
 const CRAFTABLE_SVG = (
     <svg t="1728796172948" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -24,71 +25,82 @@ const INFORMATION_SVG = (
     </svg>
 )
 
-// aspect:praecantatio
+const ITEM_STACK_TYPE = {
+    FLUID: "fluid",
+    ITEM: "item",
+    ASPECT: "aspect"
+}
 
 function ItemStack({itemStack = null, onCraftRequest}) {
-    if (!itemStack) return
-    const oriStack = JSON.parse(JSON.stringify(itemStack))
-    let air = false
-    let item = itemUtil.getItem(itemStack)
-    if (item && item.tr === item.name) {
-        item.name = itemStack.label
+    if (!itemStack) {
+        itemStack = {"name": "Air", "label": "空气", "size": 0}
     }
-    // 流体
-    if (itemStack && itemStack.amount) {
-        item = {name: itemStack.name, tr: itemStack.label, maxDurability: 1}
-        itemStack.size = itemStack.amount
-        // 如果流体数据库含有该流体则添加新信息
-        console.log(fluidDatabase[itemStack.name])
-        if (fluidDatabase[itemStack.name]) {
-            item.tr = fluidDatabase[itemStack.name].zh
-            itemStack.Temperature = fluidDatabase[itemStack.name].Temperature
-            itemStack.iconPath = itemUtil.getFluidIconByName(itemStack.name);
-        }
-    }
-    // 源质物品, 源质目前存储方式是等离子体, 也是流体
-    else if (itemStack.aspect) {
-        item = {name: itemStack.aspect, tr: itemStack.aspect, maxDurability: 1}
-        const fluidName = "gaseous" + itemStack.aspect + "essentia"
-        if (fluidDatabase[fluidName]) {
-            item.tr = fluidDatabase[fluidName].zh
-            itemStack.Temperature = fluidDatabase[fluidName].Temperature
-            itemStack.iconPath = itemUtil.getFluidIconByName(fluidName);
 
+    const oriStack = JSON.parse(JSON.stringify(itemStack))
+    let tmpType = ITEM_STACK_TYPE.ITEM
+    if (itemStack.aspect) {
+        tmpType = ITEM_STACK_TYPE.ASPECT
+    } else if (itemStack.amount) {
+        tmpType = ITEM_STACK_TYPE.FLUID
+        if (itemStack.name.endsWith("essentia")) {
+            tmpType = ITEM_STACK_TYPE.ASPECT
+            itemStack.aspect = itemStack.name.substring(7, itemStack.name.indexOf("essentia"))
         }
     }
-    else if (!itemStack) {
-        item = {"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1}
-        itemStack = {"size": "0", "damage": "0", "name": "Air"}
-        air = true
-    }
-    if (!itemStack.size) itemStack.size = 0
-    if (!itemStack.damage) itemStack.damage = 0
-    if (!item) {
-        item = {
-            "name": itemStack.label,
-            "tr": itemStack.label,
-            "tab": "建筑",
-            "type": "Block",
-            "maxStackSize": 64,
-            "maxDurability": 1
+
+    const [type] = useState(tmpType)
+    const [damage, setDamage] = useState(itemStack.damage)
+    const [item, setItem] = useState({"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1})
+
+    useEffect(() => {
+        let url = "database/" + type + "/"
+        switch (type) {
+            case ITEM_STACK_TYPE.ITEM:
+                url += itemStack.name.toLowerCase() + ":" + damage + ".json"
+                break;
+            case ITEM_STACK_TYPE.ASPECT:
+                url += itemStack.aspect.toLowerCase() + ".json"
+                break;
+            case ITEM_STACK_TYPE.FLUID:
+                url += itemStack.name.toString() + ".json"
+                break;
         }
-        if (!item.name) {
-            item.name = item.tr = itemStack.name
-        }
-        if (!item.name) {
-            item = {"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1}
-        }
-    }
+
+        httpUtil.doAction(url, "GET")
+            .then(async res => {
+                if (await res.status === 200) {
+                    const target = await res.json()
+                    if (type === ITEM_STACK_TYPE.ASPECT) {
+                        target.localizedName = target.description
+                    }
+
+                    if (itemStack.name === "ae2fc:fluid_drop") {
+                        target.localizedName = target.localizedName.substring(3)
+                        target.localizedName = itemStack.label.replaceAll("drop of", "").replaceAll("液滴", "") + " " + target.localizedName
+                        target.tooltip = target.localizedName
+                    }
+
+                    setItem(target)
+                } else {
+                    if (type === ITEM_STACK_TYPE.ITEM) setDamage(0)
+                }
+            }).catch(() => {
+                if (type === ITEM_STACK_TYPE.ITEM) setDamage(0)
+            })
+    }, [type, damage, itemStack.name, itemStack.aspect]);
 
     let metadata = []
     for (let k in oriStack) {
         metadata.push(
-            <div className={"itemInfoLine"}>
+            <div className={"itemInfoLine"} key={k}>
                 <span title={k}>{k}:</span>
                 <span title={oriStack[k] + ""}>{"" + oriStack[k]}</span>
             </div>
         )
+    }
+
+    if (itemStack.amount) {
+        itemStack.size = itemStack.amount
     }
 
     let amount = ""
@@ -111,19 +123,19 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 <div className={"item-stack-tool-bar"}>
                     {itemStack.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-tool-bar-info"} title={"该物品有额外信息"}> {INFORMATION_SVG}</span> : <></>}
                     {itemStack.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-craftable"} title={"可制造"}
-                                                   onClick={event => onCraftRequest(oriStack)}>{CRAFTABLE_SVG}</span> : <></>}
+                                                   onClick={() => onCraftRequest(oriStack)}>{CRAFTABLE_SVG}</span> : <></>}
                 </div>
 
                 <div className="itemIcon">
-                    <img loading={"lazy"} src={itemStack.iconPath || itemUtil.getLargeIcon(air ? null : itemStack)} alt={item.tr} title={item.tr}/>
+                    <img loading={"lazy"} src={itemUtil.getIcon(item.imageFilePath)} alt={item.localizedName} title={item.tooltip}/>
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
                     <span title={itemStack.size}>{amount}</span>
                 </span>
 
-                <span className={"itemInfoMainName"} title={item.tr}>{item.tr}</span>
-                <span className={"itemInfoSubName"} title={item.name}>{item.name}</span>
+                <span className={"itemInfoMainName"} title={item.localizedName}>{item.localizedName}</span>
+                <span className={"itemInfoSubName"} title={itemStack.label}>{itemStack.label}</span>
                 <div className={"itemInfo"}>
                     <div className={"itemInfoLine"}>
                         <span>ID:</span>
