@@ -31,26 +31,29 @@ const ITEM_STACK_TYPE = {
     ASPECT: "aspect"
 }
 
-function ItemStack({_itemStack = null, onCraftRequest}) {
-    if (!_itemStack) {
-        _itemStack = {"name": "Air", "label": "空气", "size": 0}
+function ItemStack({itemStack = null, onCraftRequest}) {
+    if (!itemStack) {
+        itemStack = {"name": "Air", "label": "空气", "size": 0}
     }
 
-    const oriStack = JSON.parse(JSON.stringify(_itemStack))
+    const oriStack = JSON.parse(JSON.stringify(itemStack))
     let tmpType = ITEM_STACK_TYPE.ITEM
-    if (_itemStack.aspect) {
+    if (itemStack.aspect) {
         tmpType = ITEM_STACK_TYPE.ASPECT
-    } else if (_itemStack.amount) {
+    } else if (itemStack.amount) {
         tmpType = ITEM_STACK_TYPE.FLUID
-        if (_itemStack.name.endsWith("essentia")) {
+        if (itemStack.name.endsWith("essentia")) {
             tmpType = ITEM_STACK_TYPE.ASPECT
-            _itemStack.aspect = _itemStack.name.substring(7, _itemStack.name.indexOf("essentia"))
+            itemStack.aspect = itemStack.name.substring(7, itemStack.name.indexOf("essentia"))
         }
     }
+    if (itemStack.amount) {
+        itemStack.size = itemStack.amount
+    }
 
-    const [itemStack] = useState(_itemStack)
+    const [itemStackState] = useState(itemStack)
     const [type] = useState(tmpType)
-    const [damage, setDamage] = useState(itemStack.damage)
+    const [damage, setDamage] = useState(itemStackState.damage)
     const [item, setItem] = useState({"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1})
     const [retry, setRetry] = useState(0)
 
@@ -58,13 +61,13 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
         let url = "database/" + type + "/"
         switch (type) {
             case ITEM_STACK_TYPE.ITEM:
-                url += itemStack.name.toLowerCase().replaceAll(":", ".") + "." + damage + ".json"
+                url += itemStackState.name.toLowerCase().replaceAll(":", ".") + "." + damage + ".json"
                 break;
             case ITEM_STACK_TYPE.ASPECT:
-                url += itemStack.aspect.toLowerCase() + ".json"
+                url += itemStackState.aspect.toLowerCase() + ".json"
                 break;
             case ITEM_STACK_TYPE.FLUID:
-                url += itemStack.name.toString() + ".json"
+                url += itemStackState.name.toString() + ".json"
                 break;
         }
 
@@ -76,9 +79,9 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
                         target.localizedName = target.description
                     }
 
-                    if (itemStack.name === "ae2fc:fluid_drop") {
+                    if (itemStackState.name === "ae2fc:fluid_drop") {
                         target.localizedName = target.localizedName.substring(3)
-                        target.localizedName = itemStack.label.replaceAll("drop of", "").replaceAll("液滴", "") + " " + target.localizedName
+                        target.localizedName = itemStackState.label.replaceAll("drop of", "").replaceAll("液滴", "") + " " + target.localizedName
                         target.tooltip = target.localizedName
                     }
 
@@ -90,7 +93,7 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
                 console.log("failed init item stack: ", err)
                 if (retry < 10) setRetry(retry + 1)
             })
-    }, [type, damage, itemStack, retry]);
+    }, [type, damage, itemStackState, retry]);
 
     let metadata = []
     for (let k in oriStack) {
@@ -102,21 +105,17 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
         )
     }
 
-    if (itemStack.amount) {
-        itemStack.size = itemStack.amount
-    }
-
     let amount = ""
-    if (itemStack.size > 1e9) {
-        amount = parseInt(itemStack.size / 1e7 + "") / 100.0 + "G"
-    } else if (itemStack.size > 1e6) {
-        amount = parseInt(itemStack.size / 1e4 + "") / 100.0 + "M"
-    } else if (itemStack.size > 1e3) {
-        amount = parseInt(itemStack.size / 1e1 + "") / 100.0 + "K"
+    if (itemStackState.size > 1e9) {
+        amount = parseInt(itemStackState.size / 1e7 + "") / 100.0 + "G"
+    } else if (itemStackState.size > 1e6) {
+        amount = parseInt(itemStackState.size / 1e4 + "") / 100.0 + "M"
+    } else if (itemStackState.size > 1e3) {
+        amount = parseInt(itemStackState.size / 1e1 + "") / 100.0 + "K"
     } else {
-        amount = itemStack.size
+        amount = itemStackState.size
     }
-    if (itemStack.amount) {
+    if (itemStackState.amount) {
         amount += "L"
     }
 
@@ -124,8 +123,8 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
         <>
             <div className={"itemStack"}>
                 <div className={"item-stack-tool-bar"}>
-                    {itemStack.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-tool-bar-info"} title={"该物品有额外信息"}> {INFORMATION_SVG}</span> : <></>}
-                    {itemStack.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-craftable"} title={"可制造"}
+                    {itemStackState.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-tool-bar-info"} title={"该物品有额外信息"}> {INFORMATION_SVG}</span> : <></>}
+                    {itemStackState.isCraftable ? <span className={"item-stack-tool-bar-item item-stack-craftable"} title={"可制造"}
                                                    onClick={() => onCraftRequest(oriStack)}>{CRAFTABLE_SVG}</span> : <></>}
                 </div>
 
@@ -134,26 +133,26 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
-                    <span title={itemStack.size}>{amount}</span>
+                    <span title={itemStackState.size}>{amount}</span>
                 </span>
 
                 <span className={"itemInfoMainName"} title={item.localizedName}>{item.localizedName}</span>
-                <span className={"itemInfoSubName"} title={itemStack.label}>{itemStack.label}</span>
+                <span className={"itemInfoSubName"} title={itemStackState.label}>{itemStackState.label}</span>
                 <div className={"itemInfo"}>
                     <div className={"itemInfoLine"}>
                         <span>ID:</span>
-                        <span title={itemStack.name}>{itemStack.name}</span>
+                        <span title={itemStackState.name}>{itemStackState.name}</span>
                     </div>
-                    {itemStack && itemStack.damage ? (
+                    {itemStackState && itemStackState.damage ? (
                         <div className={"itemInfoLine"}>
                             <span>损伤值:</span>
-                            <span>{itemStack.damage}</span>
+                            <span>{itemStackState.damage}</span>
                         </div>
                     ) : null}
-                    {itemStack && itemStack.Temperature ? (
+                    {itemStackState && itemStackState.Temperature ? (
                         <div className={"itemInfoLine"}>
                             <span>温度:</span>
-                            <span>{itemStack.Temperature} K</span>
+                            <span>{itemStackState.Temperature} K</span>
                         </div>
                     ) : null}
                     <hr className={"item-stack-oc-item-hr"}/>
@@ -165,7 +164,7 @@ function ItemStack({_itemStack = null, onCraftRequest}) {
 }
 
 ItemStack.propTypes = {
-    _itemStack: PropTypes.object,
+    itemStack: PropTypes.object,
     onCraftRequest: PropTypes.func
 }
 
