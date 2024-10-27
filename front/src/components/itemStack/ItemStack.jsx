@@ -51,6 +51,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
     const [type] = useState(tmpType)
     const [damage, setDamage] = useState(itemStack.damage)
     const [item, setItem] = useState({"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1})
+    const [retry, setRetry] = useState(0)
 
     useEffect(() => {
         let url = "database/" + type + "/"
@@ -68,7 +69,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
 
         httpUtil.doAction(url, "GET")
             .then(async res => {
-                if (await res.status === 200) {
+                if (await res.status !== 404) {
                     const target = await res.json()
                     if (type === ITEM_STACK_TYPE.ASPECT) {
                         target.localizedName = target.description
@@ -84,10 +85,11 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 } else {
                     if (type === ITEM_STACK_TYPE.ITEM) setDamage(0)
                 }
-            }).catch(() => {
-                if (type === ITEM_STACK_TYPE.ITEM) setDamage(0)
+            }).catch(err => {
+                console.log("failed init item stack: ", err)
+                if (retry < 10) setRetry(retry + 1)
             })
-    }, [type, damage, itemStack.name, itemStack.aspect]);
+    }, [type, damage, itemStack.name, itemStack.aspect, retry, itemStack.label]);
 
     let metadata = []
     for (let k in oriStack) {
