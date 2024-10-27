@@ -31,23 +31,24 @@ const ITEM_STACK_TYPE = {
     ASPECT: "aspect"
 }
 
-function ItemStack({itemStack = null, onCraftRequest}) {
-    if (!itemStack) {
-        itemStack = {"name": "Air", "label": "空气", "size": 0}
+function ItemStack({_itemStack = null, onCraftRequest}) {
+    if (!_itemStack) {
+        _itemStack = {"name": "Air", "label": "空气", "size": 0}
     }
 
-    const oriStack = JSON.parse(JSON.stringify(itemStack))
+    const oriStack = JSON.parse(JSON.stringify(_itemStack))
     let tmpType = ITEM_STACK_TYPE.ITEM
-    if (itemStack.aspect) {
+    if (_itemStack.aspect) {
         tmpType = ITEM_STACK_TYPE.ASPECT
-    } else if (itemStack.amount) {
+    } else if (_itemStack.amount) {
         tmpType = ITEM_STACK_TYPE.FLUID
-        if (itemStack.name.endsWith("essentia")) {
+        if (_itemStack.name.endsWith("essentia")) {
             tmpType = ITEM_STACK_TYPE.ASPECT
-            itemStack.aspect = itemStack.name.substring(7, itemStack.name.indexOf("essentia"))
+            _itemStack.aspect = _itemStack.name.substring(7, _itemStack.name.indexOf("essentia"))
         }
     }
 
+    const [itemStack] = useState(_itemStack)
     const [type] = useState(tmpType)
     const [damage, setDamage] = useState(itemStack.damage)
     const [item, setItem] = useState({"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1})
@@ -89,7 +90,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 console.log("failed init item stack: ", err)
                 if (retry < 10) setRetry(retry + 1)
             })
-    }, [type, damage, itemStack.name, itemStack.aspect, retry, itemStack.label]);
+    }, [type, damage, itemStack, retry]);
 
     let metadata = []
     for (let k in oriStack) {
@@ -164,7 +165,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
 }
 
 ItemStack.propTypes = {
-    itemStack: PropTypes.object,
+    _itemStack: PropTypes.object,
     onCraftRequest: PropTypes.func
 }
 

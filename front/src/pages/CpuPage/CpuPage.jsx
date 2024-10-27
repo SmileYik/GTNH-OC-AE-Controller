@@ -21,10 +21,10 @@ function CpuDetail({cpu}) {
                     <h3>正在合成</h3>
                     <hr/>
                     {
-                        cpu.cpu.activeItems.map(item => {
+                        cpu.cpu.activeItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={item}></ItemStack>
+                                return <ItemStack itemStack={item} key={idx}></ItemStack>
                         })
                     }
                 </div>
@@ -33,10 +33,10 @@ function CpuDetail({cpu}) {
                     <h3>等待合成</h3>
                     <hr/>
                     {
-                        cpu.cpu.pendingItems.map(item => {
+                        cpu.cpu.pendingItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={item}></ItemStack>
+                                return <ItemStack itemStack={item} key={idx}></ItemStack>
                         })
                     }
                 </div>
@@ -45,10 +45,10 @@ function CpuDetail({cpu}) {
                     <h3>缓存物品</h3>
                     <hr/>
                     {
-                        cpu.cpu.storedItems.map(item => {
+                        cpu.cpu.storedItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={item}></ItemStack>
+                                return <ItemStack itemStack={item} key={idx}></ItemStack>
                         })
                     }
                 </div>
