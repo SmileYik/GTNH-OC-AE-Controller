@@ -21,10 +21,11 @@ function CpuDetail({cpu}) {
                     <h3>正在合成</h3>
                     <hr/>
                     {
+                        !cpu.cpu.activeItems || cpu.cpu.activeItems.length === 0 ? <></> :
                         cpu.cpu.activeItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={idx}></ItemStack>
+                                return <ItemStack itemStack={item} key={"1-" + item.label}></ItemStack>
                         })
                     }
                 </div>
@@ -33,10 +34,11 @@ function CpuDetail({cpu}) {
                     <h3>等待合成</h3>
                     <hr/>
                     {
+                        !cpu.cpu.pendingItems || cpu.cpu.pendingItems.length === 0 ? <></> :
                         cpu.cpu.pendingItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={idx}></ItemStack>
+                                return <ItemStack itemStack={item} key={"2-" + item.label}></ItemStack>
                         })
                     }
                 </div>
@@ -45,10 +47,11 @@ function CpuDetail({cpu}) {
                     <h3>缓存物品</h3>
                     <hr/>
                     {
+                        !cpu.cpu.storedItems || cpu.cpu.storedItems.length === 0 ? <></> :
                         cpu.cpu.storedItems.map((item, idx) => {
                             if (!item) return
                             if (item.amount && item.amount !== 0 || item.size && item.size !== 0)
-                                return <ItemStack itemStack={item} key={idx}></ItemStack>
+                                return <ItemStack itemStack={item} key={"3-" + item.label}></ItemStack>
                         })
                     }
                 </div>
@@ -164,13 +167,13 @@ export default function CpuPage() {
             <div className={"ae-cpu-card-panel"}>
                 {
                     cpus.map(cpu => {
-                        return <AeCpuCard key={Math.random()} cpu={cpu} onClick={onClickCpu} onRefresh={onRefresh}
+                        return <AeCpuCard key={cpu.id} cpu={cpu} onClick={onClickCpu} onRefresh={onRefresh}
                                           onDelete={onDeleteCpu}></AeCpuCard>
                     })
                 }
             </div>
             {
-                cpu && cpu.id ? <CpuDetail cpu={cpu}></CpuDetail> : <></>
+                cpu && cpu.id ? <CpuDetail key={cpu.id} cpu={cpu}></CpuDetail> : <></>
             }
         </div>
     )
