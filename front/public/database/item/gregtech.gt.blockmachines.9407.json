@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockmachines~9407","imageFilePath":"item/gregtech/gt.blockmachines~9407.png","internalName":"gt.blockmachines","itemDamage":9407,"itemId":2442,"localizedName":"pH传感器仓","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"pH传感器仓 (#2442/9407)\n可安装于pH中和净化单元.\n基于当前pH值输出红石信号.\n右键以打开GUI和更改设置.","unlocalizedName":"gt.blockmachines.hatch.phsensor"}

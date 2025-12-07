@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~arrowhead~250","imageFilePath":"item/TConstruct/arrowhead~250.png","internalName":"arrowhead","itemDamage":250,"itemId":4674,"localizedName":"注血木箭头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"注血木箭头 (#4674/250)\n攻击力：0.5 心\n耐久：123\n损坏几率：50%\n重量：0.62\n\n可被替换","unlocalizedName":"toolpart.ArrowHead.BloodInfusedWood"}

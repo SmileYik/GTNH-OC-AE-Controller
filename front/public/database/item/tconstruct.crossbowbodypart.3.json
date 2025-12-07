@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~CrossbowBodyPart~3","imageFilePath":"item/TConstruct/CrossbowBodyPart~3.png","internalName":"CrossbowBodyPart","itemDamage":3,"itemId":4679,"localizedName":"燧石弩身","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"燧石弩身 (#4679/3)\n耐久：113\n拉弓速度：4.5s\n箭矢速度：1\n\n可被替换","unlocalizedName":"toolpart.CrossbowBody.Flint"}

@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockmachines~12109","imageFilePath":"item/gregtech/gt.blockmachines~12109.png","internalName":"gt.blockmachines","itemDamage":12109,"itemId":2442,"localizedName":"虚空仓","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"虚空仓 (#2442/12109)\n销毁来自多方块结构的流体\n必须配置才能工作\n模仿到达上限的仓的行为","unlocalizedName":"gt.blockmachines.hatch.void.tier.00"}

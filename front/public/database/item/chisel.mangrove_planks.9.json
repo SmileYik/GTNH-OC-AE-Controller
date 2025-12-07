@@ -1,0 +1,1 @@
+{"id":"i~chisel~mangrove_planks~9","imageFilePath":"item/chisel/mangrove_planks~9.png","internalName":"mangrove_planks","itemDamage":9,"itemId":2206,"localizedName":"红树木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"红树木板 (#2206/9)\n红树木双层台阶\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.mangrove_planks"}

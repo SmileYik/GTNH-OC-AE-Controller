@@ -1,1 +1,1 @@
-{"id":"i~BiomesOPlenty~misc~0","imageFilePath":"item/BiomesOPlenty/misc~0.png","internalName":"misc","itemDamage":0,"itemId":5152,"localizedName":"泥块","maxDamage":0,"maxStackSize":64,"modId":"BiomesOPlenty","nbt":"","tooltip":"泥块 (#5152/0)\nBiomesOPlenty:misc","unlocalizedName":"item.misc.mudbrick"}
+{"id":"i~BiomesOPlenty~misc~0","imageFilePath":"item/BiomesOPlenty/misc~0.png","internalName":"misc","itemDamage":0,"itemId":4839,"localizedName":"泥砖","maxDamage":0,"maxStackSize":64,"modId":"BiomesOPlenty","nbt":"","tooltip":"泥砖 (#4839/0)","unlocalizedName":"item.misc.mudbrick"}

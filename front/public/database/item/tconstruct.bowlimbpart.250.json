@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~BowLimbPart~250","imageFilePath":"item/TConstruct/BowLimbPart~250.png","internalName":"BowLimbPart","itemDamage":250,"itemId":4677,"localizedName":"注血木弓臂","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"注血木弓臂 (#4677/250)\n耐久：123\n拉弓速度：0.75s\n箭矢速度：3.2\n\n可被替换","unlocalizedName":"toolpart.BowLimb.BloodInfusedWood"}

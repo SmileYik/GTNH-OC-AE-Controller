@@ -1,1 +1,1 @@
-{"id":"f~gregtech~chlorine","density":-100,"fluidId":149,"gaseous":true,"imageFilePath":"fluid/gregtech/chlorine.png","internalName":"chlorine","localizedName":"氯","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.chlorine","viscosity":200}
+{"id":"f~gregtech~chlorine","density":-100,"fluidId":153,"gaseous":true,"imageFilePath":"fluid/gregtech/chlorine.png","internalName":"chlorine","localizedName":"氯","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.chlorine","viscosity":200}

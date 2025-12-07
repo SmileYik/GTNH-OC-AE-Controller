@@ -1,0 +1,1 @@
+{"id":"i~chisel~willow_planks~9","imageFilePath":"item/chisel/willow_planks~9.png","internalName":"willow_planks","itemDamage":9,"itemId":2209,"localizedName":"柳木木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"柳木木板 (#2209/9)\n柳木双层台阶\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.willow_planks"}

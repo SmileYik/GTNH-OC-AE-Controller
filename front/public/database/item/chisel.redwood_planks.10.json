@@ -1,0 +1,1 @@
+{"id":"i~chisel~redwood_planks~10","imageFilePath":"item/chisel/redwood_planks~10.png","internalName":"redwood_planks","itemDamage":10,"itemId":2208,"localizedName":"红杉木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"红杉木板 (#2208/10)\n红杉木货箱\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.redwood_planks"}

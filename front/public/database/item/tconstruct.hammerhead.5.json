@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~hammerHead~5","imageFilePath":"item/TConstruct/hammerHead~5.png","internalName":"hammerHead","itemDamage":5,"itemId":4654,"localizedName":"骨头锤头","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"骨头锤头 (#4654/5)\n耐久：151\n采掘速度：3\n采掘等级：01-铜\n攻击力：1 心\n\n可被替换","unlocalizedName":"toolpart.HammerHead.Bone"}

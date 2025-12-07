@@ -1,0 +1,1 @@
+{"id":"i~TConstruct~CrossbowBodyPart~9","imageFilePath":"item/TConstruct/CrossbowBodyPart~9.png","internalName":"CrossbowBodyPart","itemDamage":9,"itemId":4679,"localizedName":"纸弩身","maxDamage":0,"maxStackSize":64,"modId":"TConstruct","nbt":"","tooltip":"纸弩身 (#4679/9)\n铭刻\n耐久：16\n拉弓速度：0.5s\n箭矢速度：1.1\n\n可被替换","unlocalizedName":"toolpart.CrossbowBody.Paper"}

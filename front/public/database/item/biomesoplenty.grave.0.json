@@ -1,1 +1,1 @@
-{"id":"i~BiomesOPlenty~grave~0","imageFilePath":"item/BiomesOPlenty/grave~0.png","internalName":"grave","itemDamage":0,"itemId":1321,"localizedName":"坟墓","maxDamage":0,"maxStackSize":64,"modId":"BiomesOPlenty","nbt":"","tooltip":"坟墓 (#1321/0)\nBiomesOPlenty:grave","unlocalizedName":"tile.grave"}
+{"id":"i~BiomesOPlenty~grave~0","imageFilePath":"item/BiomesOPlenty/grave~0.png","internalName":"grave","itemDamage":0,"itemId":930,"localizedName":"墓碑","maxDamage":0,"maxStackSize":64,"modId":"BiomesOPlenty","nbt":"","tooltip":"墓碑 (#0930/0)","unlocalizedName":"tile.grave"}

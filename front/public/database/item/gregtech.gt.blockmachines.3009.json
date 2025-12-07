@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockmachines~3009","imageFilePath":"item/gregtech/gt.blockmachines~3009.png","internalName":"gt.blockmachines","itemDamage":3009,"itemId":2442,"localizedName":"热传感器仓","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"热传感器仓 (#2442/3009)\n读取热等静压装置的温度.\n右键以打开GUI和更改设置.","unlocalizedName":"gt.blockmachines.hatch.heatsensor"}

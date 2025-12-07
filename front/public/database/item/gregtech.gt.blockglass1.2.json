@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockglass1~2","imageFilePath":"item/gregtech/gt.blockglass1~2.png","internalName":"gt.blockglass1","itemDamage":2,"itemId":2463,"localizedName":"万用无尽注能玻璃","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"万用无尽注能玻璃 (#2463/2)\n生物不会在这个方块上生成\n这不是一个实体！\n玻璃等级: UHV\n对应子信道值26（子信道：glass）\n拖到GUI中，为此通道选择此值","unlocalizedName":"gt.blockglass1.2"}

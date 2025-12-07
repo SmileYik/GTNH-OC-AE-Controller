@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockcasings11~3","imageFilePath":"item/gregtech/gt.blockcasings11~3.png","internalName":"gt.blockcasings11","itemDamage":3,"itemId":2452,"localizedName":"铂物品管道方块","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"铂物品管道方块 (#2452/3)\n生物不会在这个方块上生成\n这不是一个实体！\n对应子信道值4（子信道：item_pipe）\n拖到GUI中，为此通道选择此值","unlocalizedName":"gt.blockcasings11.3"}

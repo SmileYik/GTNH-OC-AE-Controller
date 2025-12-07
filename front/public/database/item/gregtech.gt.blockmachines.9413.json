@@ -1,0 +1,1 @@
+{"id":"i~gregtech~gt.blockmachines~9413","imageFilePath":"item/gregtech/gt.blockmachines~9413.png","internalName":"gt.blockmachines","itemDamage":9413,"itemId":2442,"localizedName":"除气机控制仓","maxDamage":0,"maxStackSize":64,"modId":"gregtech","nbt":"","tooltip":"除气机控制仓 (#2442/9413)\n可安装于除气机净化单元.\n输出强度基于当前控制信号的红石信号","unlocalizedName":"gt.blockmachines.hatch.degasifiercontrol"}

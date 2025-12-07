@@ -1,1 +1,1 @@
-{"id":"f~gregtech~deuterium","density":-100,"fluidId":120,"gaseous":true,"imageFilePath":"fluid/gregtech/deuterium.png","internalName":"deuterium","localizedName":"氘","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.deuterium","viscosity":200}
+{"id":"f~gregtech~deuterium","density":-100,"fluidId":124,"gaseous":true,"imageFilePath":"fluid/gregtech/deuterium.png","internalName":"deuterium","localizedName":"氘","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.deuterium","viscosity":200}

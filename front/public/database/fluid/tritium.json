@@ -1,1 +1,1 @@
-{"id":"f~gregtech~tritium","density":-100,"fluidId":121,"gaseous":true,"imageFilePath":"fluid/gregtech/tritium.png","internalName":"tritium","localizedName":"氚","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.tritium","viscosity":200}
+{"id":"f~gregtech~tritium","density":-100,"fluidId":125,"gaseous":true,"imageFilePath":"fluid/gregtech/tritium.png","internalName":"tritium","localizedName":"氚","luminosity":0,"modId":"gregtech","nbt":"","temperature":295,"unlocalizedName":"fluid.tritium","viscosity":200}

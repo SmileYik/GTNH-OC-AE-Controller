@@ -1,0 +1,1 @@
+{"id":"i~chisel~magic_planks~7","imageFilePath":"item/chisel/magic_planks~7.png","internalName":"magic_planks","itemDamage":7,"itemId":2205,"localizedName":"魔法木板","maxDamage":0,"maxStackSize":64,"modId":"chisel","nbt":"","tooltip":"魔法木板 (#2205/7)\n魔法木卷帘\n生物不会在这个方块上生成\n燃烧时间: 300","unlocalizedName":"tile.chisel.magic_planks"}
