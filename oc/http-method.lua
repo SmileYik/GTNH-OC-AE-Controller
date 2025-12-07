@@ -29,10 +29,9 @@ local function require(path, method, header, body)
 
     local reply = ""
     local handle = net.request(path, body, header, method)
-
+    for chunk in handle do reply = reply .. chunk end
     local code, response, responseHeader = handle.response()
     if code == 200 then
-        for chunk in handle do reply = reply .. chunk end
         reply = json.decode(reply)
     end
 
