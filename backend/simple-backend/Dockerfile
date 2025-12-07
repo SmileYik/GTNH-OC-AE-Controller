@@ -12,7 +12,7 @@ RUN gradle bootJar
 
 
 # 使用官方的 OpenJDK 17 镜像来运行 Java 应用程序
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-ubi9-minimal
 
 # 设置应用运行时的工作目录
 WORKDIR /app
@@ -26,4 +26,4 @@ COPY ./src/main/resources/config-template.json /app/config.json
 EXPOSE 60081
 
 # 运行 Java 应用程序
-CMD ["java", "-jar", "/app/simple-backend.jar", "config.json"]
+CMD ["java", "-Xmx32M", "-jar", "/app/simple-backend.jar", "config.json"]
