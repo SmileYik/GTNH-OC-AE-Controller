@@ -166,6 +166,8 @@ export default function CpuPage() {
             <br/>
             <div className={"ae-cpu-card-panel"}>
                 {
+                    !cpus || cpus.length === 0 ? 
+                    <span>无CPU, 需要用石英刀给CPU命名, 并且每个CPU的名字必须唯一</span>:
                     cpus.map(cpu => {
                         return <AeCpuCard key={cpu.id} cpu={cpu} onClick={onClickCpu} onRefresh={onRefresh}
                                           onDelete={onDeleteCpu}></AeCpuCard>
