@@ -68,6 +68,8 @@ export default function EssentiaPage() {
 
             <br/>
             {
+                items || items.length === 0 ?
+                <span>无源质</span> :
                 items.map(item => {
                     return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + item.label}></ItemStack>)
                 })

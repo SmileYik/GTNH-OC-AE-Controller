@@ -73,6 +73,8 @@ export default function ItemsPage() {
 
             <br/>
             {
+                items || items.length === 0 ?
+                <span>无物品</span> :
                 items.map(item => {
                     return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + item.label}></ItemStack>)
                 })
