@@ -19,7 +19,7 @@ function CommandArea({fixed, setFixed}) {
     let commandOption = []
     for (const key in Config.tasks) {
         if (key === "none") continue
-        commandOption.push(<option value={key}>{key}</option>)
+        commandOption.push(<option value={key} key={key}>{key}</option>)
     }
 
     const [command, setCommand] = useState("")
@@ -76,7 +76,7 @@ function CommandStatus() {
     }, [lastModified]);
 
     return (
-        <textarea contentEditable={false} value={commandStatus ? commandStatus : ""}/>
+        <textarea contentEditable={false} value={commandStatus ? commandStatus : ""} onChange={() => {}}/>
     )
 }
 

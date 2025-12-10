@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Config from "../../Config.jsx";
 import httpUtil from "../../HttpUtil.jsx";
 import PropTypes from "prop-types";
+import OCConfigDialog from "../../components/OCConfigDialog/OCConfigDialog.jsx";
 
 function ShareTokenCard({url, token}) {
     return (
@@ -15,6 +16,7 @@ function ShareTokenCard({url, token}) {
 }
 
 function ApplyResult({result}) {
+    const [displayPrevOCConfig, setDisplayPrevOCConfig] = useState(true)
     if (result === null) {
         return <></>
     }
@@ -24,7 +26,12 @@ function ApplyResult({result}) {
             {
                 result.data ?
                     (
-                        <ShareTokenCard url={result.data.url} token={result.data.token}></ShareTokenCard>
+                        <div>
+                            <ShareTokenCard url={result.data.url} token={result.data.token}></ShareTokenCard>
+                            <br/>
+                            <button onClick={() => setDisplayPrevOCConfig(true)}>查看OC配置</button>
+                            <OCConfigDialog baseUrl={result.data.url} token={result.data.token} popup={displayPrevOCConfig} onClose={() => setDisplayPrevOCConfig(false)}></OCConfigDialog>
+                        </div>
                     ) :
                     (
                         <p>{result.message}</p>
@@ -39,6 +46,7 @@ export default function ApplyPage() {
     const [url, setUrl] = useState("")
     const [apply, setApply] = useState(false)
     const [result, setResult] = useState(null)
+    const [displayPrevOCConfig, setDisplayPrevOCConfig] = useState(false)
 
     const [prevUrl] = useState(localStorage.getItem("shared-url"))
     const [prevToken] = useState(localStorage.getItem("shared-token"))
@@ -121,7 +129,15 @@ export default function ApplyPage() {
             <div className={"pre-shared-token"}>
                 <h2>上一次申领的 Token</h2>
                 {
-                    prevToken && prevUrl ? <ShareTokenCard url={prevUrl} token={prevToken}></ShareTokenCard> :
+                    prevToken && prevUrl ? 
+                    (
+                        <div>
+                            <ShareTokenCard url={prevUrl} token={prevToken}></ShareTokenCard> 
+                            <br/>
+                            <button onClick={() => setDisplayPrevOCConfig(true)}>查看OC配置</button>
+                            <OCConfigDialog baseUrl={prevUrl} token={prevToken} popup={displayPrevOCConfig} onClose={() => setDisplayPrevOCConfig(false)}></OCConfigDialog>
+                        </div>
+                    ) :
                         <p>好像没有申领过哦</p>
                 }
             </div>

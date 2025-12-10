@@ -25,7 +25,7 @@ const pages = {
 function TabList({className, onChangeTab, selectedPage}) {
     const tabs = []
     for (const key in pages) {
-        tabs.push(<p className={"tab-item " + (selectedPage === key ? "tab-item-selected" : "")} onClick={event=> onChangeTab(key)}>{key}</p>)
+        tabs.push(<p className={"tab-item " + (selectedPage === key ? "tab-item-selected" : "")} onClick={event=> onChangeTab(key)} key={key}>{key}</p>)
     }
     return (
         <div className={className}>

@@ -1,12 +1,14 @@
 import {useState} from "react";
 import Config from "../../Config.jsx";
 import "./ConfigPage.css"
+import OCConfigDialog from "../../components/OCConfigDialog/OCConfigDialog.jsx";
 
 export default function ConfigPage() {
     const [baseUrl, setBaseUrl] = useState(localStorage.getItem("base-url"))
     const [hideBaseUrl, setHideBaseUrl] = useState(true)
     const [token, setToken] = useState(localStorage.getItem("ocaetoken"))
     const [theme, setTheme] = useState(localStorage.getItem("theme"))
+    const [displayOCConfig, setDisplayOCConfig] = useState(false)
 
     function saveConfig() {
         if (baseUrl) localStorage.setItem("base-url", baseUrl)
@@ -17,7 +19,7 @@ export default function ConfigPage() {
 
     return (
         <div style={{textAlign: "left", alignItems: "normal"}}>
-            <form name={"config-form"}>
+            <form name="config-form" className="config-form">
                 <label htmlFor={"config-base-url"}>
                     基础URL
                     <input type={"checkbox"} checked={hideBaseUrl}
@@ -50,7 +52,11 @@ export default function ConfigPage() {
                 </select>
                 <br/>
                 <br/>
-                <button value={"保存"} type={"button"} onClick={() => saveConfig()}>保存</button>
+                <div style={{textAlign: "center"}}>
+                    <button value="保存" type="button" onClick={() => saveConfig()}>保存</button>
+                    <button value="查看OC配置" type="button" onClick={() => setDisplayOCConfig(true)}>查看OC配置</button>
+                </div>
+                <OCConfigDialog popup={displayOCConfig} token={token} baseUrl={baseUrl} onClose={() => setDisplayOCConfig(false)}></OCConfigDialog>
             </form>
         </div>
     )
