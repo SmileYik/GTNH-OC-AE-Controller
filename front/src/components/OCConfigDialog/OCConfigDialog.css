@@ -21,6 +21,7 @@
     padding: 1%;
     text-align: center;
     display: table;
+    position: relative;
 
     pre {
         text-align: left;
@@ -33,10 +34,11 @@
     }
 
     button {
-        position: relative;
+        position: absolute;
         width: 80%;
         margin: 0 auto;
         height: 50px;
-        bottom: -25px;
+        bottom: -75px;
+        left: 10%;
     }
 }
