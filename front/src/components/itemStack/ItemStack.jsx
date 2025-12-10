@@ -129,7 +129,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 </div>
 
                 <div className="itemIcon">
-                    <img loading={"lazy"} src={itemUtil.getIcon(item.imageFilePath)} alt={item.localizedName} title={item.tooltip}/>
+                    <img src={itemUtil.getIcon(item.imageFilePath)} onError={() => {setItem({...item, imageFilePath: item.imageFilePath.replace("~" + item.maxDamage, "~0")})}} alt={item.localizedName} title={item.tooltip}/>
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
