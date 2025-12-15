@@ -82,7 +82,6 @@ function PageList({
         return array
     }, [data, querys]);
     const pageButtonCounts = useMemo(() => {
-        console.log(footRect.width)
         const count = Math.floor(footRect.width / 12 / 32)
         return Math.min(count, 3)
     }, [footRect])
@@ -123,15 +122,19 @@ function PageList({
                 }
             </div>
             <div className="page-list-footer" ref={footRef}>
-                <button onClick={previousPage}>上一页</button>
-                <PageButtons 
-                    currentPage={currentPage} 
-                    maxPage={maxPageSize} 
-                    onPageChange={(page) => setCurrentPage(page)}
-                    leftSize={pageButtonCounts}
-                    rightSize={pageButtonCounts}
-                ></PageButtons>
-                <button onClick={nextPage}>下一页</button>
+                {
+                    maxPageSize > 1 && <>
+                        <button onClick={previousPage}>上一页</button>
+                        <PageButtons 
+                            currentPage={currentPage} 
+                            maxPage={maxPageSize} 
+                            onPageChange={(page) => setCurrentPage(page)}
+                            leftSize={pageButtonCounts}
+                            rightSize={pageButtonCounts}
+                        ></PageButtons>
+                        <button onClick={nextPage}>下一页</button>
+                    </>
+                }
             </div>
         </div>
     )
