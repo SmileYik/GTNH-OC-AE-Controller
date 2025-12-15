@@ -11,7 +11,6 @@ export default function ItemsPage() {
         if (!itemStack || !itemStack.isCraftable) return;
         const numberString = prompt("可制造" + itemStack.label + "，请输入要制造的数量: ","0");
         const number = parseInt(numberString)
-        console.log(number, number + "" === numberString)
         if (number + "" !== numberString || number === 0 || isNaN(number)) return;
 
         const filter = {
@@ -74,7 +73,7 @@ export default function ItemsPage() {
                 !items || items.length === 0 ?
                 <span>无物品</span> :
                 items.map(item => {
-                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + item.label}></ItemStack>)
+                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + ":" + item.label + ":" + item.size}></ItemStack>)
                 })
             }
         </>

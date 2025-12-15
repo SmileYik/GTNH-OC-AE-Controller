@@ -3,6 +3,8 @@ import itemUtil from "../../ItemUtil.jsx";
 import "./ItemStack.css"
 import {useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
+import { useMemo } from 'react';
+import { useCallback } from 'react';
 
 const CRAFTABLE_SVG = (
     <svg t="1728796172948" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +33,25 @@ const ITEM_STACK_TYPE = {
     ASPECT: "aspect"
 }
 
+function ItemIcon({
+    srcList,
+    alt,
+    title
+}) {
+    const [srcIdx, setSrcIdx] = useState(0)
+    const src = useMemo(() => {
+        return srcList[srcIdx]
+    }, [srcList, srcIdx])
+    const handleError = useCallback(event => {
+        setSrcIdx(old => {
+            return Math.min(old + 1, srcList.length)
+        })
+    }, [srcList]);
+    return (
+        <img src={src} onError={handleError} alt={alt} title={title} key={src}/>
+    )
+}
+
 function ItemStack({itemStack = null, onCraftRequest}) {
     if (!itemStack) {
         itemStack = {"name": "Air", "label": "空气", "size": 0}
@@ -56,6 +77,10 @@ function ItemStack({itemStack = null, onCraftRequest}) {
     const [damage, setDamage] = useState(itemStackState.damage)
     const [item, setItem] = useState({"name": "Air", "tr": "空气", "tab": "建筑", "type": "Block", "maxStackSize": 64, "maxDurability": 1})
     const [retry, setRetry] = useState(0)
+
+    const itemLocalizedName = useMemo(() => {
+        return item.localizedName || itemStackState.label || itemStackState.name
+    }, [item, itemStackState])
 
     useEffect(() => {
         let url = "database/" + type + "/"
@@ -91,7 +116,7 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 }
             }).catch(err => {
                 console.log("failed init item stack: ", err)
-                if (retry < 10) setRetry(retry + 1)
+                if (retry < 10) setRetry((retry) => retry + 1)
             })
     }, [type, damage, itemStackState, retry]);
 
@@ -129,14 +154,19 @@ function ItemStack({itemStack = null, onCraftRequest}) {
                 </div>
 
                 <div className="itemIcon">
-                    <img src={itemUtil.getIcon(item.imageFilePath)} onError={() => {setItem({...item, imageFilePath: item.imageFilePath.replace("~" + item.maxDamage, "~0")})}} alt={item.localizedName} title={item.tooltip}/>
+                    <ItemIcon srcList={[
+                        itemUtil.getIcon(item.imageFilePath),
+                        itemUtil.getIcon((item.imageFilePath || "").replace("~" + item.maxDamage, "~0")),
+                        itemUtil.getIcon(undefined)
+                    ]} alt={item.localizedName} title={item.tooltip}></ItemIcon>
+                    {/* <img src={itemUtil.getIcon(item.imageFilePath)} onError={() => {setItem({...item, imageFilePath: item.imageFilePath.replace("~" + item.maxDamage, "~0")})}} alt={item.localizedName} title={item.tooltip}/> */}
                 </div>
                 <span className={"item-stack-amount"}>
                     <span>x</span>
                     <span title={itemStackState.size}>{amount}</span>
                 </span>
 
-                <span className={"itemInfoMainName"} title={item.localizedName}>{item.localizedName}</span>
+                <span className={"itemInfoMainName"} title={itemLocalizedName}>{itemLocalizedName}</span>
                 <span className={"itemInfoSubName"} title={itemStackState.label}>{itemStackState.label}</span>
                 <div className={"itemInfo"}>
                     <div className={"itemInfoLine"}>
