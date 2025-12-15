@@ -4,6 +4,7 @@ import ItemStack from "../../components/itemStack/ItemStack.jsx";
 import CommandUtil from "../../commons/CommandUtil.jsx";
 import PageList from "../../components/PageList/PageList.jsx";
 import useResizeObserver from "../../components/useResizeObserver.jsx";
+import ItemLineSetButton from "../../components/itemLineSet.jsx";
 
 export default function FluidPage() {
     const [items, setItems] = useState([])
@@ -43,11 +44,12 @@ export default function FluidPage() {
         }
     }, [lastModified]);
 
+    const [itemStackLine, setItemStackLine] = useState(2)
     const contentRef = useRef(null);
     const contentRect = useResizeObserver(contentRef);
     const defaultPageSize = useMemo(() => {
-        return (Math.floor(contentRect.width / 138)) * 2;
-    }, [contentRect]);
+        return (Math.floor(contentRect.width / 138)) * itemStackLine;
+    }, [contentRect, itemStackLine]);
     const [queryParams, setQueryParams] = useState({ 
         label: '', 
         name: '', 
@@ -129,6 +131,7 @@ export default function FluidPage() {
                 }}>
                     搜寻流体
                 </button>
+                <ItemLineSetButton currentLine={itemStackLine} onLineChanged={line => setItemStackLine(line)}></ItemLineSetButton>
             </div>
 
             <br/>

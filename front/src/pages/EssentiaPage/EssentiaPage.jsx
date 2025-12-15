@@ -4,6 +4,7 @@ import ItemStack from "../../components/itemStack/ItemStack.jsx";
 import CommandUtil from "../../commons/CommandUtil.jsx";
 import PageList from "../../components/PageList/PageList.jsx";
 import useResizeObserver from "../../components/useResizeObserver.jsx";
+import ItemLineSetButton from "../../components/itemLineSet.jsx";
 
 export default function EssentiaPage() {
     const [items, setItems] = useState([])
@@ -44,11 +45,12 @@ export default function EssentiaPage() {
         }
     }, [lastModified]);
 
+    const [itemStackLine, setItemStackLine] = useState(2)
     const contentRef = useRef(null);
     const contentRect = useResizeObserver(contentRef);
     const defaultPageSize = useMemo(() => {
-        return (Math.floor(contentRect.width / 138)) * 2;
-    }, [contentRect]);
+        return (Math.floor(contentRect.width / 138)) * itemStackLine;
+    }, [contentRect, itemStackLine]);
     const [queryParams, setQueryParams] = useState({ 
         label: '', 
         name: '', 
@@ -78,19 +80,19 @@ export default function EssentiaPage() {
         return (
             <div className="page-list-query-header">
                 <label>
-                    <span>流体类型:</span> 
+                    <span>源质类型:</span> 
                     <input value={queryParams.name} 
                            onChange={e => setQueryParams(params => {return {...params, name: e.target.value}})}></input>
                 </label>
 
                 <label>
-                    <span>流体名称:</span> 
+                    <span>源质名称:</span> 
                     <input value={queryParams.label} 
                            onChange={e => setQueryParams(params => {return {...params, label: e.target.value}})}></input>
                 </label>
 
                 <label>
-                    <span>流体损伤:</span> 
+                    <span>源质损伤:</span> 
                     <input value={queryParams.damage} 
                            onChange={e => setQueryParams(params => {return {...params, damage: e.target.value}})}></input>
                 </label>
@@ -130,6 +132,7 @@ export default function EssentiaPage() {
                 }}>
                     搜寻源质
                 </button>
+                <ItemLineSetButton currentLine={itemStackLine} onLineChanged={line => setItemStackLine(line)}></ItemLineSetButton>
             </div>
 
             <br/>
