@@ -10,6 +10,7 @@ import "./commons/style.css"
 import './MainFrame.css'
 import ApplyPage from "./pages/ApplyPage/ApplyPage.jsx";
 import EssentiaPage from "./pages/EssentiaPage/EssentiaPage.jsx";
+import CommandUtil from "./commons/CommandUtil.jsx";
 
 const DEFAULT_PAGE = "Index"
 const pages = {
@@ -62,6 +63,7 @@ export default function MainFrame() {
     }, [])
 
     const changePage = useCallback((page) => {
+        CommandUtil.resetNow()
         setPage(page)
     }, [setPage])
     return (

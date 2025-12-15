@@ -1,20 +1,11 @@
 import {useCallback, useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
+import CommandUtil from "../../commons/CommandUtil.jsx";
 import "./CommandConsole.css"
 import Config from "../../Config.jsx";
 import PropTypes from "prop-types";
 
 function CommandArea({fixed, setFixed}) {
-    function submitCommand(command, bodyData) {
-        if (command == null || command === "") return
-        const json = JSON.parse(bodyData)
-        httpUtil.put(httpUtil.path.task, {
-            method: command,
-            data: json
-        }).then(val => {
-
-        })
-    }
 
     let commandOption = []
     for (const key in Config.tasks) {
@@ -48,7 +39,11 @@ function CommandArea({fixed, setFixed}) {
                 </div>
             </div>
             <span className={"command-area-submit-btn"}
-                  onClick={() => submitCommand(command, bodyData)}>提交指令</span>
+                  title="发送指令给游戏"
+                  onClick={() => CommandUtil.submitCommand(command, bodyData)}>提交指令</span>
+            <span className={"command-area-submit-btn"}
+                  title="一段时间没有操作会终止与服务器的交互, 点击这个按钮可以重新开始与服务器交互"
+                  onClick={() => CommandUtil.resetNow()}>刷新状态</span>
         </>
     )
 }
@@ -56,8 +51,18 @@ function CommandArea({fixed, setFixed}) {
 function CommandStatus() {
     const [commandStatus, setCommandStatus] = useState("")
     const [lastModified, setLastModified] = useState("")
+    const [refreshStatus, setRefreshStatus] = useState(true)
+
     useEffect(() => {
         const timer = setInterval(() => {
+            const status = CommandUtil.canFetchData()
+            setRefreshStatus((old) => {
+                if (old !== status) {
+                    return status
+                }
+                return old
+            })
+            if (!status) return;
             httpUtil.get(httpUtil.path.task, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async response => {
                     if (response.status === 200) {
@@ -76,7 +81,9 @@ function CommandStatus() {
     }, [lastModified]);
 
     return (
-        <textarea contentEditable={false} value={commandStatus ? commandStatus : ""} onChange={() => {}}/>
+        <textarea contentEditable={false} value={
+            (refreshStatus ? "" : "停止向服务器同步数据, 点击刷新状态按钮重新开启数据同步\n") + (commandStatus ? commandStatus : "")
+        } onChange={() => {}}/>
     )
 }
 

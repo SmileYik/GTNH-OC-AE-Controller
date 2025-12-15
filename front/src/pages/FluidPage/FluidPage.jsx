@@ -1,6 +1,7 @@
 import {useCallback, useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import ItemStack from "../../components/itemStack/ItemStack.jsx";
+import CommandUtil from "../../commons/CommandUtil.jsx";
 
 export default function FluidPage() {
     const [items, setItems] = useState([])
@@ -12,17 +13,12 @@ export default function FluidPage() {
         const number = parseInt(numberString)
         console.log(number, number + "" === numberString)
         if (number + "" !== numberString || number === 0 || isNaN(number)) return;
-
-        httpUtil.put(httpUtil.path.task, {
-            "method": "requestItem",
-            "data": {
-                filter: {
-                    name: itemStack.name
-                },
-                amount: number
-            }
-        })
-        .then(async resp => {
+        CommandUtil.submitCommand("requestItem", {
+            filter: {
+                name: itemStack.name
+            },
+            amount: number
+        }, async resp => {
             if (resp.status === 200) {
                 alert("制造 " + itemStack.label + " 的请求已经发送！")
             }
@@ -31,6 +27,7 @@ export default function FluidPage() {
 
     useEffect(() => {
         const timer = setInterval(() => {
+            if (!CommandUtil.canFetchData()) return;
             httpUtil.get(httpUtil.path.fluids, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async response => {
                     if (response.status === 200) {

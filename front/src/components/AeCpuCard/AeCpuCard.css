@@ -49,6 +49,8 @@
 .ae-cpu-card-name {
     color: aquamarine;
     padding: 2px;
+    max-height: 20%;
+    overflow: hidden;
 }
 
 .ae-cpu-card-refresh {

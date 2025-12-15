@@ -36,6 +36,20 @@
     overflow: auto;
 }
 
+/* 滚动条 */
+.itemInfoSubName::-webkit-scrollbar {
+    display: none;
+}
+.itemInfo::-webkit-scrollbar {
+    display: none;
+}
+.itemInfoMainName::-webkit-scrollbar {
+    display: none;
+}
+.itemInfoSubName::-webkit-scrollbar {
+    display: none;
+}
+
 .itemInfoLine {
     display: block;
     position: relative;

@@ -1,6 +1,7 @@
 import {useCallback, useEffect, useState} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import ItemStack from "../../components/itemStack/ItemStack.jsx";
+import CommandUtil from "../../commons/CommandUtil.jsx";
 
 export default function ItemsPage() {
     const [items, setItems] = useState([])
@@ -21,14 +22,10 @@ export default function ItemsPage() {
             filter.aspect = itemStack.aspect
         }
 
-        httpUtil.put(httpUtil.path.task, {
-            "method": "requestItem",
-            "data": {
-                filter: filter,
-                amount: number
-            }
-        })
-        .then(async resp => {
+        CommandUtil.submitCommand("requestItem", {
+            filter: filter,
+            amount: number
+        }, async resp => {
             if (resp.status === 200) {
                 alert("制造 " + itemStack.label + " 的请求已经发送！")
             }
@@ -37,6 +34,7 @@ export default function ItemsPage() {
 
     useEffect(() => {
         const timer = setInterval(() => {
+            if (!CommandUtil.canFetchData()) return;
             httpUtil.get(httpUtil.path.items, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async response => {
                     if (response.status === 200) {

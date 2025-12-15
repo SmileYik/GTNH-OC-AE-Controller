@@ -4,6 +4,7 @@ import AeCpuCard from "../../components/AeCpuCard/AeCpuCard.jsx";
 import PropTypes from "prop-types";
 import ItemStack from "../../components/itemStack/ItemStack.jsx";
 import "./CpuPage.css"
+import CommandUtil from "../../commons/CommandUtil.jsx";
 
 function CpuDetail({cpu}) {
     if (cpu == null) return ;
@@ -67,6 +68,7 @@ export default function CpuPage() {
 
     useEffect(() => {
         const timer = setInterval(() => {
+            if (!CommandUtil.canFetchData()) return;
             httpUtil.get(httpUtil.path.cpus, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
                 .then(async resp => {
                     if (resp.status === 200) {
@@ -118,12 +120,9 @@ export default function CpuPage() {
     }, [])
 
     const onRefresh = useCallback((cpuId) => {
-        httpUtil.put(httpUtil.path.task, {
-            "method": "cpuDetail",
-            "data": {
-                "id": cpuId
-            }
-        }).then(async resp => {
+        CommandUtil.submitCommand("cpuDetail", {
+            id: cpuId
+        }, async resp => {
             if (resp.status === 200) {
 
             }

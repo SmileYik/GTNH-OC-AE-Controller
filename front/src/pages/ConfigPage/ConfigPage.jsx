@@ -2,6 +2,7 @@ import {useState} from "react";
 import Config from "../../Config.jsx";
 import "./ConfigPage.css"
 import OCConfigDialog from "../../components/OCConfigDialog/OCConfigDialog.jsx";
+import CommandUtil from "../../commons/CommandUtil.jsx";
 
 export default function ConfigPage() {
     const [baseUrl, setBaseUrl] = useState(localStorage.getItem("base-url"))
@@ -14,6 +15,7 @@ export default function ConfigPage() {
         if (baseUrl) localStorage.setItem("base-url", baseUrl)
         if (token) localStorage.setItem("ocaetoken", token)
         if (theme && theme !== "") localStorage.setItem("theme", theme)
+        CommandUtil.resetNow()
         alert("成功保存配置到浏览器本地！")
     }
 
