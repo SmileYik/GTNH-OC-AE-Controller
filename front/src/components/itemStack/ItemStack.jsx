@@ -48,7 +48,7 @@ function ItemIcon({
         })
     }, [srcList]);
     return (
-        <img src={src} onError={handleError} alt={alt} title={title} key={src}/>
+        <img src={src} onError={handleError} alt={alt} title={title} key={srcIdx}/>
     )
 }
 

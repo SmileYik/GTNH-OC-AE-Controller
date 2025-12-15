@@ -1,11 +1,25 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useState, useRef} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import ItemStack from "../../components/itemStack/ItemStack.jsx";
 import CommandUtil from "../../commons/CommandUtil.jsx";
+import PageList from "../../components/PageList/PageList.jsx";
+import useResizeObserver from "../../components/useResizeObserver.jsx";
+import { useMemo } from "react";
 
 export default function ItemsPage() {
-    const [items, setItems] = useState([])
-    const [lastModified, setLastModified] = useState("")
+    const [items, setItems] = useState([]);
+    const [lastModified, setLastModified] = useState("");
+    const contentRef = useRef(null);
+    const contentRect = useResizeObserver(contentRef);
+    const defaultPageSize = useMemo(() => {
+        return (Math.floor(contentRect.width / 138)) * 2;
+    }, [contentRect]);
+    const [queryParams, setQueryParams] = useState({ 
+        label: '', 
+        name: '', 
+        damage: '' 
+    });
+    const [queryList, setQueryList] = useState([]);
 
     const onCraftRequest = useCallback((itemStack) => {
         if (!itemStack || !itemStack.isCraftable) return;
@@ -31,6 +45,62 @@ export default function ItemsPage() {
         })
     }, [])
 
+    const renderItemStack = useCallback((item, index) => {
+        return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + ":" + item.label + ":" + item.size + ":" + index}></ItemStack>)
+    }, [])
+
+    const buildQueryList = useCallback(() => {
+        const list = [];
+        if (queryParams.name && queryParams.name !== '') {
+            list.push((data) => data.filter(elem => elem.name && elem.name.toLowerCase().indexOf(queryParams.name.toLowerCase()) >= 0))
+        }
+        if (queryParams.label && queryParams.label !== '') {
+            list.push(data => data.filter(elem => elem.label && elem.label.toLowerCase().indexOf(queryParams.label.toLowerCase()) >= 0));
+        }
+        if (queryParams.damage && queryParams.damage !== '') {
+            list.push(data => data.filter(elem => elem.damage && elem.damage == queryParams.damage));
+        }
+        setQueryList(list)
+    }, [queryParams, queryList])
+
+    const renderQueryHeader = useCallback(() => {
+        return (
+            <div className="page-list-query-header">
+                <label>
+                    <span>物品类型:</span> 
+                    <input value={queryParams.name} 
+                           onChange={e => setQueryParams(params => {return {...params, name: e.target.value}})}></input>
+                </label>
+
+                <label>
+                    <span>物品名称:</span> 
+                    <input value={queryParams.label} 
+                           onChange={e => setQueryParams(params => {return {...params, label: e.target.value}})}></input>
+                </label>
+
+                <label>
+                    <span>物品损伤:</span> 
+                    <input value={queryParams.damage} 
+                           onChange={e => setQueryParams(params => {return {...params, damage: e.target.value}})}></input>
+                </label>
+
+                <span>
+                    <button onClick={buildQueryList}>搜索</button>
+                    <button onClick={() => {
+                        setQueryParams({
+                            name: '',
+                            label: '',
+                            damage: ''
+                        })
+                        setTimeout(() => {
+                            buildQueryList()
+                        }, 100)
+                    }}>重置</button>
+                </span>
+            </div>
+        )
+    })
+
     useEffect(() => {
         const timer = setInterval(() => {
             if (!CommandUtil.canFetchData()) return;
@@ -50,7 +120,7 @@ export default function ItemsPage() {
 
     return (
         <>
-            <div>
+            <div ref={contentRef}>
                 <button onClick={event => {
                     httpUtil.put(httpUtil.path.items, {
                         "result": []
@@ -72,9 +142,7 @@ export default function ItemsPage() {
             {
                 !items || items.length === 0 ?
                 <span>无物品</span> :
-                items.map(item => {
-                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + ":" + item.label + ":" + item.size}></ItemStack>)
-                })
+                <PageList data={items} defaultPageSize={defaultPageSize} onRender={renderItemStack} onHeadRender={renderQueryHeader} querys={queryList}></PageList>
             }
         </>
     )

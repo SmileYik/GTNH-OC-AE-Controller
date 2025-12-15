@@ -1,0 +1,45 @@
+.page-list-page-button {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    padding: 0;
+}
+
+.page-list-page-button-current {
+    background: #7ba2e0 !important;
+    transition: transform .5s ease;
+    scale: 1.05;
+    transform: rotate(-5deg) scale(1.1);
+}
+
+.page-list-page-button-dot {
+    border: 0px none !important;
+    cursor: auto !important;
+}
+
+.page-list-query-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.page-list-query-header label span {
+    padding: 0 10px 0 0;
+}
+
+.page-list-query-header label input {
+    border: none;
+    border-bottom: 1px solid #7ba2e0;
+    padding: 1px 10px;
+}
+
+.page-list-query-header label input:hover {
+    border-bottom: 2px solid #67a1ff;
+    padding: 0 10px;
+}
+
+.page-list-query-header button {
+    padding: 3px 10px;
+}
