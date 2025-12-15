@@ -9,17 +9,6 @@ import { useMemo } from "react";
 export default function ItemsPage() {
     const [items, setItems] = useState([]);
     const [lastModified, setLastModified] = useState("");
-    const contentRef = useRef(null);
-    const contentRect = useResizeObserver(contentRef);
-    const defaultPageSize = useMemo(() => {
-        return (Math.floor(contentRect.width / 138)) * 2;
-    }, [contentRect]);
-    const [queryParams, setQueryParams] = useState({ 
-        label: '', 
-        name: '', 
-        damage: '' 
-    });
-    const [queryList, setQueryList] = useState([]);
 
     const onCraftRequest = useCallback((itemStack) => {
         if (!itemStack || !itemStack.isCraftable) return;
@@ -44,6 +33,35 @@ export default function ItemsPage() {
             }
         })
     }, [])
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (!CommandUtil.canFetchData()) return;
+            httpUtil.get(httpUtil.path.items, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
+                .then(async response => {
+                    if (response.status === 200) {
+                        const r = await response.json();
+                        if (r.result) setItems(r.result)
+                        setLastModified(response.headers.get("last-modified"))
+                    }
+                })
+        }, 1000)
+        return () => {
+            clearInterval(timer)
+        }
+    }, [lastModified]);
+
+    const contentRef = useRef(null);
+    const contentRect = useResizeObserver(contentRef);
+    const defaultPageSize = useMemo(() => {
+        return (Math.floor(contentRect.width / 138)) * 2;
+    }, [contentRect]);
+    const [queryParams, setQueryParams] = useState({ 
+        label: '', 
+        name: '', 
+        damage: '' 
+    });
+    const [queryList, setQueryList] = useState([]);
 
     const renderItemStack = useCallback((item, index) => {
         return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + ":" + item.label + ":" + item.size + ":" + index}></ItemStack>)
@@ -101,23 +119,6 @@ export default function ItemsPage() {
         )
     })
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            if (!CommandUtil.canFetchData()) return;
-            httpUtil.get(httpUtil.path.items, lastModified && lastModified !== "" ? {"If-Modified-Since": lastModified} : {})
-                .then(async response => {
-                    if (response.status === 200) {
-                        const r = await response.json();
-                        if (r.result) setItems(r.result)
-                        setLastModified(response.headers.get("last-modified"))
-                    }
-                })
-        }, 1000)
-        return () => {
-            clearInterval(timer)
-        }
-    }, [lastModified]);
-
     return (
         <>
             <div ref={contentRef}>
@@ -142,7 +143,12 @@ export default function ItemsPage() {
             {
                 !items || items.length === 0 ?
                 <span>无物品</span> :
-                <PageList data={items} defaultPageSize={defaultPageSize} onRender={renderItemStack} onHeadRender={renderQueryHeader} querys={queryList}></PageList>
+                <PageList data={items} 
+                          defaultPageSize={defaultPageSize}
+                          onRender={renderItemStack} 
+                          onHeadRender={renderQueryHeader} 
+                          querys={queryList}
+                ></PageList>
             }
         </>
     )
