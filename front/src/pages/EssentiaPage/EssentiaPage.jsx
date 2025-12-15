@@ -1,7 +1,9 @@
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useState, useRef, useMemo} from "react";
 import httpUtil from "../../HttpUtil.jsx";
 import ItemStack from "../../components/itemStack/ItemStack.jsx";
 import CommandUtil from "../../commons/CommandUtil.jsx";
+import PageList from "../../components/PageList/PageList.jsx";
+import useResizeObserver from "../../components/useResizeObserver.jsx";
 
 export default function EssentiaPage() {
     const [items, setItems] = useState([])
@@ -11,7 +13,6 @@ export default function EssentiaPage() {
         if (!itemStack || !itemStack.isCraftable) return;
         const numberString = prompt("可制造" + itemStack.label + "，请输入要制造的数量: ","0");
         const number = parseInt(numberString)
-        console.log(number, number + "" === numberString)
         if (number + "" !== numberString || number === 0 || isNaN(number)) return;
         CommandUtil.submitCommand("requestItem", {
             filter: {
@@ -43,9 +44,77 @@ export default function EssentiaPage() {
         }
     }, [lastModified]);
 
+    const contentRef = useRef(null);
+    const contentRect = useResizeObserver(contentRef);
+    const defaultPageSize = useMemo(() => {
+        return (Math.floor(contentRect.width / 138)) * 2;
+    }, [contentRect]);
+    const [queryParams, setQueryParams] = useState({ 
+        label: '', 
+        name: '', 
+        damage: '' 
+    });
+    const [queryList, setQueryList] = useState([]);
+
+    const renderItemStack = useCallback((item, index) => {
+        return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + ":" + item.label + ":" + item.size + ":" + index}></ItemStack>)
+    }, [])
+
+    const buildQueryList = useCallback(() => {
+        const list = [];
+        if (queryParams.name && queryParams.name !== '') {
+            list.push((data) => data.filter(elem => elem.name && elem.name.toLowerCase().indexOf(queryParams.name.toLowerCase()) >= 0))
+        }
+        if (queryParams.label && queryParams.label !== '') {
+            list.push(data => data.filter(elem => elem.label && elem.label.toLowerCase().indexOf(queryParams.label.toLowerCase()) >= 0));
+        }
+        if (queryParams.damage && queryParams.damage !== '') {
+            list.push(data => data.filter(elem => elem.damage && elem.damage == queryParams.damage));
+        }
+        setQueryList(list)
+    }, [queryParams, queryList])
+
+    const renderQueryHeader = useCallback(() => {
+        return (
+            <div className="page-list-query-header">
+                <label>
+                    <span>流体类型:</span> 
+                    <input value={queryParams.name} 
+                           onChange={e => setQueryParams(params => {return {...params, name: e.target.value}})}></input>
+                </label>
+
+                <label>
+                    <span>流体名称:</span> 
+                    <input value={queryParams.label} 
+                           onChange={e => setQueryParams(params => {return {...params, label: e.target.value}})}></input>
+                </label>
+
+                <label>
+                    <span>流体损伤:</span> 
+                    <input value={queryParams.damage} 
+                           onChange={e => setQueryParams(params => {return {...params, damage: e.target.value}})}></input>
+                </label>
+
+                <span>
+                    <button onClick={buildQueryList}>搜索</button>
+                    <button onClick={() => {
+                        setQueryParams({
+                            name: '',
+                            label: '',
+                            damage: ''
+                        })
+                        setTimeout(() => {
+                            buildQueryList()
+                        }, 100)
+                    }}>重置</button>
+                </span>
+            </div>
+        )
+    })
+
     return (
         <>
-            <div>
+            <div ref={contentRef}>
                 <button onClick={event => {
                     httpUtil.put(httpUtil.path.essentia, {
                         "result": []
@@ -67,9 +136,12 @@ export default function EssentiaPage() {
             {
                 !items || items.length === 0 ?
                 <span>无源质</span> :
-                items.map(item => {
-                    return (<ItemStack itemStack={item} onCraftRequest={onCraftRequest} key={item.name + ":" + item.damage + item.label}></ItemStack>)
-                })
+                <PageList data={items} 
+                          defaultPageSize={defaultPageSize}
+                          onRender={renderItemStack} 
+                          onHeadRender={renderQueryHeader} 
+                          querys={queryList}
+                ></PageList>
             }
         </>
     )
