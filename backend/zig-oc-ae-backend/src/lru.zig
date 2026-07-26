@@ -195,7 +195,7 @@ pub fn LRUCache(comptime K: type, comptime V: type) type {
 
         pub fn fetchPut(self: *Self, key: K, value: V, callback: anytype, args: anytype) !?EvictedKV {
             const ret = try self.putAndGet(key, value);
-            defer if (ret.evicted) |*evicted| {
+            errdefer if (ret.evicted) |*evicted| {
                 evicted.deinit();
             };
 
