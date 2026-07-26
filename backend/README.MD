@@ -1,17 +1,34 @@
-## 后端配置
+# 后端配置
 
-### 后端程序选择
+## 目录
 
-#### json-server
+- [后端配置](#后端配置)
+  - [目录](#目录)
+  - [后端程序选择](#后端程序选择)
+    - [json-server](#json-server)
+    - [simple-backend](#simple-backend)
+    - [zig-oc-ae-backend](#zig-oc-ae-backend)
+    - [启用鉴权](#启用鉴权)
+      - [NGINX](#nginx)
+  - [自定义后端](#自定义后端)
+    - [数据类型](#数据类型)
+      - [数组类型（`[]`）](#数组类型)
+      - [对象类型（`{}`）](#对象类型)
+      - [需要的资源路径](#需要的资源路径)
+
+## 后端程序选择
+
+### json-server
 
 后端默认采用的 [json-server](https://github.com/typicode/json-server)，可以使用指令 `npm install json-server -g` 安装至全局环境中。相关安装方法请进其项目页了解。
 
 json-server 运行的初始json文件内容如下：
-```
+
+```json
 {
   "items": {},      // 物品数据
   "cpus": [],       // cpu数据
-  "essentia": {},   // 源质数据
+  "essentia": {},   // 源质数
   "fluids": {},     // 流体数据
   "task": {}        // 任务数据
 }
@@ -19,11 +36,19 @@ json-server 运行的初始json文件内容如下：
 
 使用命令 `json-server oc.json` 开启一个简单的后端服务器
 
-#### simple-backend
+### simple-backend
 
 [SimpleBackend](./simple-backend/README.MD) 是用 Spring 制作的一个简单的符合OC-AE要求的后端程序，并且带有简单的鉴权验证。
 
 详细请到 [SimpleBackend](./simple-backend/README.MD) 页面查看。
+
+### zig-oc-ae-backend
+
+[zig-oc-ae-backend](./zig-oc-ae-backend/README.md) 是用 [Zig](https://ziglang.org/) + [Httpz](https://github.com/karlseguin/http.zig/) 制作的一个轻量级的符合OC-AE要求的后端程序, 并带有简单的鉴权验证。
+
+与 **SimpleBackend** 相类似, zig-oc-ae-backend 也具有跨平台属性, 能够同时在 x86, amd64, arm64 架构上的 Windows, Linux, Macos 系统中运行.
+
+详细请到 [zig-oc-ae-backend](./zig-oc-ae-backend/README.md) 页面查看。
 
 ### 启用鉴权
 
@@ -31,7 +56,7 @@ json-server 运行的初始json文件内容如下：
 
 使用 NGINX 作为下游服务端， 反向代理请求至上游的 json-server 服务端，在反向代理时先通过跨域请求，再对凭据进行校验。
 
-```
+```conf
 location / {
     proxy_http_version 1.1;
     proxy_set_header Host $host;
@@ -60,20 +85,19 @@ location / {
 }
 ```
 
-
-### 自定义后端
+## 自定义后端
 
 若不想使用 json-server, 想自己搭建一个后端程序，那么请依据如下规则设计一个RESTFUL风格后端程序。
 
 **所有数据传输都建立在 json 格式字符串之上。**
 
-#### 数据类型
+### 数据类型
 
-##### 数组类型（`[]`）
+#### 数组类型（`[]`）
 
 假设有个名为 `cpus` 的路径代表对一个 **数组类型** 的资源进行操作，那么需要实现的接口有
 
-```
+```shell
 /cpus GET: 获取整个数组，以json格式返回。
 /cpus POST: 为数组内添加一个对象元素，该对象元素以其中的 `id` 字段作为主键。
 /cpus/<id> GET: 获取数组内对象的 `id` 字段为指定值的对象，以json格式返回。
@@ -81,11 +105,11 @@ location / {
 /cpus/<id> DELETE: 删除指定 `id` 的对象
 ```
 
-##### 对象类型（`{}`）
+#### 对象类型（`{}`）
 
 假设有一个名为 `items` 的路径代表对一个 **对象类型** 的资源进行操作，那么需要实现的接口有
 
-```
+```shell
 /items PUT: 为这个对象更新内容
 /items GET: 获取这个对象信息
 ```
@@ -94,7 +118,7 @@ location / {
 
 **以下资源路径都省略了共同的URL地址部分，例如`https://blog.smileyik.eu.org/oc-ae/items`与`https://blog.smileyik.eu.org/oc-ae/cpus`将被缩写为`/items`与`/cpus`**
 
-```
+```shell
 /items: 对象类型，代表AE中的物品
 /cpus: 数组类型，代表AE中的CPU
 /essentia: 对象类型，代表AE中的源质
