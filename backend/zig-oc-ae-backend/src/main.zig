@@ -16,8 +16,9 @@ pub fn main(init: std.process.Init) !void {
     //     std.debug.print("\nmemory leak: {}\n", .{check});
     // }
     const allocator = init.gpa;
+    const config_path = init.environ_map.get("OC_AE_BACKEND_CONFIG") orelse "./config.json";
 
-    var config = try mod.Config.load(allocator, init.io, "./data/config.json");
+    var config = try mod.Config.load(allocator, init.io, config_path);
     defer config.deinit();
     const c = config.config();
 
@@ -51,11 +52,13 @@ pub fn main(init: std.process.Init) !void {
         const This = @This();
 
         io: std.Io,
+        base_path: []const u8,
+
         pub fn clean(ctx: *anyopaque, key: []const u8) !void {
             const self: *This = @ptrCast(@alignCast(ctx));
             var buf: [8192]u8 = undefined;
             @memset(&buf, 0);
-            const path = try std.fmt.bufPrint(&buf, "{s}/{s}", .{ "./data", key });
+            const path = try std.fmt.bufPrint(&buf, "{s}/{s}", .{ self.base_path, key });
             std.debug.print("Clean namespace path: {s}\n", .{path});
             try std.Io.Dir.cwd().deleteTree(self.io, path);
         }
@@ -63,7 +66,10 @@ pub fn main(init: std.process.Init) !void {
         pub fn cleanFn(_: *This) *const fn (ctx: *anyopaque, key: []const u8) anyerror!void {
             return &clean;
         }
-    }){ .io = init.io };
+    }){
+        .io = init.io,
+        .base_path = c.json_data_path,
+    };
     var namespace_impl = try mod.Namespace.NamespaceFile.init(.{
         .allocator = allocator,
         .io = init.io,

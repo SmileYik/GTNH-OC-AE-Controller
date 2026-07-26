@@ -1,0 +1,62 @@
+{
+    "port": 16500,
+    "lru_capacity": 16,
+    "url_prefix": "/ocae",
+    "httpz": {
+        "thread_pool": {
+            "count": null,
+            "backlog": null,
+            "buffer_size": null
+        },
+        "request": {
+            "lazy_read_size": null,
+            "max_body_size": null,
+            "buffer_size": null,
+            "max_header_count": null,
+            "max_param_count": null,
+            "max_query_count": null,
+            "max_form_count": null,
+            "max_multiform_count": null
+        },
+        "worker": {
+            "count": null,
+            "max_conn": null,
+            "min_conn": null,
+            "large_buffer_count": null,
+            "large_buffer_size": null,
+            "retain_allocated_bytes": null
+        },
+        "response": {
+            "max_header_count": null
+        },
+        "timeout": {
+            "request": null,
+            "keepalive": null,
+            "request_count": null
+        }
+    },
+    "cors": {
+        "origin": "*",
+        "headers": "*",
+        "methods": null,
+        "max_age": null,
+        "credentials": "true"
+    },
+    "mode": "json",
+    "json_data_path": "./data",
+    "saver_period_second": 60,
+    "namespace": {
+        "mode": "json",
+        "json_file": "./data/namespaces.json",
+        "rental_period_seconds": 604800,
+        "namespace_length": 32,
+        "token_length": 32,
+        "secure_random": true,
+        "candidate": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_"
+    },
+    "apply_handler": {
+        "url_prefix": "",
+        "max_request_count": 1,
+        "max_request_count_period_ms": 60000
+    }
+}
