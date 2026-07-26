@@ -16,6 +16,7 @@ pub fn main(init: std.process.Init) !void {
     //     std.debug.print("\nmemory leak: {}\n", .{check});
     // }
     const allocator = init.gpa;
+
     const config_path = init.environ_map.get("OC_AE_BACKEND_CONFIG") orelse "./config.json";
 
     var config = try mod.Config.load(allocator, init.io, config_path);
@@ -261,25 +262,51 @@ const Saver = struct {
 
 var global_server: ?*mod.HttpzServer = null;
 
-fn handlePosixSignal(_: std.os.linux.SIG) callconv(.c) void {
+fn handlePosixSignal(_: std.c.SIG) callconv(.c) void {
     if (global_server) |s| s.stop();
 }
+
+fn handleWindowsControl(ctrl_type: std.os.windows.DWORD) callconv(.winapi) std.os.windows.BOOL {
+    std.debug.print("Windows SIGNAL {any}\n", .{ctrl_type});
+    switch (ctrl_type) {
+        std.c.SIG.DFL,
+        @intFromEnum(std.c.SIG.BREAK),
+        @intFromEnum(std.c.SIG.TERM),
+        => {
+            if (global_server) |s| {
+                s.stop();
+            }
+            return .TRUE;
+        },
+        else => return .FALSE,
+    }
+}
+
+extern "kernel32" fn SetConsoleCtrlHandler(
+    HandlerRoutine: ?*const fn (std.os.windows.DWORD) callconv(.winapi) std.os.windows.BOOL,
+    Add: std.os.windows.BOOL,
+) callconv(.winapi) std.os.windows.BOOL;
 
 pub fn setupSignalHandler(server_ptr: *mod.HttpzServer) !void {
     global_server = server_ptr;
 
-    if (builtin.target.os.tag == .windows) {} else {
-        const signals = .{ std.posix.SIG.INT, std.posix.SIG.TERM };
-        inline for (signals) |signal| {
-            std.posix.sigaction(
-                signal,
-                &.{
-                    .handler = .{ .handler = handlePosixSignal },
-                    .mask = std.posix.sigemptyset(),
-                    .flags = 0,
-                },
-                null,
-            );
+    if (builtin.target.os.tag == .windows) {
+        if (SetConsoleCtrlHandler(handleWindowsControl, .TRUE) == .FALSE) {
+            return error.SignalSetupFailed;
         }
+        return;
+    }
+
+    const signals = .{ std.posix.SIG.INT, std.posix.SIG.TERM };
+    inline for (signals) |signal| {
+        std.posix.sigaction(
+            signal,
+            &.{
+                .handler = .{ .handler = handlePosixSignal },
+                .mask = std.posix.sigemptyset(),
+                .flags = 0,
+            },
+            null,
+        );
     }
 }
